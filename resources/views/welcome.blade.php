@@ -3,97 +3,146 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>Laravel</title>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
+        <style type="text/css">
+            body {
+                background-color: #efefef !important;
+            }
+            .single-blog {
+                box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.2);
+                padding: 10px;
+                margin-top: 30px;
                 background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
             }
-
-            .full-height {
-                height: 100vh;
+            .single-blog img {
+                width: 100%;
             }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
+            .blog-meta {
+                font-size: 14px;
+                margin-bottom: 2px;
             }
-
-            .position-ref {
-                position: relative;
+            .single-blog span {
+                float: right;
+                font-size: 12px;
+                color: cornflowerblue;
             }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
+            .blog-text {
+                font-size: 14px;
+                text-align: justify;
             }
-
-            .content {
-                text-align: center;
+            .single-blog h2 {
+                margin-top: 10px;
+                font-size: 16px;
+                color: #007bff;
             }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
+            .single-blog h2 a {
                 text-decoration: none;
-                text-transform: uppercase;
             }
-
-            .m-b-md {
-                margin-bottom: 30px;
+            .read-more-btn {
+                background-image: linear-gradient(to right, #1c03b5, #5c8bef);
+                padding: 5px 12px 8px;
+                border-radius: 20px;
+                line-height: 20px;
+                font-size: 14px;
+                color: #fff;
+                border: none!important;
+            }
+            .read-more-btn:hover {
+                background-image: linear-gradient(to right, #006417, #00b128);
+                text-decoration: none;
+                color: #fff;
             }
         </style>
+        
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown link
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
                 </div>
-            @endif
+              </li>
+            </ul>
+          </div>
+        </nav>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+       <div class="container">
+           <h1 class="text-center">Easy Tutorials Blog</h1>
+           <p class="text-center">Like this video and ask your questions in comment section, <br>
+            don't forget to subscribe Easy Tutorials YouTube Channel to watch more videos.
+           </p>
+
+           <div class="row">
+
+                <div class="col-md-4">
+                    <div class="single-blog">
+                        <p class="blog-meta">By Admin <span>September 24, 2018</span></p>
+                        <img style="width: 100%; height: 250px;" src="/images/img1.jpg" class="img-responsive" alt="Image">
+                        <h2><a href="#">Learn How To Make a Website</a></h2>
+                        <p class="blog-text">Like this video and ask your questions in comment sections, don't forget to Subscribe Easy Tutorials YouTube Channel to watch more videos...</p>
+                        <p><a class="read-more-btn" href="#">Read More</a>
+                            <span><i class="fa fa-thumbs-o-up"></i>7 People like, <i class="fa fa-comments-o"></i> 3.. 
+                            </span>
+                        </p>
+                    </div>  
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="col-md-4">
+                    <div class="single-blog">
+                        <p class="blog-meta">By Winnie Damayo <span>October 04, 2018</span></p>
+                        <img style="width: 100%; height: 250px;" src="/images/img2.jpg" class="img-responsive" alt="Image">
+                        <h2><a href="#">Learn How To Make a Website</a></h2>
+                        <p class="blog-text">Like this video and ask your questions in comment sections, don't forget to Subscribe Easy Tutorials YouTube Channel to watch more videos...</p>
+                        <p><a class="read-more-btn" href="#">Read More</a>
+                            <span><i class="fa fa-thumbs-o-up"></i>7 People like, <i class="fa fa-comments-o"></i> 3.. 
+                            </span>
+                        </p>
+                    </div>  
                 </div>
-            </div>
-        </div>
+
+                <div class="col-md-4">
+                    <div class="single-blog">
+                        <p class="blog-meta">By Jane Dough <span>July 18, 2018</span></p>
+                        <img style="width: 100%; height: 250px;" src="/images/img3.jpg" class="img-responsive" alt="Image">
+                        <h2><a href="#">Learn How To Make a Website</a></h2>
+                        <p class="blog-text">Like this video and ask your questions in comment sections, don't forget to Subscribe Easy Tutorials YouTube Channel to watch more videos...</p> 
+                        <p><a class="read-more-btn" href="#">Read More</a>
+                            <span><i class="fa fa-thumbs-o-up"></i>7 People like, <i class="fa fa-comments-o"></i> 3.. 
+                            </span>
+                        </p>
+                    </div>  
+                </div>
+
+           </div>
+       </div>
+       
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
 </html>
