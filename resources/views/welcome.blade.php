@@ -56,6 +56,11 @@
                 text-decoration: none;
                 color: #fff;
             }
+            .navbar
+            {
+                border-top:3px solid #F48024;
+                border-bottom:1px solid linear-gradient(to right, #006417, #00b128);
+            }
         </style>
         
     </head>
@@ -67,9 +72,6 @@
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Language
