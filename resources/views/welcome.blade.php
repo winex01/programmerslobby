@@ -10,7 +10,7 @@
         <style type="text/css">
             body {
                 background-color: #efefef !important;
-                padding-top: 70px;
+                padding-top: 60px;
             }
             .single-blog {
                 box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.2);
@@ -102,7 +102,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link py-0" href="#">Login</a>
+                <a class="nav-link py-0 btn btn-primary text-white" href="#">Sign up</a>
               </li>
 
             </ul>
