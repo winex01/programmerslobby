@@ -10,6 +10,7 @@
         <style type="text/css">
             body {
                 background-color: #efefef !important;
+                padding-top: 70px;
             }
             .single-blog {
                 box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.2);
@@ -59,12 +60,12 @@
         
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">ProgrammersLobby</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+          <a class="navbar-brand" href="#">ProgrammersLobby.com</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -92,6 +93,15 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Submit Code</a>
               </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+              </li>
+
+              <li class="nav-item">
+                <button type="button" class="btn btn-primary">Register</button>
+              </li>
+
             </ul>
           </div>
         </nav>
