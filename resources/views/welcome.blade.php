@@ -90,7 +90,7 @@
         </nav>
 
        <div class="container">
-           <h1 class="text-center">Easy Tutorials Blog</h1>
+           <h1 class="text-center">Get Source Code For Free</h1>
            <p class="text-center">Like this video and ask your questions in comment section, <br>
             don't forget to subscribe Easy Tutorials YouTube Channel to watch more videos.
            </p>
