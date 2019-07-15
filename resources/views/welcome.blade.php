@@ -60,7 +60,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="#">ProgrammersLobby</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -90,7 +90,7 @@
         </nav>
 
        <div class="container">
-           <h1 class="text-center">Get Source Code For Free</h1>
+           <h1 class="text-center mt-2">Get Source Code For Free</h1>
            <p class="text-center">Like this video and ask your questions in comment section, <br>
             don't forget to subscribe Easy Tutorials YouTube Channel to watch more videos.
            </p>
