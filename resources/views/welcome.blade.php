@@ -67,7 +67,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
-          <a class="navbar-brand" href="#">ProgrammersLobby.com</a>
+          <a class="navbar-brand text-muted" href="#">ProgrammersLobby.com</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -98,7 +98,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link py-0" href="#">Login</a>
+                <a class="nav-link py-0 text-info" href="#">Login</a>
               </li>
 
               <li class="nav-item">
