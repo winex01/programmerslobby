@@ -60,12 +60,13 @@
             {
                 border-top:3px solid #F48024;
                 border-bottom:1px solid linear-gradient(to right, #006417, #00b128);
+                height: 50px;
             }
         </style>
         
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
           <a class="navbar-brand" href="#">ProgrammersLobby.com</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -73,7 +74,7 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link py-0 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Language
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -87,21 +88,21 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
+                <a class="nav-link py-0" href="#">Blog</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Meme</a>
+                <a class="nav-link py-0" href="#">Meme</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Submit Code</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link py-0" href="#">Submit Code</a>
               </li>
 
               <li class="nav-item">
-                <button type="button" class="btn btn-primary">Register</button>
+                <a class="nav-link py-0" href="#">Login</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link py-0" href="#">Login</a>
               </li>
 
             </ul>
