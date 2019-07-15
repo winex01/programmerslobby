@@ -59,7 +59,7 @@
             .navbar
             {
                 border-top:3px solid #F48024;
-                border-bottom:1px solid linear-gradient(to right, #006417, #00b128);
+                border-bottom: 1px solid #ddd;
                 height: 50px;
             }
         </style>
