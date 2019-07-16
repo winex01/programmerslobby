@@ -67,6 +67,24 @@
     </head>
     <body>
 
+        {{-- 
+                ASP/ASP.NET
+                Android
+                C#
+                C/C++
+                Delphi
+                HTML/CSS
+                Java
+                Javascript
+                MySQL
+                PHP
+                PostgreSQL
+                Python
+                Visual Basic
+                Visual Basic.Net
+                iOS
+         --}}
+
         <nav class="navbar py-0 navbar-expand-sm navbar-light bg-light fixed-top py-md-0">
             <a class="navbar-brand text-muted" href="#">ProgrammersLobby.com</a>
             <button class="navbar-toggler mt-1" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,9 +93,33 @@
             <div class="navbar-collapse collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Programming</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Programming
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">ASP/ASP.NET</a>
+                          <a class="dropdown-item" href="#">Android</a>
+                          <a class="dropdown-item" href="#">C#</a>
+                          <a class="dropdown-item" href="#">C/C++</a>
+                          <a class="dropdown-item" href="#">Delphi</a>
+                          <a class="dropdown-item" href="#">HTML/CSS</a>
+                          <a class="dropdown-item" href="#">Java</a>
+                          <a class="dropdown-item" href="#">Javascript</a>
+                          <a class="dropdown-item" href="#">MySQL</a>
+                          <a class="dropdown-item" href="#">PHP</a>
+                          <a class="dropdown-item" href="#">PostgreSQL</a>
+                          <a class="dropdown-item" href="#">Python</a>
+                          <a class="dropdown-item" href="#">Visual Basic</a>
+                          <a class="dropdown-item" href="#">Visual Basic.Net</a>
+                          <a class="dropdown-item" href="#">iOS</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Others</a>
+                        </div>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="#">Web</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Language</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Mobile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Windows Form</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Meme</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Submit Code</a></li>
