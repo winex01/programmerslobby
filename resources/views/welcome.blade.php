@@ -66,22 +66,47 @@
         
     </head>
     <body>
+
+        {{-- <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+          <a class="navbar-brand text-muted" href="#">ProgrammersLobby.com</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            
+          </div>
+        </nav> --}}
+
+
         <nav class="navbar py-0 navbar-expand-sm navbar-light bg-light fixed-top py-md-0">
             <a class="navbar-brand text-muted" href="#">ProgrammersLobby.com</a>
             <button class="navbar-toggler mt-1" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
             <div class="navbar-collapse collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Meme</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Submit Code</a></li>
-                  <li class="nav-item"><a class="nav-link text-info" href="#">Login</a></li>
-                  <li class="nav-item"><a class="nav-link text-info" href="#">Sign up</a></li>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Meme</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Submit Code</a></li>
+                  {{-- <li class="nav-item"></li> --}}
+                  {{-- <li class="nav-item"></li> --}}
+                    
                 </ul>
+
+                <form class="mx-2 my-auto d-inline w-25">
+                    <input class="form-control form-control-sm" type="search" placeholder="Search..." aria-label="Search">
+                </form>
+
+                <a class="ml-2 text-info" href="#">Login</a>
+                <a class="ml-2 btn btn-outline-primary btn-sm my-2 my-sm-0" href="#">Sign up</a>
+              {{-- <button class="btn btn-outline-primary btn-sm my-2 my-sm-0 ml-1" type="submit">Search</button> --}}
+                
             </div>
+
         </nav>
+
+
 
        <div class="container mt-5">
            <h1 class="text-center">Get Source Code For Free</h1>
