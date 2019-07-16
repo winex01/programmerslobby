@@ -10,7 +10,7 @@
         <style type="text/css">
             body {
                 background-color: #efefef !important;
-                padding-top: 60px;
+                /*padding-top: 70px;*/
             }
             .single-blog {
                 box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.2);
@@ -60,57 +60,31 @@
             {
                 border-top:3px solid #F48024;
                 border-bottom: 1px solid #ddd;
-                height: 50px;
+                /*height: 50px;*/
             }
         </style>
         
     </head>
     <body>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
-          <a class="navbar-brand text-muted" href="#">ProgrammersLobby.com</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                <a class="nav-link py-0 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Language
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">PHP</a>
-                  <a class="dropdown-item" href="#">Python</a>
-                  <a class="dropdown-item" href="#">C#</a>
-                  <a class="dropdown-item" href="#">C++</a>
-                  <a class="dropdown-item" href="#">Java</a>
-                  <a class="dropdown-item" href="#">Javascript</a>
-                  <a class="dropdown-item" href="#">Others</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link py-0" href="#">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link py-0" href="#">Meme</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link py-0" href="#">Submit Code</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link py-0 text-info" href="#">Login</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link py-0 btn btn-primary text-white" href="#">Sign up</a>
-              </li>
-
-            </ul>
-          </div>
+        <nav class="navbar py-0 navbar-expand-sm navbar-light bg-light fixed-top py-md-0">
+            <a class="navbar-brand text-muted" href="#">ProgrammersLobby.com</a>
+            <button class="navbar-toggler mt-1" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="navbar-collapse collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Meme</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Submit Code</a></li>
+                  <li class="nav-item"><a class="nav-link text-info" href="#">Login</a></li>
+                  <li class="nav-item"><a class="nav-link text-info" href="#">Sign up</a></li>
+                </ul>
+            </div>
         </nav>
 
-       <div class="container">
-           <h1 class="text-center mt-2">Get Source Code For Free</h1>
+       <div class="container mt-5">
+           <h1 class="text-center">Get Source Code For Free</h1>
            <p class="text-center">Like this video and ask your questions in comment section, <br>
             don't forget to subscribe Easy Tutorials YouTube Channel to watch more videos.
            </p>
