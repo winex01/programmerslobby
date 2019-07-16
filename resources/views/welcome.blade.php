@@ -98,7 +98,7 @@
                     <input class="form-control form-control-sm" type="search" placeholder="Search..." aria-label="Search">
                 </form>
 
-                <a class="ml-2 text-info" href="#">Login</a>
+                <a class="ml-2 text-muted" href="#">Login</a>
                 <a class="ml-2 btn btn-outline-primary btn-sm my-2 my-sm-0" href="#">Sign up</a>
               {{-- <button class="btn btn-outline-primary btn-sm my-2 my-sm-0 ml-1" type="submit">Search</button> --}}
                 
