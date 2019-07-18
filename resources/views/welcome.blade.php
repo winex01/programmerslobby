@@ -10,7 +10,6 @@
         <style type="text/css">
             body {
                 background-color: #efefef !important;
-                /*padding-top: 70px;*/
             }
             .single-blog {
                 box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.2);
@@ -60,7 +59,6 @@
             {
                 border-top:3px solid #F48024;
                 border-bottom: 1px solid #ddd;
-                /*height: 50px;*/
             }
         </style>
         
@@ -93,7 +91,7 @@
             <div class="navbar-collapse collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item dropdown">
+                    {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Programming
                         </a>
@@ -116,14 +114,8 @@
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item" href="#">Others</a>
                         </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Web</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Mobile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Windows Form</a></li>
+                    </li> --}}
                     <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Meme</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Submit Code</a></li>
-                    
                 </ul>
 
                 <form class="mx-2 my-auto d-inline w-25">
