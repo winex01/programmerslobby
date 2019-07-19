@@ -88,7 +88,7 @@
                         <h2><a href="#">Learn How To Make a Website</a></h2>
                         <p class="blog-text">Like this video and ask your questions in comment sections, don't forget to Subscribe Easy Tutorials YouTube Channel to watch more videos...</p>
                         <p><a class="read-more-btn" href="#">Read More</a>
-                            <span><i class="fa fa-thumbs-o-up"></i>7 People like, <i class="fa fa-comments-o"></i> 3.. 
+                            <span><i class="fa fa-heart"></i> 7 People like, <i class="fa fa-comments-o"></i> 3.. 
                             </span>
                         </p>
                     </div>  
@@ -101,7 +101,7 @@
                         <h2><a href="#">Learn How To Make a Website</a></h2>
                         <p class="blog-text">Like this video and ask your questions in comment sections, don't forget to Subscribe Easy Tutorials YouTube Channel to watch more videos...</p>
                         <p><a class="read-more-btn" href="#">Read More</a>
-                            <span><i class="fa fa-thumbs-o-up"></i>7 People like, <i class="fa fa-comments-o"></i> 3.. 
+                            <span><i class="fa fa-heart"></i> 7 People like, <i class="fa fa-comments-o"></i> 3.. 
                             </span>
                         </p>
                     </div>  
@@ -114,7 +114,7 @@
                         <h2><a href="#">Learn How To Make a Website</a></h2>
                         <p class="blog-text">Like this video and ask your questions in comment sections, don't forget to Subscribe Easy Tutorials YouTube Channel to watch more videos...</p> 
                         <p><a class="read-more-btn" href="#">Read More</a>
-                            <span><i class="fa fa-thumbs-o-up"></i>7 People like, <i class="fa fa-comments-o"></i> 3.. 
+                            <span><i class="fa fa-heart"></i> 7 People like, <i class="fa fa-comments-o"></i> 3.. 
                             </span>
                         </p>
                     </div>  
@@ -131,7 +131,7 @@
                         <h2><a href="#">Learn How To Make a Website</a></h2>
                         <p class="blog-text">Like this video and ask your questions in comment sections, don't forget to Subscribe Easy Tutorials YouTube Channel to watch more videos...</p>
                         <p><a class="read-more-btn" href="#">Read More</a>
-                            <span><i class="fa fa-thumbs-o-up"></i>7 People like, <i class="fa fa-comments-o"></i> 3.. 
+                            <span><i class="fa fa-heart"></i> 7 People like, <i class="fa fa-comments-o"></i> 3.. 
                             </span>
                         </p>
                     </div>  
@@ -144,7 +144,7 @@
                         <h2><a href="#">Learn How To Make a Website</a></h2>
                         <p class="blog-text">Like this video and ask your questions in comment sections, don't forget to Subscribe Easy Tutorials YouTube Channel to watch more videos...</p>
                         <p><a class="read-more-btn" href="#">Read More</a>
-                            <span><i class="fa fa-thumbs-o-up"></i>7 People like, <i class="fa fa-comments-o"></i> 3.. 
+                            <span><i class="fa fa-heart"></i> 7 People like, <i class="fa fa-comments-o"></i> 3.. 
                             </span>
                         </p>
                     </div>  
@@ -157,7 +157,7 @@
                         <h2><a href="#">Learn How To Make a Website</a></h2>
                         <p class="blog-text">Like this video and ask your questions in comment sections, don't forget to Subscribe Easy Tutorials YouTube Channel to watch more videos...</p> 
                         <p><a class="read-more-btn" href="#">Read More</a>
-                            <span><i class="fa fa-thumbs-o-up"></i>7 People like, <i class="fa fa-comments-o"></i> 3.. 
+                            <span><i class="fa fa-heart"></i> 7 People like, <i class="fa fa-comments-o"></i> 3.. 
                             </span>
                         </p>
                     </div>  
