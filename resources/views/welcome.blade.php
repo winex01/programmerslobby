@@ -3,67 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
+        <title>{{ config('app.name') }}</title>
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <style type="text/css">
-            body {
-                background-color: #efefef !important;
-                /*padding-top: 70px;*/
-            }
-            .single-blog {
-                box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.2);
-                padding: 10px;
-                margin-top: 30px;
-                background-color: #fff;
-            }
-            .single-blog img {
-                width: 100%;
-            }
-            .blog-meta {
-                font-size: 14px;
-                margin-bottom: 2px;
-            }
-            .single-blog span {
-                float: right;
-                font-size: 12px;
-                color: cornflowerblue;
-            }
-            .blog-text {
-                font-size: 14px;
-                text-align: justify;
-            }
-            .single-blog h2 {
-                margin-top: 10px;
-                font-size: 16px;
-                color: #007bff;
-            }
-            .single-blog h2 a {
-                text-decoration: none;
-            }
-            .read-more-btn {
-                background-image: linear-gradient(to right, #1c03b5, #5c8bef);
-                padding: 5px 12px 8px;
-                border-radius: 20px;
-                line-height: 20px;
-                font-size: 14px;
-                color: #fff;
-                border: none!important;
-            }
-            .read-more-btn:hover {
-                background-image: linear-gradient(to right, #006417, #00b128);
-                text-decoration: none;
-                color: #fff;
-            }
-            .navbar
-            {
-                border-top:3px solid #F48024;
-                border-bottom: 1px solid #ddd;
-                /*height: 50px;*/
-            }
-        </style>
-        
+        <link rel="stylesheet" type="text/css" href="{{ mix('/css/all.css') }}">
+     
     </head>
     <body>
 
@@ -93,7 +37,7 @@
             <div class="navbar-collapse collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item dropdown">
+                    {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Programming
                         </a>
@@ -116,14 +60,8 @@
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item" href="#">Others</a>
                         </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Web</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Mobile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Windows Form</a></li>
+                    </li> --}}
                     <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Meme</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Submit Code</a></li>
-                    
                 </ul>
 
                 <form class="mx-2 my-auto d-inline w-25">
