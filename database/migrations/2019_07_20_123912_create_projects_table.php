@@ -15,7 +15,6 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
 
             //content
             $table->string('title');
@@ -33,6 +32,7 @@ class CreateProjectsTable extends Migration
 
             $table->unsignedBigInteger('author_id');            
             
+            $table->timestamps();
         });
     }
 
