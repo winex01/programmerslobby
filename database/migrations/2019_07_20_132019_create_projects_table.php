@@ -15,8 +15,6 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->bigIncrements('id');
-
-            //content
             $table->string('title');
             $table->text('body');
             $table->string('image')->nullable();
@@ -30,8 +28,7 @@ class CreateProjectsTable extends Migration
             $table->enum('status', ['PUBLISHED', 'DRAFT', 'PENDING'])->default('DRAFT');
             $table->boolean('featured')->default(0);
 
-            $table->unsignedBigInteger('author_id');            
-            
+            $table->unsignedBigInteger('author_id');
             $table->timestamps();
         });
     }
