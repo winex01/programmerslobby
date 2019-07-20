@@ -29,6 +29,8 @@ class CreateProjectsTable extends Migration
             $table->boolean('featured')->default(0);
 
             $table->unsignedBigInteger('author_id');
+            $table->foreign('author_id')->references('id')->on('users');
+
             $table->timestamps();
         });
     }
