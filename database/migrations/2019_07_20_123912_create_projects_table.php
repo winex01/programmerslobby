@@ -25,7 +25,7 @@ class CreateProjectsTable extends Migration
             
             //seo
             $table->string('seo_title')->nullable();
-            $table->text('excerpt')->nullable(); //can be meta desc
+            // $table->text('excerpt')->nullable(); //can be meta desc
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();
             $table->enum('status', ['PUBLISHED', 'DRAFT', 'PENDING'])->default('DRAFT');
