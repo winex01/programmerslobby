@@ -31,11 +31,8 @@ class CreateProjectsTable extends Migration
             $table->enum('status', ['PUBLISHED', 'DRAFT', 'PENDING'])->default('DRAFT');
             $table->boolean('featured')->default(0);
 
-            $table->integer('author_id');
-            $table->integer('category_id')->nullable();
-
-            $table->foreign('author_id')->references('id')->on('users');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->unsignedBigInteger('author_id');            
+            
         });
     }
 
