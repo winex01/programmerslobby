@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Project;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,8 +14,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //
-        return view('home');
+        $projects = Project::published()->orderBy('created_at', 'DESC')->paginate(6);
+
+        return view('home', compact('projects'));
     }
 
     /**
