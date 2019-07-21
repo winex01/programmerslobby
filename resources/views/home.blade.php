@@ -14,8 +14,7 @@
             @foreach($chunk as $project)
                 <div class="col-md-4">
                     <div class="single-blog">
-                        <p class="blog-meta">By {{ $project->author->name }} <span>{{ $project->created_by }}</span></p>
-                        {{-- <img style="width: 100%; height: 250px;" src="/images/img1.jpg" class="img-responsive" alt="Image"> --}}
+                        <p class="blog-meta">By {{ $project->author->name }} <span>{{ $project->created_at->diffForHumans() }}</span></p>
                         <img src="{{ Voyager::image($project->thumbnail('cropped', 'image')) }}" class="img-responsive" alt="Image">
                         <h2><a href="#" title="{{ $project->title }}">{{ str_limit($project->title, 40) }}</a></h2>
                         <p class="blog-text">{!! (str_limit(strip_tags($project->body), 190)) !!}</p>
