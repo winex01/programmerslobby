@@ -22,6 +22,8 @@
 - php artisan iseed data_types,data_rows --classnameprefix=AppBread --force
 - php artisan iseed permissions,roles,permission_role --classnameprefix=AppPermissionRoles --force
 
+- php artisan iseed menus,menu_items --classnameprefix=AppMenu --force && php artisan iseed data_types,data_rows --classnameprefix=AppBread --force && php artisan iseed permissions,roles,permission_role --classnameprefix=AppPermissionRoles --force
+
 
 ## One line install reinstall for dev
 - php artisan migrate:fresh && php artisan voyager:install --with-dummy && php artisan db:seed --class=ApplicationMenuTableSeeder && php artisan db:seed --class=ApplicationBreadTableSeeder && php artisan db:seed --class=ApplicationPermissionRolesTableSeeder && php artisan db:seed --class=ApplicationSettingsTableSeeder
