@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'ProjectController@index')->name('home');
+Route::get('/project/{project}', 'ProjectController@show')->name('project');
 
 
 Route::group(['prefix' => 'admin'], function () {
