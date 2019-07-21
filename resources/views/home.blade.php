@@ -2,9 +2,9 @@
 
 @section('content')
     <h1 class="text-center">Get Source Code For Free</h1>
-       <p class="text-center">Like this website and ask your questions in comment section, <br>
-        don't forget to leave a comment, ProgrammersLobby.com coming soon..
-       </p>
+    <p class="text-center">Like this website and ask your questions in comment section, <br>
+    don't forget to leave a comment, ProgrammersLobby.com coming soon..
+    </p>
 
        <div class="row">
             <div class="col-md-4">
