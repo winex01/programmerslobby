@@ -17,7 +17,7 @@ class ProjectController extends Controller
         //
         $projects = Project::published()->orderBy('created_at', 'DESC')->paginate(6);
 
-        return view('home', compact('projects'));
+        return view('index', compact('projects'));
     }
 
     /**
