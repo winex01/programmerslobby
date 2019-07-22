@@ -4,18 +4,19 @@
         <i class="fa fa-bars"></i>
     </button>
     <div class="navbar-collapse collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item active"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
         </ul>
 
-        <form class="mx-2 my-auto d-inline w-25">
+        {{-- search box --}}
+        <form class="mx-2 my-auto d-inline w-50">
             <input class="form-control form-control-sm" type="search" placeholder="Search..." aria-label="Search">
         </form>
 
         
         <!-- Right Side Of Navbar -->
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav">
             <!-- Authentication Links -->
             @guest
                 <li class="nav-item">
@@ -23,7 +24,7 @@
                 </li>
                 @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="btn btn-outline-primary btn-sm mt-1" href="{{ route('register') }}">Sign up</a>
+                        <a class="btn btn-outline-primary btn-sm mt-1 mb-1" href="{{ route('register') }}">Signup</a>
                     </li>
                 @endif
             @else
