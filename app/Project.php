@@ -8,6 +8,11 @@ use TCG\Voyager\Traits\Resizable;
 class Project extends Model
 {
     use Resizable;
+
+    // Carbon instance fields
+    protected $dates = ['created_at'];
+
+
     //
     public function author()
     {

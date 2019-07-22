@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'ProjectController@index')->name('home');
+Route::get('/project/{project}', 'ProjectController@show')->name('project');
 
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('dashboard');

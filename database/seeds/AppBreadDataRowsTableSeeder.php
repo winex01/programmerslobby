@@ -14,7 +14,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
     {
         
 
-        \DB::table('data_rows')->delete();
+        // \DB::table('data_rows')->delete();
         
         \DB::table('data_rows')->insert(array (
             0 => 
@@ -1083,9 +1083,9 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'browse' => 1,
                 'read' => 1,
-                'edit' => 1,
+                'edit' => 0,
                 'add' => 0,
-                'delete' => 1,
+                'delete' => 0,
                 'details' => '{}',
                 'order' => 13,
             ),
