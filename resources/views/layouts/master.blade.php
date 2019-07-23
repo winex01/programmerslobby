@@ -7,6 +7,7 @@
         <title>{{ config('app.name') }}</title>
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
         <link rel="stylesheet" type="text/css" href="{{ mix('/css/all.css') }}">
         @stack('css')
     </head>
@@ -16,6 +17,9 @@
        <div class="container mt-5">
            @yield('content')
         </div>
+
+        {{-- footer --}}
+        @include('layouts.footer')
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
