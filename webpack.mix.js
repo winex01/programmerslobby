@@ -16,5 +16,6 @@ const mix = require('laravel-mix');
 
 mix.styles([
     'resources/css/custom.css',
-    'resources/css/style.css'
+    'resources/css/style.css',
+    'resources/css/image-hover-effect.css'
 ], 'public/css/all.css').version();

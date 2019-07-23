@@ -15,7 +15,15 @@
                 <div class="col-md-4">
                     <div class="single-blog">
                         <p class="blog-meta">By {{ $project->author->name }} <span>{{ $project->created_at->diffForHumans() }}</span></p>
-                        <img src="{{ Voyager::image($project->thumbnail('cropped', 'image')) }}" class="img-responsive" alt="Image">
+                        
+                        <div class="hovereffect">
+                            <img src="{{ Voyager::image($project->thumbnail('cropped', 'image')) }}" class="img-responsive" alt="Image">
+                            <div class="overlay">
+                               <h2>PHP, Laravel</h2>
+                               <a class="info" href="#">Download Code</a>
+                            </div>
+                        </div>
+
                         <h2><a href="{{ route('project', $project->slug) }}" data-toggle="tooltip" title="{{ $project->title }}">{{ str_limit($project->title, 40) }}</a></h2>
                         <p class="blog-text">{!! (str_limit(strip_tags($project->body), 190)) !!}</p>
                         <p><a class="read-more-btn" href="{{ route('project', $project->slug) }}">Read More</a>
