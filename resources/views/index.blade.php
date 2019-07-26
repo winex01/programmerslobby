@@ -17,7 +17,7 @@
                         <p class="blog-meta">By {{ $project->author->name }} <span>{{ $project->created_at->diffForHumans() }}</span></p>
                         
                         <div class="hovereffect">
-                            <img src="{{ Voyager::image($project->thumbnail('cropped', 'image')) }}" class="img-responsive" alt="Image">
+                            <img src="{{ Voyager::image($project->thumbnail('cropped', 'image')) }}" class="img-responsive" alt="{{ $project->title }}">
                             <div class="overlay">
                                <h2>PHP, Laravel</h2>
                                <a class="info" href="#">Download Code</a>
