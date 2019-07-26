@@ -12,10 +12,6 @@ class AppBreadDataTypesTableSeeder extends Seeder
      */
     public function run()
     {
-        
-
-        // \DB::table('data_types')->delete();
-        
         \DB::table('data_types')->insert(array (
             0 => 
             array (
@@ -142,6 +138,24 @@ class AppBreadDataTypesTableSeeder extends Seeder
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2019-07-21 02:04:00',
                 'updated_at' => '2019-07-23 14:56:06',
+            ),
+            7 => 
+            array (
+                'id' => 11,
+                'name' => 'tags',
+                'slug' => 'tags',
+                'display_name_singular' => 'Tag',
+                'display_name_plural' => 'Tags',
+                'icon' => 'voyager-milestone',
+                'model_name' => 'App\\Tag',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2019-07-26 13:30:04',
+                'updated_at' => '2019-07-26 13:32:59',
             ),
         ));
         

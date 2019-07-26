@@ -12,10 +12,6 @@ class AppBreadDataRowsTableSeeder extends Seeder
      */
     public function run()
     {
-        
-
-        // \DB::table('data_rows')->delete();
-        
         \DB::table('data_rows')->insert(array (
             0 => 
             array (
@@ -1120,6 +1116,70 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'delete' => 1,
                 'details' => '{"model":"\\\\App\\\\User","table":"users","type":"belongsTo","column":"author_id","key":"id","label":"email","pivot_table":"categories","pivot":"0","taggable":"0"}',
                 'order' => 5,
+            ),
+            69 => 
+            array (
+                'id' => 91,
+                'data_type_id' => 11,
+                'field' => 'id',
+                'type' => 'text',
+                'display_name' => 'Id',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 1,
+            ),
+            70 => 
+            array (
+                'id' => 92,
+                'data_type_id' => 11,
+                'field' => 'description',
+                'type' => 'text',
+                'display_name' => 'Description',
+                'required' => 1,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"validation":{"rule":"required|unique:tags"}}',
+                'order' => 2,
+            ),
+            71 => 
+            array (
+                'id' => 93,
+                'data_type_id' => 11,
+                'field' => 'created_at',
+                'type' => 'timestamp',
+                'display_name' => 'Created At',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 0,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 3,
+            ),
+            72 => 
+            array (
+                'id' => 94,
+                'data_type_id' => 11,
+                'field' => 'updated_at',
+                'type' => 'timestamp',
+                'display_name' => 'Updated At',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 4,
             ),
         ));
         

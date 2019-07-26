@@ -12,10 +12,6 @@ class AppPermissionRolesPermissionsTableSeeder extends Seeder
      */
     public function run()
     {
-        
-
-        // \DB::table('permissions')->delete();
-        
         \DB::table('permissions')->insert(array (
             0 => 
             array (
@@ -384,6 +380,46 @@ class AppPermissionRolesPermissionsTableSeeder extends Seeder
                 'table_name' => 'projects',
                 'created_at' => '2019-07-21 02:04:00',
                 'updated_at' => '2019-07-21 02:04:00',
+            ),
+            46 => 
+            array (
+                'id' => 62,
+                'key' => 'browse_tags',
+                'table_name' => 'tags',
+                'created_at' => '2019-07-26 13:30:05',
+                'updated_at' => '2019-07-26 13:30:05',
+            ),
+            47 => 
+            array (
+                'id' => 63,
+                'key' => 'read_tags',
+                'table_name' => 'tags',
+                'created_at' => '2019-07-26 13:30:05',
+                'updated_at' => '2019-07-26 13:30:05',
+            ),
+            48 => 
+            array (
+                'id' => 64,
+                'key' => 'edit_tags',
+                'table_name' => 'tags',
+                'created_at' => '2019-07-26 13:30:05',
+                'updated_at' => '2019-07-26 13:30:05',
+            ),
+            49 => 
+            array (
+                'id' => 65,
+                'key' => 'add_tags',
+                'table_name' => 'tags',
+                'created_at' => '2019-07-26 13:30:05',
+                'updated_at' => '2019-07-26 13:30:05',
+            ),
+            50 => 
+            array (
+                'id' => 66,
+                'key' => 'delete_tags',
+                'table_name' => 'tags',
+                'created_at' => '2019-07-26 13:30:05',
+                'updated_at' => '2019-07-26 13:30:05',
             ),
         ));
         

@@ -12,10 +12,6 @@ class AppMenuMenuItemsTableSeeder extends Seeder
      */
     public function run()
     {
-        
-
-        // \DB::table('menu_items')->delete();
-        
         \DB::table('menu_items')->insert(array (
             0 => 
             array (
@@ -43,9 +39,9 @@ class AppMenuMenuItemsTableSeeder extends Seeder
                 'icon_class' => 'voyager-images',
                 'color' => NULL,
                 'parent_id' => NULL,
-                'order' => 6,
+                'order' => 7,
                 'created_at' => '2019-07-21 01:58:57',
-                'updated_at' => '2019-07-21 02:23:57',
+                'updated_at' => '2019-07-26 13:30:19',
                 'route' => 'voyager.media.index',
                 'parameters' => NULL,
             ),
@@ -59,9 +55,9 @@ class AppMenuMenuItemsTableSeeder extends Seeder
                 'icon_class' => 'voyager-person',
                 'color' => NULL,
                 'parent_id' => NULL,
-                'order' => 4,
+                'order' => 5,
                 'created_at' => '2019-07-21 01:58:57',
-                'updated_at' => '2019-07-21 02:23:57',
+                'updated_at' => '2019-07-26 13:30:19',
                 'route' => 'voyager.users.index',
                 'parameters' => NULL,
             ),
@@ -75,9 +71,9 @@ class AppMenuMenuItemsTableSeeder extends Seeder
                 'icon_class' => 'voyager-lock',
                 'color' => NULL,
                 'parent_id' => NULL,
-                'order' => 5,
+                'order' => 6,
                 'created_at' => '2019-07-21 01:58:57',
-                'updated_at' => '2019-07-21 02:23:57',
+                'updated_at' => '2019-07-26 13:30:19',
                 'route' => 'voyager.roles.index',
                 'parameters' => NULL,
             ),
@@ -91,9 +87,9 @@ class AppMenuMenuItemsTableSeeder extends Seeder
                 'icon_class' => 'voyager-tools',
                 'color' => '#000000',
                 'parent_id' => NULL,
-                'order' => 8,
+                'order' => 9,
                 'created_at' => '2019-07-21 01:58:57',
-                'updated_at' => '2019-07-21 02:23:43',
+                'updated_at' => '2019-07-26 13:30:19',
                 'route' => NULL,
                 'parameters' => '',
             ),
@@ -171,9 +167,9 @@ class AppMenuMenuItemsTableSeeder extends Seeder
                 'icon_class' => 'voyager-settings',
                 'color' => NULL,
                 'parent_id' => NULL,
-                'order' => 7,
+                'order' => 8,
                 'created_at' => '2019-07-21 01:58:57',
-                'updated_at' => '2019-07-21 02:23:40',
+                'updated_at' => '2019-07-26 13:30:19',
                 'route' => 'voyager.settings.index',
                 'parameters' => NULL,
             ),
@@ -267,11 +263,27 @@ class AppMenuMenuItemsTableSeeder extends Seeder
                 'icon_class' => 'voyager-params',
                 'color' => '#000000',
                 'parent_id' => NULL,
-                'order' => 9,
+                'order' => 10,
                 'created_at' => '2019-07-21 02:23:25',
-                'updated_at' => '2019-07-21 02:24:22',
+                'updated_at' => '2019-07-26 13:30:19',
                 'route' => NULL,
                 'parameters' => '',
+            ),
+            16 => 
+            array (
+                'id' => 20,
+                'menu_id' => 1,
+                'title' => 'Tags',
+                'url' => '',
+                'target' => '_self',
+                'icon_class' => 'voyager-milestone',
+                'color' => NULL,
+                'parent_id' => NULL,
+                'order' => 4,
+                'created_at' => '2019-07-26 13:30:05',
+                'updated_at' => '2019-07-26 13:30:19',
+                'route' => 'voyager.tags.index',
+                'parameters' => NULL,
             ),
         ));
         

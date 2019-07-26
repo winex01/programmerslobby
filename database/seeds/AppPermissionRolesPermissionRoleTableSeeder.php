@@ -12,10 +12,6 @@ class AppPermissionRolesPermissionRoleTableSeeder extends Seeder
      */
     public function run()
     {
-        
-
-        // \DB::table('permission_role')->delete();
-        
         \DB::table('permission_role')->insert(array (
             0 => 
             array (
@@ -240,6 +236,31 @@ class AppPermissionRolesPermissionRoleTableSeeder extends Seeder
             44 => 
             array (
                 'permission_id' => 51,
+                'role_id' => 1,
+            ),
+            45 => 
+            array (
+                'permission_id' => 62,
+                'role_id' => 1,
+            ),
+            46 => 
+            array (
+                'permission_id' => 63,
+                'role_id' => 1,
+            ),
+            47 => 
+            array (
+                'permission_id' => 64,
+                'role_id' => 1,
+            ),
+            48 => 
+            array (
+                'permission_id' => 65,
+                'role_id' => 1,
+            ),
+            49 => 
+            array (
+                'permission_id' => 66,
                 'role_id' => 1,
             ),
         ));
