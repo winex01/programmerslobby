@@ -12,6 +12,10 @@ class AppPermissionRolesRolesTableSeeder extends Seeder
      */
     public function run()
     {
+        
+
+        // \DB::table('roles')->delete();
+        
         \DB::table('roles')->insert(array (
             0 => 
             array (

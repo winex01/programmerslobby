@@ -12,6 +12,10 @@ class AppBreadDataRowsTableSeeder extends Seeder
      */
     public function run()
     {
+        
+
+        // \DB::table('data_rows')->delete();
+        
         \DB::table('data_rows')->insert(array (
             0 => 
             array (
@@ -971,7 +975,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"slugify":{"origin":"title","forceUpdate":true},"validation":{"rule":"unique:posts,slug"}}',
-                'order' => 8,
+                'order' => 9,
             ),
             60 => 
             array (
@@ -987,7 +991,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{}',
-                'order' => 9,
+                'order' => 10,
             ),
             61 => 
             array (
@@ -1003,7 +1007,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{}',
-                'order' => 10,
+                'order' => 11,
             ),
             62 => 
             array (
@@ -1019,7 +1023,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{}',
-                'order' => 11,
+                'order' => 12,
             ),
             63 => 
             array (
@@ -1035,7 +1039,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"default":"DRAFT","options":{"PUBLISHED":"published","DRAFT":"draft","PENDING":"pending"}}',
-                'order' => 12,
+                'order' => 13,
             ),
             64 => 
             array (
@@ -1051,7 +1055,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{}',
-                'order' => 7,
+                'order' => 8,
             ),
             65 => 
             array (
@@ -1067,7 +1071,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{}',
-                'order' => 6,
+                'order' => 7,
             ),
             66 => 
             array (
@@ -1083,7 +1087,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 13,
+                'order' => 14,
             ),
             67 => 
             array (
@@ -1099,7 +1103,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 14,
+                'order' => 15,
             ),
             68 => 
             array (
@@ -1115,7 +1119,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"model":"\\\\App\\\\User","table":"users","type":"belongsTo","column":"author_id","key":"id","label":"email","pivot_table":"categories","pivot":"0","taggable":"0"}',
-                'order' => 5,
+                'order' => 6,
             ),
             69 => 
             array (
@@ -1180,6 +1184,22 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'delete' => 0,
                 'details' => '{}',
                 'order' => 4,
+            ),
+            73 => 
+            array (
+                'id' => 95,
+                'data_type_id' => 8,
+                'field' => 'project_belongstomany_tag_relationship',
+                'type' => 'relationship',
+                'display_name' => 'Tags',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"model":"App\\\\Tag","table":"tags","type":"belongsToMany","column":"id","key":"id","label":"description","pivot_table":"project_tag","pivot":"1","taggable":"on"}',
+                'order' => 5,
             ),
         ));
         
