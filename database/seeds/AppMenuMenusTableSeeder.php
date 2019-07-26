@@ -12,10 +12,6 @@ class AppMenuMenusTableSeeder extends Seeder
      */
     public function run()
     {
-        
-
-        // \DB::table('menus')->delete();
-        
         \DB::table('menus')->insert(array (
             0 => 
             array (
