@@ -9,17 +9,6 @@
 				<img src="{{ Voyager::image($project->thumbnail('medium', 'image')) }}" class="img-fluid" alt="{{ $project->title }}">
 			</div>
 
-			<div class="card border-0 shadow mb-4 d-lg-none">
-				<div class="card-body">
-					<a target="_blank" href="https://github.com/BlackrockDigital/startbootstrap-clean-blog/archive/gh-pages.zip" class="btn btn-block btn-primary mb-3 py-3" onclick="if (!window.__cfRLUnblockHandlers) return false; ga('send','event','Download','click','Clean Blog')">
-					<i class="fal fa-download fa-fw"></i> <span>Free Download</span>
-					</a>
-					<hr>
-					<a target="_blank" href="/previews/clean-blog/" class="btn btn-block btn-outline-primary mb-3"><i class="far fa-browser fa-fw"></i> Live Preview</a>
-					<a target="_blank" href="https://github.com/BlackrockDigital/startbootstrap-clean-blog" class="btn btn-block btn-outline-github"><i class="fab fa-github fa-fw"></i> View on GitHub</a>
-				</div>
-			</div>
-
 			<div class="card border-0 shadow mb-4">
 				<div class="card-body">
 					<h4 class="m-0">{{ $project->title }}</h4>
@@ -38,12 +27,19 @@
 
 			<div class="card border-0 shadow mb-4 d-none d-lg-block">
 				<div class="card-body">
-					<a target="_blank" href="https://github.com/BlackrockDigital/startbootstrap-clean-blog/archive/gh-pages.zip" class="btn btn-block btn-primary mb-3 py-3" onclick="if (!window.__cfRLUnblockHandlers) return false; ga('send','event','Download','click','Clean Blog')">
-					<i class="fal fa-download fa-fw"></i> <span>Free Download</span>
+					<a target="_blank" href="https://github.com/BlackrockDigital/startbootstrap-clean-blog/archive/gh-pages.zip" class="btn btn-block btn-danger mb-3 py-3">
+						<i class="fa fa-download" aria-hidden="true"></i> <span>{{ __('Free Download') }}</span>
 					</a>
 					<hr>
-					<a target="_blank" href="/previews/clean-blog/" class="btn btn-block btn-outline-primary mb-3"><i class="far fa-browser fa-fw"></i> Live Preview</a>
-					<a target="_blank" href="https://github.com/BlackrockDigital/startbootstrap-clean-blog" class="btn btn-block btn-outline-github"><i class="fab fa-github fa-fw"></i> View on GitHub</a>
+					<a href="/previews/clean-blog/" class="btn btn-block btn-outline-primary mb-3">
+						<i class="fa fa-gitlab" aria-hidden="true"></i></i></i> {{ __('View on GitLab') }}
+					</a>
+					<a href="https://github.com/BlackrockDigital/startbootstrap-clean-blog" class="btn btn-block btn-outline-dark">
+						<i class="fa fa-github" aria-hidden="true"></i> {{ __('View on GitHub') }}
+					</a>
+					<a href="https://github.com/BlackrockDigital/startbootstrap-clean-blog" class="btn btn-block btn-outline-success">
+						<i class="fa fa-code" aria-hidden="true"></i> {{ __('View SourceCode') }}
+					</a>
 				</div>
 			</div>
 
