@@ -34,7 +34,10 @@
                         <h2><a href="{{ route('project', $project->slug) }}" data-toggle="tooltip" title="{{ $project->title }}">{{ str_limit($project->title, 40) }}</a></h2>
                         <p class="blog-text">{!! (str_limit(strip_tags($project->description), 190)) !!}</p>
                         <p><a class="read-more-btn" href="{{ route('project', $project->slug) }}">Read More</a>
-                            <span><i class="fa fa-heart"></i> 7 People like, <i class="fa fa-comments-o"></i> 3.. 
+                            <span>
+                                <i class="fa fa-thumbs-o-up"></i> 7 People like, 
+                                <i class="fa fa-eye"></i> 110 Views, 
+                                <i class="fa fa-comments-o"></i> 3.. 
                             </span>
                         </p>
                     </div>  
