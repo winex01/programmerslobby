@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'ProjectController@index')->name('home');
-Route::get('/project/{project}', 'ProjectController@show')->name('project');
+Route::get('/project/{project}', 'ProjectController@show')->middleware('project.views')->name('project');
 
 
 Route::group(['prefix' => 'admin'], function () {
