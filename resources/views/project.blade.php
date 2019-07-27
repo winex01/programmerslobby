@@ -12,7 +12,17 @@
 			<div class="card border-0 shadow mb-4">
 				<div class="card-body">
 					<h4 class="m-0">{{ $project->title }}</h4>
-					<p class="blog-meta">By {{ $project->author->name }} <span>{{ $project->created_at->diffForHumans() }}</span></p>
+					<p class="blog-meta">
+						{{ __('By') }} <a href="javascript:(void);">{{ $project->author->name }}</a> 
+						<span class="text-muted">
+							<sub>
+								{{ __('published') }} {{ $project->created_at->diffForHumans() }}
+							</sub>
+						</span>
+						<span class="text-dark pull-right">
+							<i class="fa fa-eye" aria-hidden="true"></i> 8 {{ __('views') }}
+						</span>
+					</p>
 					<hr>
 					{!! $project->description !!}
 				</div>
