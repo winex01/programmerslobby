@@ -5,9 +5,9 @@
 	<div class="row">
 		<div class="col-lg-8">
 
-			<a class="img-preview d-block shadow-lg rounded mb-4" target="_blank" href="/previews/clean-blog/">
-				<img src="{{ Voyager::image($project->thumbnail('medium', 'image')) }}" class="img-responsive" alt="{{ $project->title }}">
-			</a>
+			<div class="d-block shadow-lg rounded mb-4">
+				<img src="{{ Voyager::image($project->thumbnail('medium', 'image')) }}" class="img-fluid" alt="{{ $project->title }}">
+			</div>
 
 			<div class="card border-0 shadow mb-4 d-lg-none">
 				<div class="card-body">
