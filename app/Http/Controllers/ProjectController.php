@@ -47,10 +47,11 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
-        return view('project');
+        $project = Project::where('slug', $slug)->published()->first();
+        // clock($project);
+        return view('project', compact('project'));
     }
 
     /**

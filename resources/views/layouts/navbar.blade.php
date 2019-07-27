@@ -1,11 +1,14 @@
 <nav class="navbar py-0 navbar-expand-sm navbar-light bg-light fixed-top py-md-0">
-    <a class="navbar-brand text-muted" href="{{ route('home') }}">ProgrammersLobby</a>
+    {{-- <a class="navbar-brand text-muted" href="{{ route('home') }}">ProgrammersLobby</a> --}}
+    <a class="navbar-brand text-muted" href="{{ route('home') }}"><i class="fa fa-home" aria-hidden="true"></i>
+        {{ config('app.name') }}
+    </a>
     <button class="navbar-toggler mt-1" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars"></i>
     </button>
     <div class="navbar-collapse collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
         </ul>
 
@@ -24,7 +27,7 @@
                 </li>
                 @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="btn btn-outline-primary btn-sm mt-1 mb-1" href="{{ route('register') }}">Signup</a>
+                        <a class="btn btn-outline-primary btn-sm mt-1 mb-1" href="{{ route('register') }}">{{ __('Signup') }}</a>
                     </li>
                 @endif
             @else
