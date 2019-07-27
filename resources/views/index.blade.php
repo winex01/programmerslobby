@@ -27,7 +27,7 @@
                                         @endif
                                     @endforeach
                                </h2>
-                               <a class="info" href="#">Download Code</a>
+                               <a class="info" href="{{ route('project', $project->slug) }}">Download Code</a>
                             </div>
                         </div>
 
