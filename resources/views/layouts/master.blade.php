@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
         <link rel="stylesheet" type="text/css" href="{{ mix('/css/all.css') }}">
         @stack('css')
+        @stack('js-top')
     </head>
     <body>
         @include('layouts.navbar')

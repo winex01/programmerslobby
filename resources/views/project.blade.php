@@ -45,8 +45,8 @@
 
 			<div class="card border-0 shadow mb-4 text-center">
 				<div class="card-body">
-					<div class="small mb-2 font-weight-bold">Get updates when Clean Blog is improved!</div>
-					<a target="_blank" href="javascript:void(0)" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open('https://twitter.com/intent/user?original_referer=&amp;region=screen_name&amp;screen_name=SBootstrap&amp;source=followbutton&amp;variant=1.1', 'twitter', 'toolbar=no, width=450, height=600'); return false;" class="btn btn-twitter btn-sm btn-block"><i class="fab fa-twitter"></i> Follow @SBootstrap</a>
+					<div class="small mb-2 font-weight-bold">{{ __('Get updates when new sourcode is uploaded!') }}</div>
+					@include('layouts.facebook-page')
 				</div>
 			</div>
 
