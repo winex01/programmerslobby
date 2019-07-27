@@ -6,8 +6,8 @@
     don't forget to leave a comment, And always remember keep it DRY :) ...
     </p>
 
+  
 
-    {{-- {{ dd($projects) }} --}}
 
     @foreach($projects->chunk('3') as $chunk)
         <div class="row">
@@ -19,7 +19,14 @@
                         <div class="hovereffect">
                             <img src="{{ Voyager::image($project->thumbnail('cropped', 'image')) }}" class="img-responsive" alt="{{ $project->title }}">
                             <div class="overlay">
-                               <h2>PHP, Laravel</h2>
+                               <h2>
+                                    @foreach($project->tags->pluck('description') as $tag)
+                                        {{ $tag }}
+                                         @if (!$loop->last)
+                                            {{ __(',') }}
+                                        @endif
+                                    @endforeach
+                               </h2>
                                <a class="info" href="#">Download Code</a>
                             </div>
                         </div>

@@ -19,6 +19,11 @@ class Project extends Model
     	return $this->belongsTo('App\User');
     }
 
+    public function tags()
+    {
+        return $this->belongsToMany('App\Tag');
+    }
+
     //QUERY SCOPE
     public function scopePublished($query)
     {
