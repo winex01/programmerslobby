@@ -24,7 +24,7 @@
 				<div class="card-body">
 					<h5 class="m-0">Description</h5>
 					<hr>
-					Clean blog is a carefully styled Bootstrap blog theme that is perfect for personal or company blogs. This theme features four HTML pages including a blog index, an about page, a sample post, and a contact page.
+					{!! $project->description !!}
 				</div>
 			</div>
 
@@ -32,13 +32,7 @@
 				<div class="card-body">
 				<h5 class="m-0">Features</h5>
 				<hr>
-				<ul class="mb-0">
-					<li>Modern design with a subtle splash of color (which is easy to customize, especially with LESS!)</li>
-					<li>Distraction free blog text optimized for legibility with a menu bar interface that conveniently appears when you scroll up!</li>
-					<li>Working PHP contact form with validation - just add your email address to the PHP file included</li>
-					<li>Footer with social links and copyright information</li>
-					<li>SASS/SCSS files included for deeper customization options</li>
-				</ul>
+				 {!! $project->features !!}
 				</div>
 			</div>
 
