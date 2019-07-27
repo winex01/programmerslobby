@@ -13,13 +13,14 @@ class CreateProjectUserPivotTable extends Migration
     public function up()
     {
         Schema::create('project_user', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            
             $table->unsignedBigInteger('project_id')->index();
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             
             $table->unsignedBigInteger('user_id')->index()->default(3); //3 = guest user
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             
-            $table->primary(['project_id', 'user_id']);
             $table->timestamps();
         });
     }

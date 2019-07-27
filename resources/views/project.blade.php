@@ -20,7 +20,9 @@
 							</sub>
 						</span>
 						<span class="text-dark pull-right">
-							<i class="fa fa-eye" aria-hidden="true"></i> 8 {{ __('views') }}
+							<i class="fa fa-eye" aria-hidden="true"></i> 
+							{{ $project->views->count() }} 
+							{{ str_plural(__('view'), $project->views->count() ) }}
 						</span>
 					</p>
 					<hr>

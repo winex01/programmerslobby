@@ -14,7 +14,7 @@
             @foreach($chunk as $project)
                 <div class="col-md-4">
                     <div class="single-blog">
-                        <p class="blog-meta">By {{ $project->author->name }} <span>{{ $project->created_at->diffForHumans() }}</span></p>
+                        <p class="blog-meta">By <a href="#">{{ $project->author->name }}</a> <span>{{ $project->created_at->diffForHumans() }}</span></p>
                         
                         <div class="hovereffect">
                             <img class="mb-1" src="{{ Voyager::image($project->thumbnail('cropped', 'image')) }}" class="img-responsive" alt="{{ $project->title }}">
@@ -27,7 +27,7 @@
                                         @endif
                                     @endforeach
                                </h2>
-                               <a class="info" href="{{ route('project', $project->slug) }}">Download Code</a>
+                               <a class="info" href="{{ route('project', $project->slug) }}">{{ __('Download Code') }}</a>
                             </div>
                         </div>
 
@@ -35,10 +35,14 @@
                         <p class="blog-text">
                             {!! (str_limit(strip_tags($project->description), 190)) !!}
                         </p>
-                        <p><a class="read-more-btn" href="{{ route('project', $project->slug) }}">Read More</a>
+                        <p><a class="read-more-btn" href="{{ route('project', $project->slug) }}">{{ __('Read More') }}</a>
                             <span>
-                                <i class="fa fa-thumbs-o-up"></i> 7 People like, 
-                                <i class="fa fa-eye"></i> 110 Views, 
+                                <i class="fa fa-thumbs-o-up"></i> 7 {{ __('People like') }}, 
+                                
+                                <i class="fa fa-eye"></i> 
+                                {{ $project->views->count() }} 
+                                {{ str_plural(__('view'), $project->views->count() ) }}, 
+                                
                                 <i class="fa fa-comments-o"></i> 3.. 
                             </span>
                         </p>
