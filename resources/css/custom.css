@@ -50,3 +50,8 @@ body {
     border-top:3px solid #F48024;
     border-bottom: 1px solid #ddd;
 }
+
+#suggested-widget {
+    height: 104px;
+    width: 192px;
+}
