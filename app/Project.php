@@ -40,4 +40,21 @@ class Project extends Model
     	return $query->where('status', '!=', 'PUBLISHED');
     }
 
+    public function getHasCodeLinkAttribute()
+    {
+        if($this->github_link) {
+            return true;
+        }
+
+        if($this->gitlab_link) {
+            return true;
+        }
+
+        if($this->sourcecode_link) {
+            return true;
+        }
+
+        return false;
+    }
+
 }
