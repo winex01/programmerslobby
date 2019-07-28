@@ -13,12 +13,17 @@
 				<div class="card-body">
 					<h4 class="m-0">{{ $project->title }}</h4>
 					<p class="blog-meta">
-						{{ __('By') }} <a href="javascript:(void);">{{ $project->author->name }}</a> 
+						{{ __('Submitted by') }} <a href="javascript:(void);">{{ $project->author->name }}</a> 
 						<span class="text-muted">
+							<br>
 							<sub>
-								{{ __('published') }} {{ $project->created_at->diffForHumans() }}
+								{{ __('Published') }} {{ $project->created_at->toDateString() }}
+								-
+								{{ __('Last Updated').' '.$project->updated_at->toDateString() }}
 							</sub>
 						</span>
+						
+
 						<span class="text-dark pull-right">
 							<i class="fa fa-eye" aria-hidden="true"></i> 
 							{{ $project->views->count() }} 
