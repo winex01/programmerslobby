@@ -31,7 +31,7 @@
 			</div>
 
 			<div class="card border-0 shadow mb-4">
-				{{-- @include('layouts.disqus-comments') --}}
+				@include('layouts.disqus-comments')
 			</div>
 		</div>
 
