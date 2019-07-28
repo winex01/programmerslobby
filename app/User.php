@@ -40,6 +40,6 @@ class User extends \TCG\Voyager\Models\User
     // 
     public function viewedProjects()
     {
-        return $this->belongsToMany('App\Project');
+        return $this->belongsToMany('App\Project')->withTimestamps();
     }
 }
