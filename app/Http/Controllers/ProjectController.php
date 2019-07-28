@@ -50,8 +50,12 @@ class ProjectController extends Controller
     public function show($slug)
     {
         $project = Project::where('slug', $slug)->published()->first();
-        // clock($project);
-        return view('project', compact('project'));
+        $suggestedProject = Project::select('slug', 'title', 'image')
+                                    ->where('slug', '!=', $slug)
+                                    ->inRandomOrder()
+                                    ->limit(6)->get();
+        clock($suggestedProject);
+        return view('project', compact('project', 'suggestedProject'));
     }
 
     /**

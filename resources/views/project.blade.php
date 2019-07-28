@@ -13,12 +13,17 @@
 				<div class="card-body">
 					<h4 class="m-0">{{ $project->title }}</h4>
 					<p class="blog-meta">
-						{{ __('By') }} <a href="javascript:(void);">{{ $project->author->name }}</a> 
+						{{ __('Submitted by') }} <a href="javascript:(void);">{{ $project->author->name }}</a> 
 						<span class="text-muted">
+							<br>
 							<sub>
-								{{ __('published') }} {{ $project->created_at->diffForHumans() }}
+								{{ __('Published') }} {{ $project->created_at->toDateString() }}
+								-
+								{{ __('Last Updated').' '.$project->updated_at->toDateString() }}
 							</sub>
 						</span>
+						
+
 						<span class="text-dark pull-right">
 							<i class="fa fa-eye" aria-hidden="true"></i> 
 							{{ $project->views->count() }} 
@@ -106,41 +111,22 @@
 
 			<div class="card border-0 shadow mb-4">
 				<div class="card-body">
-					<h5 class="mb-0">Need something more?</h5>
-					<p class="small mb-4">Try one of these premium Bootstrap themes!</p>
+					<h5 class="mb-0">{{ __('SUGGESTED PROJECT') }}</h5>
+					<p class="small mb-4">{{ __('Browse one of these random projects!') }}</p>
 				
 					<div class="row">
-						<div class="col-6 mb-4">
-							<div class="item-preview">
-								<a class="item-preview-img box-shadow-lg d-block" href="https://www.creative-tim.com/product/material-kit-pro/?affiliate_id=101249" onclick="if (!window.__cfRLUnblockHandlers) return false; ga('send','event','Affiliate Link','click','Creative Tim - Material Kit Pro')" rel="nofollow">
-								<img class="img-fluid" src="/assets/img/screenshots/premium/creative-tim/mkp.jpg" alt="Material Kit Pro - Premium Bootstrap 4 UI Kit">
-								</a>
+						@foreach($suggestedProject as $row)
+							<div class="col-6 mb-4">
+								<div class="hovereffect">
+		                            <img class="mb-1" src="{{ Voyager::image($row->thumbnail('small', 'image')) }}" class="img-responsive" alt="{{ $row->title }}" height="100px;">
+		                            <div class="overlay">
+		                               <a class="info" style="font-size: 10px;" href="{{ route('project', $row->slug) }}">
+		                               		{{ $row->title }}
+		                               	</a>
+		                            </div>
+		                        </div>
 							</div>
-						</div>
-
-						<div class="col-6 mb-4">
-							<div class="item-preview">
-								<a class="item-preview-img box-shadow-lg d-block" href="https://www.creative-tim.com/product/material-kit-pro-react/?affiliate_id=101249" onclick="if (!window.__cfRLUnblockHandlers) return false; ga('send','event','Affiliate Link','click','Creative Tim - Material Kit Pro React')" rel="nofollow">
-								<img class="img-fluid" src="/assets/img/screenshots/premium/creative-tim/mkp-react.jpg" alt="Material Kit Pro - Premium Bootstrap 4 UI Kit">
-								</a>
-							</div>
-						</div>
-
-						<div class="col-6 mb-4">
-							<div class="item-preview">
-								<a class="item-preview-img box-shadow-lg d-block" href="https://www.creative-tim.com/product/now-ui-kit-pro/?affiliate_id=101249" onclick="if (!window.__cfRLUnblockHandlers) return false; ga('send','event','Affiliate Link','click','Creative Tim - Now UI Kit Pro')" rel="nofollow">
-								<img class="img-fluid" src="/assets/img/screenshots/premium/creative-tim/nukp.jpg" alt="Now UI Kit - Premium Bootstrap 4 UI Kit">
-								</a>
-							</div>
-						</div>
-
-						<div class="col-6 mb-4">
-							<div class="item-preview">
-								<a class="item-preview-img box-shadow-lg d-block" href="https://www.creative-tim.com/product/paper-kit-2-pro/?affiliate_id=101249" onclick="if (!window.__cfRLUnblockHandlers) return false; ga('send','event','Affiliate Link','click','Creative Tim - Paper Kit 2 Pro')" rel="nofollow">
-								<img class="img-fluid" src="/assets/img/screenshots/premium/creative-tim/pk2p.jpg" alt="Paper Kit 2 Pro - Premium Bootstrap 4 UI Kit">
-								</a>
-							</div>
-						</div>
+						@endforeach
 					</div>
 					<a href="/buy-bootstrap-themes" class="btn btn-outline-primary btn-block">View More Premium Content</a>
 				</div>
