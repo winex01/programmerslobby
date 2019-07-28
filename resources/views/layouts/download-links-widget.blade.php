@@ -1,5 +1,5 @@
 @if($project->hasCodeLink)
-	<div class="card border-0 shadow mb-4 d-none d-lg-block">
+	<div class="card border-0 shadow mb-4">
 		<div class="card-body">
 			@if($project->download_link)
 				<a target="_blank" href="{{ $project->download_link }}" class="btn btn-block btn-danger mb-3 py-3">

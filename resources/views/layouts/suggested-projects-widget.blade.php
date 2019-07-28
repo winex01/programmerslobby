@@ -7,7 +7,7 @@
 			@foreach($suggestedProject as $row)
 				<div class="col-6 mb-4">
 					<div class="hovereffect">
-                        <img class="mb-1" src="{{ Voyager::image($row->thumbnail('small', 'image')) }}" class="img-responsive" alt="{{ $row->title }}" height="100px;">
+                        <img id="suggested-widget" class="mb-1" src="{{ Voyager::image($row->thumbnail('small', 'image')) }}" class="img-responsive" alt="{{ $row->title }}">
                         <div class="overlay">
                            <a class="info" style="font-size: 10px;" href="{{ route('project', $row->slug) }}">
                            		{{ $row->title }}
