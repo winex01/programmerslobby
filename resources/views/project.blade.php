@@ -17,9 +17,8 @@
 						<span class="text-muted">
 							<br>
 							<sub>
-								{{ __('Published') }} {{ $project->created_at->toDateString() }}
-								-
-								{{ __('Last Updated').' '.$project->updated_at->toDateString() }}
+								{{ __('Published') }} {{ $project->created_at->toDayDateTimeString() }}
+								{{-- {{ __('Last Updated').' '.$project->updated_at->toDayDateTimeString() }} --}}
 							</sub>
 						</span>
 						
