@@ -1,15 +1,5 @@
-<div class="card-body">
-	<div class="disqus-comments">
-		<div id="disqus_thread"><iframe id="dsq-app6029" name="dsq-app6029" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" sandbox="allow-forms allow-popups allow-same-origin allow-scripts" width="100%" src="//tempest.services.disqus.com/ads-iframe/google/?position=top&amp;shortname=startbootstrap&amp;experiment=network_default&amp;variant=fallthrough&amp;service=dynamic&amp;anchorColor=%23dd3d31&amp;colorScheme=light&amp;sourceUrl=https%3A%2F%2Fstartbootstrap.com%2Fthemes%2Fclean-blog%2F&amp;typeface=sans-serif&amp;canonicalUrl=https%3A%2F%2Fstartbootstrap.com%2Fthemes%2Fclean-blog%2F&amp;disqus_version=43bf82a" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 614px !important;"></iframe><iframe id="dsq-app6026" name="dsq-app6026" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="https://disqus.com/embed/comments/?base=default&amp;f=startbootstrap&amp;t_u=https%3A%2F%2Fstartbootstrap.com%2Fthemes%2Fclean-blog%2F&amp;t_d=Clean%20Blog%20-%20Bootstrap%20Blog%20Theme%20-%20Start%20Bootstrap&amp;t_t=Clean%20Blog%20-%20Bootstrap%20Blog%20Theme%20-%20Start%20Bootstrap&amp;s_o=default#version=0ac6af584272c5fdcd44643479fbe23d" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 5929px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe><iframe id="dsq-app6031" name="dsq-app6031" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" sandbox="allow-forms allow-popups allow-same-origin allow-scripts" width="100%" src="//tempest.services.disqus.com/ads-iframe/google/?position=bottom&amp;shortname=startbootstrap&amp;experiment=network_default&amp;variant=fallthrough&amp;service=dynamic&amp;anchorColor=%23dd3d31&amp;colorScheme=light&amp;sourceUrl=https%3A%2F%2Fstartbootstrap.com%2Fthemes%2Fclean-blog%2F&amp;typeface=sans-serif&amp;canonicalUrl=https%3A%2F%2Fstartbootstrap.com%2Fthemes%2Fclean-blog%2F&amp;disqus_version=43bf82a" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 615px !important;"></iframe></div>
-	<script type="text/javascript">
-	    (function() { // DON'T EDIT BELOW THIS LINE
-	      var d = document,
-	        s = d.createElement('script');
-	      s.src = 'https://startbootstrap.disqus.com/embed.js';
-	      s.setAttribute('data-timestamp', +new Date());
-	      (d.head || d.body).appendChild(s);
-	    })();
-	  </script>
-	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<div class="card border-0 shadow mb-4">
+	<div class="card-body">
+		<div id="disqus_thread"></div>
 	</div>
 </div>
