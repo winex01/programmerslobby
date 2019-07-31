@@ -35,9 +35,8 @@
 				</div>
 			</div>
 
-			<div class="card border-0 shadow mb-4">
-				@include('layouts.disqus-comments-widget')
-			</div>
+			@include('layouts.disqus-comments-widget')
+			
 		</div>
 
 		<div class="col-lg-4">
