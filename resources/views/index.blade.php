@@ -38,13 +38,14 @@
                         </p>
                         <p><a class="read-more-btn" href="{{ route('project', $project->slug) }}">{{ __('Read More') }}</a>
                             <span>
-                                <i class="fa fa-thumbs-o-up"></i> 7 {{ __('People like') }}, 
+                                {{-- <i class="fa fa-thumbs-o-up"></i> 7 {{ __('People like') }},  --}}
                                 
                                 <i class="fa fa-eye"></i> 
                                 {{ $project->views->count() }} 
-                                {{ str_plural(__('view'), $project->views->count() ) }}, 
+                                {{ str_plural(__('View'), $project->views->count() ) }}, 
                                 
-                                <a href="{{ route('project', $project->slug) }}#disqus_thread"></a>
+                                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                                <a href="{{ route('project', $project->slug) }}#disqus_thread"></a>...
 
                             </span>
                         </p>
