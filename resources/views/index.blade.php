@@ -1,3 +1,4 @@
+
 @extends('layouts.master')
 
 @section('content')
@@ -43,7 +44,8 @@
                                 {{ $project->views->count() }} 
                                 {{ str_plural(__('view'), $project->views->count() ) }}, 
                                 
-                                <i class="fa fa-comments-o"></i> 3.. 
+                                <a href="{{ route('project', $project->slug) }}#disqus_thread"></a>
+
                             </span>
                         </p>
                     </div>  
@@ -59,6 +61,7 @@
 @endsection
 
 @push('js')
+<script id="dsq-count-scr" src="//{{ config('disqus.username') }}.disqus.com/count.js" async></script>
 <script>
     $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip(); 
