@@ -1,7 +1,7 @@
 <nav class="navbar py-0 navbar-expand-sm navbar-light bg-light fixed-top py-md-0">
-    {{-- <a class="navbar-brand text-muted" href="{{ route('home') }}">ProgrammersLobby</a> --}}
-    <a class="navbar-brand text-muted" href="{{ route('home') }}"><i class="fa fa-home" aria-hidden="true"></i>
-        {{ config('app.name') }}
+    <a class="navbar-brand text-muted" href="{{ route('home') }}">
+        <img src="{{ url('storage/images/new-logo.png') }}" class="img-responsive" alt="programmerslobby-logo" height="40px;">
+        {{ substr(config('app.name'), 1) }}
     </a>
     <button class="navbar-toggler mt-1" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars"></i>
