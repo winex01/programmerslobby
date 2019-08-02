@@ -15,7 +15,7 @@
             @foreach($chunk as $project)
                 <div class="col-md-4">
                     <div class="single-blog">
-                        <p class="blog-meta">By <a href="#">{{ $project->author->name }}</a> <span>{{ $project->created_at->toDateString() }}</span></p>
+                        <p class="blog-meta">By <a href="#">{{ $project->author->name }}</a> <span>{{ $project->created_at->toFormattedDateString() }}</span></p>
                         
                         <div class="hovereffect">
                             <img class="mb-1" src="{{ Voyager::image($project->thumbnail('cropped', 'image')) }}" class="img-responsive" alt="{{ $project->title }}">
