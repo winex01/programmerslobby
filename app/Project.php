@@ -26,7 +26,7 @@ class Project extends Model
 
     public function views()
     {
-        return $this->belongsToMany('App\User')->withTimestamps();
+        return $this->belongsToMany('App\User', 'project_views')->withTimestamps();
     }
 
     //QUERY SCOPE
