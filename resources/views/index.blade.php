@@ -1,3 +1,4 @@
+
 @extends('layouts.master')
 
 @section('content')
@@ -37,13 +38,15 @@
                         </p>
                         <p><a class="read-more-btn" href="{{ route('project', $project->slug) }}">{{ __('Read More') }}</a>
                             <span>
-                                <i class="fa fa-thumbs-o-up"></i> 7 {{ __('People like') }}, 
+                                {{-- <i class="fa fa-thumbs-o-up"></i> 7 {{ __('People like') }},  --}}
                                 
                                 <i class="fa fa-eye"></i> 
                                 {{ $project->views->count() }} 
-                                {{ str_plural(__('view'), $project->views->count() ) }}, 
+                                {{ str_plural(__('View'), $project->views->count() ) }}, 
                                 
-                                <i class="fa fa-comments-o"></i> 3.. 
+                                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                                <a href="{{ route('project', $project->slug) }}#disqus_thread">{{ __('...') }}</a>
+
                             </span>
                         </p>
                     </div>  
@@ -59,6 +62,7 @@
 @endsection
 
 @push('js')
+<script id="dsq-count-scr" src="//{{ config('disqus.username') }}.disqus.com/count.js" async></script>
 <script>
     $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip(); 
