@@ -45,7 +45,7 @@
                                 {{ str_plural(__('View'), $project->views->count() ) }}, 
                                 
                                 <i class="fa fa-comments-o" aria-hidden="true"></i>
-                                <a href="{{ route('project', $project->slug) }}#disqus_thread"></a>...
+                                <a href="{{ route('project', $project->slug) }}#disqus_thread">{{ __('...') }}</a>
 
                             </span>
                         </p>
