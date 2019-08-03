@@ -13,7 +13,7 @@ class ProjectFactoryTableSeeder extends Seeder
     {
         //
         
-        factory(\App\Project::class, 50)->create()->each(function ($project) {
+        factory(\App\Project::class, 10000)->create()->each(function ($project) {
         	
         	$tempTags = [];
         	while(count($tempTags) < 3) {
