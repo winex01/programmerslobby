@@ -1,6 +1,6 @@
 <nav class="navbar py-0 navbar-expand-sm navbar-light bg-light fixed-top py-md-0">
     <a class="navbar-brand text-muted" href="{{ route('home') }}">
-        <img src="{{ url('storage/images/new-logo.png') }}" class="img-responsive" alt="programmerslobby-logo" height="40px;">
+        <img src="{{ url('storage/images/new-logo.png') }}" class="img-responsive nav-bar-logo" alt="programmerslobby-logo">
         {{ substr(config('app.name'), 1) }}
     </a>
     <button class="navbar-toggler mt-1" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
