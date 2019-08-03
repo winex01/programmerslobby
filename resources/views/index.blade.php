@@ -18,7 +18,11 @@
                         <p class="blog-meta">By <a href="#">{{ $project->author->name }}</a> <span>{{ $project->created_at->toFormattedDateString() }}</span></p>
                         
                         <div class="hovereffect">
-                            <img class="mb-1" src="{{ Voyager::image($project->thumbnail('cropped', 'image')) }}" class="img-responsive" alt="{{ $project->title }}">
+                            @if(config('app.env') != 'production')
+                                <img class="mb-1" src="{{ $project->image }}" class="img-responsive" alt="{{ $project->title }}">
+                            @else
+                                <img class="mb-1" src="{{ Voyager::image($project->thumbnail('cropped', 'image')) }}" class="img-responsive" alt="{{ $project->title }}">
+                            @endif
                             <div class="overlay">
                                <h2>
                                     @foreach($project->tags->pluck('description') as $tag)
