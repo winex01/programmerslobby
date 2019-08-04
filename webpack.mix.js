@@ -14,8 +14,9 @@ const mix = require('laravel-mix');
 // mix.js('resources/js/app.js', 'public/js')
 //     .sass('resources/sass/app.scss', 'public/css');
 
-mix.styles([
-    'resources/css/custom.css',
-    'resources/css/style.css',
-    'resources/css/image-hover-effect.css'
-], 'public/css/all.css').version();
+mix.js('resources/js/app.js', 'public/js')
+	.styles([
+	    'resources/css/custom.css',
+	    'resources/css/style.css',
+	    'resources/css/image-hover-effect.css'
+	], 'public/css/all.css').version();
