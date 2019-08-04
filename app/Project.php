@@ -57,4 +57,19 @@ class Project extends Model
         return false;
     }
 
+    //--------------------------------------ALGOLIA------------------------------------
+    /**
+     * Get the value used to index the model.
+     *
+     * @return mixed
+     */
+    public function getScoutKey()
+    {
+        return $this->slug;
+    }
+
+    public function shouldBeSearchable()
+    {
+        return $this->published();
+    }
 }
