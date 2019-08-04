@@ -8,7 +8,8 @@ use TCG\Voyager\Traits\Resizable;
 
 class Project extends Model
 {
-    use Resizable, Searchable; #TODO: Queueing
+    use Resizable; 
+    use Searchable; #TODO: Queueing
 
     // Carbon instance fields
     protected $dates = ['created_at'];
@@ -55,21 +56,5 @@ class Project extends Model
         }
 
         return false;
-    }
-
-    //--------------------------------------ALGOLIA------------------------------------
-    /**
-     * Get the value used to index the model.
-     *
-     * @return mixed
-     */
-    public function getScoutKey()
-    {
-        return $this->slug;
-    }
-
-    public function shouldBeSearchable()
-    {
-        return $this->published();
     }
 }
