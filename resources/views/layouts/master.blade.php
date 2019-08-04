@@ -13,14 +13,14 @@
         @stack('js-top')
     </head>
     <body>
-        @include('layouts.navbar')
-
-        <div class="container mt-5">
-           @yield('content')
+        <div id="app">
+            @include('layouts.navbar')
+            <div class="container mt-5">
+               @yield('content')
+            </div>
+            {{-- footer --}}
+            @include('layouts.footer')
         </div>
-
-        {{-- footer --}}
-        @include('layouts.footer')
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
