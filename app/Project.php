@@ -3,15 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 use TCG\Voyager\Traits\Resizable;
 
 class Project extends Model
 {
-    use Resizable;
+    use Resizable; 
+    use Searchable; #TODO: Queueing
 
     // Carbon instance fields
     protected $dates = ['created_at'];
-
 
     //
     public function author()
@@ -26,7 +27,7 @@ class Project extends Model
 
     public function views()
     {
-        return $this->belongsToMany('App\User')->withTimestamps();
+        return $this->belongsToMany('App\User', 'project_views')->withTimestamps();
     }
 
     //QUERY SCOPE
@@ -56,5 +57,4 @@ class Project extends Model
 
         return false;
     }
-
 }
