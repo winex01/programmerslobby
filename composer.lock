@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "80109f7cd9a18db5b6a315e0cf3946ab",
+    "content-hash": "b131eeaa0f7652581aa9171c84583039",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
-            "version": "2.2.0",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/algolia/algoliasearch-client-php.git",
-                "reference": "d2477f550cabf12c99a018183d2bd4494ed39b0b"
+                "reference": "823dc934f1ad82cb43988e474a4597c7e660104b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/d2477f550cabf12c99a018183d2bd4494ed39b0b",
-                "reference": "d2477f550cabf12c99a018183d2bd4494ed39b0b",
+                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/823dc934f1ad82cb43988e474a4597c7e660104b",
+                "reference": "823dc934f1ad82cb43988e474a4597c7e660104b",
                 "shasum": ""
             },
             "require": {
@@ -30,6 +30,8 @@
                 "psr/simple-cache": "^1.0"
             },
             "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "fzaninotto/faker": "^1.8",
                 "phpunit/phpunit": "^4.8",
                 "symfony/yaml": "^2.0 || ^4.0"
             },
@@ -72,7 +74,7 @@
                 "php",
                 "search"
             ],
-            "time": "2019-01-23T10:44:28+00:00"
+            "time": "2019-07-18T18:05:23+00:00"
         },
         {
             "name": "arrilot/laravel-widgets",
