@@ -8,14 +8,14 @@
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-        <link rel="stylesheet" type="text/css" href="{{ mix('/css/all.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ mix('/css/app.css') }}">
         @stack('css')
         @stack('js-top')
     </head>
     <body>
         <div id="app">
             @include('layouts.navbar')
-            <div class="container mt-5">
+            <div class="container mt-60">
                @yield('content')
             </div>
             {{-- footer --}}
