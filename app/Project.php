@@ -57,4 +57,30 @@ class Project extends Model
 
         return false;
     }
+
+    //attributes
+    public function getMetaDescriptionAttribute($value)
+    {
+        return (empty($value)) ? $this->description : $value;
+    }
+
+    public function getSeoTitleAttribute($value)
+    {
+        return (empty($value)) ? $this->title : $value;
+    }
+
+    public function getTagDescriptionAttribute()
+    {
+        return $this->tags->pluck('description');
+    }
+
+    public function getPublishedAtAttribute()
+    {
+        return $this->created_at;
+    }
+
+    public function getModifiedAtAttribute()
+    {
+        return $this->updated_at;
+    }
 }
