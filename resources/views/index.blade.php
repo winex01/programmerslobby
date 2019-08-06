@@ -7,8 +7,9 @@
     don't forget to leave a comment, And always remember keep it DRY :) ...
     </p>
 
-  
-
+    <div class="mb-n4">
+        @include('layouts.inspire')
+    </div>
 
     @foreach($projects->chunk('3') as $chunk)
         <div class="row">
