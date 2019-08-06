@@ -7,7 +7,7 @@
     don't forget to leave a comment, And always remember keep it DRY :) ...
     </p>
 
-    <div style="margin-bottom: -35px;">
+    <div class="mb-n4">
         @include('layouts.inspire')
     </div>
 
