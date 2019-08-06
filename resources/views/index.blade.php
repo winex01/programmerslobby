@@ -7,9 +7,6 @@
     don't forget to leave a comment, And always remember keep it DRY :) ...
     </p>
 
-  
-
-
     @foreach($projects->chunk('3') as $chunk)
         <div class="row">
             @foreach($chunk as $project)
