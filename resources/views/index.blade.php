@@ -7,6 +7,10 @@
     don't forget to leave a comment, And always remember keep it DRY :) ...
     </p>
 
+    <div style="margin-bottom: -35px;">
+        @include('layouts.inspire')
+    </div>
+
     @foreach($projects->chunk('3') as $chunk)
         <div class="row">
             @foreach($chunk as $project)
