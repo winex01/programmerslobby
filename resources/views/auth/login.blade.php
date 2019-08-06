@@ -65,6 +65,30 @@
                             </div>
                         </div>
                     </form>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                            <a href="#" class="btn btn-block btn-dark">
+                                <i class="fa fa-github" aria-hidden="true"></i> {{ __('Sign in with Github') }}
+                            </a>
+                        </div>
+
+                        <div class="col-md-4 form-group">
+                            <a href="#" class="btn btn-block btn-danger">
+                                <i class="fa fa-google" aria-hidden="true"></i> {{ __('Sign in with Gmail') }}
+                            </a>
+                        </div>
+
+                        <div class="col-md-4 form-group">
+                            <a href="#" class="btn btn-block btn-primary">
+                                <i class="fa fa-twitter" aria-hidden="true"></i> {{ __('Sign in with Twitter') }}
+                            </a>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -73,3 +97,7 @@
 @endsection
 
 @include('layouts.hide-in-auth-pages')
+
+@push('css')
+
+@endpush
