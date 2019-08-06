@@ -14,7 +14,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
     {
         
 
-        // \DB::table('data_rows')->delete();
+        \DB::table('data_rows')->delete();
         
         \DB::table('data_rows')->insert(array (
             0 => 
@@ -931,22 +931,6 @@ class AppBreadDataRowsTableSeeder extends Seeder
             ),
             57 => 
             array (
-                'id' => 71,
-                'data_type_id' => 8,
-                'field' => 'body',
-                'type' => 'rich_text_box',
-                'display_name' => 'Body',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"validation":{"rule":"required|min:150"}}',
-                'order' => 3,
-            ),
-            58 => 
-            array (
                 'id' => 72,
                 'data_type_id' => 8,
                 'field' => 'image',
@@ -959,9 +943,9 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"resize":{"width":"1000","height":"null"},"quality":"70%","upsize":true,"thumbnails":[{"name":"small","scale":"25%"},{"name":"medium","crop":{"width":"730","height":"400"}},{"name":"cropped","crop":{"width":"330","height":"220"}}]}',
-                'order' => 4,
+                'order' => 3,
             ),
-            59 => 
+            58 => 
             array (
                 'id' => 73,
                 'data_type_id' => 8,
@@ -975,9 +959,9 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"slugify":{"origin":"title","forceUpdate":true},"validation":{"rule":"unique:posts,slug"}}',
-                'order' => 9,
+                'order' => 13,
             ),
-            60 => 
+            59 => 
             array (
                 'id' => 74,
                 'data_type_id' => 8,
@@ -991,9 +975,9 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{}',
-                'order' => 10,
+                'order' => 14,
             ),
-            61 => 
+            60 => 
             array (
                 'id' => 75,
                 'data_type_id' => 8,
@@ -1007,9 +991,9 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{}',
-                'order' => 11,
+                'order' => 15,
             ),
-            62 => 
+            61 => 
             array (
                 'id' => 76,
                 'data_type_id' => 8,
@@ -1023,9 +1007,9 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{}',
-                'order' => 12,
+                'order' => 16,
             ),
-            63 => 
+            62 => 
             array (
                 'id' => 77,
                 'data_type_id' => 8,
@@ -1039,9 +1023,9 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"default":"DRAFT","options":{"PUBLISHED":"published","DRAFT":"draft","PENDING":"pending"}}',
-                'order' => 13,
+                'order' => 17,
             ),
-            64 => 
+            63 => 
             array (
                 'id' => 78,
                 'data_type_id' => 8,
@@ -1055,9 +1039,9 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{}',
-                'order' => 8,
+                'order' => 12,
             ),
-            65 => 
+            64 => 
             array (
                 'id' => 79,
                 'data_type_id' => 8,
@@ -1071,9 +1055,9 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{}',
-                'order' => 7,
+                'order' => 11,
             ),
-            66 => 
+            65 => 
             array (
                 'id' => 80,
                 'data_type_id' => 8,
@@ -1087,9 +1071,9 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 14,
+                'order' => 18,
             ),
-            67 => 
+            66 => 
             array (
                 'id' => 81,
                 'data_type_id' => 8,
@@ -1103,9 +1087,9 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 15,
+                'order' => 19,
             ),
-            68 => 
+            67 => 
             array (
                 'id' => 82,
                 'data_type_id' => 8,
@@ -1118,10 +1102,10 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{"model":"\\\\App\\\\User","table":"users","type":"belongsTo","column":"author_id","key":"id","label":"email","pivot_table":"categories","pivot":"0","taggable":"0"}',
-                'order' => 6,
+                'details' => '{"model":"\\\\App\\\\User","table":"users","type":"belongsTo","column":"author_id","key":"id","label":"name","pivot_table":"categories","pivot":"0","taggable":"0"}',
+                'order' => 10,
             ),
-            69 => 
+            68 => 
             array (
                 'id' => 91,
                 'data_type_id' => 11,
@@ -1137,7 +1121,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 1,
             ),
-            70 => 
+            69 => 
             array (
                 'id' => 92,
                 'data_type_id' => 11,
@@ -1153,7 +1137,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'details' => '{"validation":{"rule":"required|unique:tags"}}',
                 'order' => 2,
             ),
-            71 => 
+            70 => 
             array (
                 'id' => 93,
                 'data_type_id' => 11,
@@ -1169,7 +1153,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 3,
             ),
-            72 => 
+            71 => 
             array (
                 'id' => 94,
                 'data_type_id' => 11,
@@ -1185,7 +1169,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 4,
             ),
-            73 => 
+            72 => 
             array (
                 'id' => 95,
                 'data_type_id' => 8,
@@ -1199,7 +1183,87 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"model":"App\\\\Tag","table":"tags","type":"belongsToMany","column":"id","key":"id","label":"description","pivot_table":"project_tag","pivot":"1","taggable":"on"}',
+                'order' => 9,
+            ),
+            73 => 
+            array (
+                'id' => 96,
+                'data_type_id' => 8,
+                'field' => 'description',
+                'type' => 'rich_text_box',
+                'display_name' => 'Description',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"validation":{"rule":"required|min:200"}}',
+                'order' => 4,
+            ),
+            74 => 
+            array (
+                'id' => 97,
+                'data_type_id' => 8,
+                'field' => 'sourcecode_link',
+                'type' => 'text',
+                'display_name' => 'Sourcecode Link',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 7,
+            ),
+            75 => 
+            array (
+                'id' => 98,
+                'data_type_id' => 8,
+                'field' => 'gitlab_link',
+                'type' => 'text',
+                'display_name' => 'Gitlab Link',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 6,
+            ),
+            76 => 
+            array (
+                'id' => 99,
+                'data_type_id' => 8,
+                'field' => 'github_link',
+                'type' => 'text',
+                'display_name' => 'Github Link',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
                 'order' => 5,
+            ),
+            77 => 
+            array (
+                'id' => 100,
+                'data_type_id' => 8,
+                'field' => 'download_link',
+                'type' => 'text',
+                'display_name' => 'Download Link',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 8,
             ),
         ));
         
