@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use Illuminate\Http\Request;
+use SEOMeta;
+use OpenGraph;
+use Twitter;
 
 class ProjectController extends Controller
 {
@@ -14,9 +17,20 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
-        $projects = Project::published()->orderBy('created_at', 'DESC')->paginate(6);
+        
+        SEOMeta::setTitle('Home');
+        SEOMeta::setCanonical('http://programmerslobby.com/');
+        // desc default
 
+        OpenGraph::setTitle('Home');
+        OpenGraph::setUrl('http://programmerslobby.com/');
+        OpenGraph::addProperty('type', 'applications');
+        // desc default
+
+        Twitter::setTitle('Homepage');
+        // site default
+
+        $projects = Project::published()->orderBy('created_at', 'DESC')->paginate(6);
         return view('index', compact('projects'));
     }
 
@@ -54,7 +68,7 @@ class ProjectController extends Controller
                                     ->where('slug', '!=', $slug)
                                     ->inRandomOrder()
                                     ->limit(6)->get();
-        clock($suggestedProject);
+        // clock($suggestedProject);
         return view('project', compact('project', 'suggestedProject'));
     }
 
