@@ -57,6 +57,23 @@ class Programming
             "Controlling complexity is the essence of computer programming. - Brian Kernighan",
             "Just heard a QA \"Engineeer\" ask a customer on the phone - \"What made you wanna do THAT!??\" - Kevin Marois",
             "The main purpose of multidimensional arrays in C++ is to confuse beginners and generate an endless stream of questions about how to allocate them dynamically, about how to delete them, or why they can't be converted to pointers to pointers. –  R. Martinho Fernandes",
+            "When you don't create things, you become defined by your tastes rather than ability. your tastes only narrow & exclude people. so create. – Why The Lucky Stiff",
+            "Programs must be written for people to read, and only incidentally for machines to execute. – Harold Abelsons",
+            "Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the Universe trying to produce bigger and better idiots. So far, the Universe is winning. – Rick Cook",
+            "That's the thing about people who think they hate computers. What they really hate is lousy programmers. – Larry Niven",
+            "Give a man a program, frustrate him for a day. Teach a man to program, frustrate him for a lifetime. ― Muhammad Waseem",
+            "I'm not a great programmer; I'm just a good programmer with great habits. ― Kent Beck",
+            "Truth can only be found in one place: the code. ― Robert C. Martin",
+            "How you look at it is pretty much how you'll see it. ― Rasheed Ogunlaru",
+            "You've baked a really lovely cake, but then you've used dog shit for frosting. ― Steve Jobs",
+            "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it? ― Brian Kernighan",
+            "A language that doesn't affect the way you think about programming is not worth knowing. ― Alan J. Perlis",
+            "If you're good at something, never do it for free. ― Heath Ledger",
+            "The most disastrous thing that you can ever learn is your first programming language. ― Alan Kay",
+            "Perl – The only language that looks the same before and after RSA encryption. ― Keith Bostic",
+            "The most important property of a program is whether it accomplishes the intention of its user. ― C.A.R. Hoare",
+            "Object-oriented programming offers a sustainable way to write spaghetti code. It lets you accrete programs as a series of patches. ― Paul Graham",
+            "At forty, I was too old to work as a programmer myself anymore; writing code is a young person’s job. ― Michael Crichton, Prey",
         ])->random();
     }
 }
