@@ -26,7 +26,7 @@
     <body>
         <div id="app">
             @include('layouts.navbar')
-            <div class="container mt-60">
+            <div class="container">
                @yield('content')
             </div>
             {{-- footer --}}

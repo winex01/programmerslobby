@@ -14,7 +14,7 @@
 
         {{-- search box --}}
         <form class="mx-2 my-auto d-inline w-50">
-            <input class="form-control form-control-sm" type="search" placeholder="Search..." aria-label="Search">
+            <input id="search-box" class="form-control form-control-sm" type="search" placeholder="Search..." aria-label="Search">
         </form>
 
         
@@ -52,3 +52,4 @@
         </ul>
     </div>
 </nav>
+

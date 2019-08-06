@@ -22,3 +22,5 @@
     </div>
 </div>
 @endsection
+
+@include('layouts.hide-in-auth-pages')
