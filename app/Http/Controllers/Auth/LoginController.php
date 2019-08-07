@@ -57,7 +57,19 @@ class LoginController extends Controller
     {
         $user = Socialite::driver($provider)->user();
 
-        dd($user);
+        clock($user);
+
+        // name
+        // email
+        // avatar
+        // email_verified_at
+        // password 
+        // remember_token
+        
+        // add this column
+        // provider_id nullable
+        // provider_type nullable
+        // make password nullable
 
         // $user->token;
     }
