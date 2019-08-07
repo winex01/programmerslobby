@@ -11,13 +11,20 @@
 |
 */
 
+
+//guest
 Route::get('/', 'ProjectController@index')->name('home');
 Route::get('/project/{project}', 'ProjectController@show')->middleware('project.views')->name('project');
 
+//auth
+Auth::routes();
+Route::get('login/provider/{provider}', 'Auth\LoginController@redirectToProvider')->name('login.provider');
+Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('login.provider.callback');
 
+
+//authenticated
+Route::get('/home', 'HomeController@index')->name('dashboard');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('dashboard');

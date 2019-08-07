@@ -70,7 +70,7 @@
 
                     <div class="row">
                         <div class="col-md-4 form-group">
-                            <a href="#" class="btn btn-block btn-dark">
+                            <a href="{{ route('login.provider', 'github') }}" class="btn btn-block btn-dark">
                                 <i class="fa fa-github" aria-hidden="true"></i> {{ __('Sign in with Github') }}
                             </a>
                         </div>
