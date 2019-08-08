@@ -12,6 +12,14 @@ class ApplicationSettingsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+        \DB::table('users')->insert(
+            array(
+                'role_id' => 2,
+                'name' => 'Guest',
+                'email' => 'guest@test.com',
+                'avatar' => 'users/default.png',
+                'password' => 'just_some_random_string'
+            )
+        );
     }
 }
