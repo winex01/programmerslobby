@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Provider;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -39,12 +41,16 @@ class LoginController extends Controller
     }
 
      /**
-     * Redirect the user to the GitHub authentication page.
+     * Redirect the user to the provider authentication page.
      *
      * @return \Illuminate\Http\Response
      */
     public function redirectToProvider($provider)
     {
+        Provider::firstOrNew([
+            'name' => $provider
+        ]);
+        
         return Socialite::driver($provider)->redirect();
     }
 
@@ -55,22 +61,42 @@ class LoginController extends Controller
      */
     public function handleProviderCallback($provider)
     {
-        $user = Socialite::driver($provider)->user();
+        $providerUser = Socialite::driver($provider)->user();
+        clock($providerUser);
 
-        clock($user);
+        $user = User::where([
+            ['provider', $provider],
+            ['provider_id', $providerUser->id],
+        ])->first();
 
-        // name
-        // email
-        // avatar
-        // email_verified_at
-        // password 
-        // remember_token
-        
-        // add this column
-        // provider_id nullable
-        // provider_type nullable
-        // make password nullable
+        $user = User::whereHas('providers', function($q) use($search) {
+            $q->where([
+                ['name' => $provider],
+                ['provider_unique_id' => $providerUser->id]
+            ]);
+        });
 
-        // $user->token;
+        if (!$user) {
+            //check email if already signed in by other provider
+            // if not then insert new user, otherwise attach provider
+            $checkEmail = User::where('email', $providerUser->email)->first();
+
+            if (!$checkEmail) {
+                $user = User::create([
+                    'name' => $providerUser->name,
+                    'email' => $providerUser->email,
+                    'avatar' => $providerUser->avatar,
+                    'provider' => $provider,
+                    'email_verified_at' => true
+                ]);
+            }
+
+            //attach provider
+
+        }
+
+        auth()->login($user, true);
+
+        return redirect($this->redirectTo);
     }
 }
