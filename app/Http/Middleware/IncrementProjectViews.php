@@ -22,7 +22,7 @@ class IncrementProjectViews
         if(auth()->user()) {
             $project->views()->attach(auth()->user()->id);
         }else {
-            $project->views()->attach(3); //3 = guest
+            $project->views()->attach(2); //2 = guest
         }
 
 
