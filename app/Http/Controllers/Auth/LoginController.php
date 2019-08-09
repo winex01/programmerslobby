@@ -73,15 +73,11 @@ class LoginController extends Controller
         })->first();
 
         if (!$user) {
-            $email = User::where('email', $providerUser->email)->first();
-            if (!$email) {
-                $user = User::create([
-                    'name' => $providerUser->name,
-                    'email' => $providerUser->email,
-                    'avatar' => $providerUser->avatar,
-                    'email_verified_at' => true
-                ]);
-            }
+            $user = User::firstOrCreate(['email' => $providerUser->email], [
+                'name' => $providerUser->name,
+                'avatar' => $providerUser->avatar,
+                'email_verified_at' => true  
+            ]);
 
             $user->providers()->attach($provider->id, [
                 'provider_unique_id' => $providerUser->id
