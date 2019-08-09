@@ -18,7 +18,7 @@ class CreateProjectUserPivotTable extends Migration
             $table->unsignedBigInteger('project_id')->index();
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             
-            $table->unsignedBigInteger('user_id')->index()->default(3); //3 = guest user
+            $table->unsignedBigInteger('user_id')->index()->default(2); //2 = guest user
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             
             $table->timestamps();

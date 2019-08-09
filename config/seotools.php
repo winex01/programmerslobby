@@ -7,7 +7,7 @@ return [
          */
         'defaults'       => [
             'title'        => env('APP_NAME')."!", // set false to total remove
-            'description'  => 'Free source code that are open source, MIT licensed, and free to download - Lets learn how to program together and always remember keep it DRY!', // set false to total remove
+            'description'  => 'Download free source code, MIT licensed and learn how to program. - Dont forget to keep it DRY!', // set false to total remove
             'separator'    => ' - ',
             'keywords'     => [],
             'canonical'    => false, // Set null for using Url::current(), set false to total remove
@@ -31,7 +31,7 @@ return [
          */
         'defaults' => [
             'title'       => env('APP_NAME')."!", // set false to total remove
-            'description' => 'Free source code that are open source, MIT licensed, and free to download - Lets learn how to program together and always remember keep it DRY!', // set false to total remove
+            'description' => 'Download free source code, MIT licensed and learn how to program. - Dont forget to keep it DRY!', // set false to total remove
             'url'         => false, // Set null for using Url::current(), set false to total remove
             'type'        => false,
             'site_name'   => false,

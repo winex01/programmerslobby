@@ -16,7 +16,7 @@ class User extends \TCG\Voyager\Models\User
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'avatar',
     ];
 
     /**
@@ -41,5 +41,10 @@ class User extends \TCG\Voyager\Models\User
     public function viewedProjects()
     {
         return $this->belongsToMany('App\Project', 'project_views')->withTimestamps();
+    }
+
+    public function providers()
+    {
+        return $this->belongsToMany('App\Provider')->withTimestamps();
     }
 }
