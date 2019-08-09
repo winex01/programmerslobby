@@ -65,17 +65,18 @@ class LoginController extends Controller
             'name' => $provider
         ]);
 
-
         #TODO: fix this
-        // $providerUser = Socialite::driver($provider)->user();
+        $providerUser = Socialite::driver($provider)->user();
         // clock($providerUser);
 
-        // $user = User::whereHas('providers', function($q) use($provider, $providerUser) {
-        //     $q->where([
-        //         ['name' => $provider],
-        //         ['provider_unique_id' => $providerUser->id]
-        //     ]);
-        // });
+        $user = User::whereHas('providers', function($q) use($provider, $providerUser) {
+            $q->where([
+                ['name' => $provider],
+                ['provider_unique_id' => $providerUser->id]
+            ]);
+        });
+
+        clock($user);
 
         // if (!$user) {
         //     //check email if already signed in by other provider
