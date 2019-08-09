@@ -69,7 +69,7 @@ class LoginController extends Controller
 
         $user = User::WhereHas('providers', function($q) use($provider, $providerUser) { 
             $q->where('provider_id', $provider->id)
-                ->where('provider_unique_id', '131212'); 
+                ->where('provider_unique_id', $providerUser->id); 
         })->first();
 
         if (!$user) {
@@ -79,9 +79,12 @@ class LoginController extends Controller
                 'email_verified_at' => true  
             ]);
 
-            $user->providers()->syncWithoutDetaching($provider->id, [
-                'provider_unique_id' => $providerUser->id
-            ]);
+            // clock($providerUser);            
+            if (!$user->providers->contains(['provider_id' => $provider->id, 'provider_unique_id' => $providerUser->id])) {
+                $user->providers()->attach($provider->id, [
+                    'provider_unique_id' => $providerUser->id
+                ]);
+            }
         }
 
         auth()->login($user, true);
