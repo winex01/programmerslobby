@@ -79,7 +79,7 @@ class LoginController extends Controller
                 'email_verified_at' => true  
             ]);
 
-            $user->providers()->attach($provider->id, [
+            $user->providers()->syncWithoutDetaching($provider->id, [
                 'provider_unique_id' => $providerUser->id
             ]);
         }
