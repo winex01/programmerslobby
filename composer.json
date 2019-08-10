@@ -19,7 +19,8 @@
         "laravel/tinker": "^1.0",
         "orangehill/iseed": "^2.6",
         "tcg/voyager": "^1.2",
-        "yajra/laravel-disqus": "^1.1"
+        "yajra/laravel-disqus": "^1.1",
+        "yoeunes/toastr": "^1.2"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
