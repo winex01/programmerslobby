@@ -20,6 +20,7 @@
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
         <link rel="stylesheet" type="text/css" href="{{ mix('/css/app.css') }}">
+        @toastr_css
         @stack('css')
         @stack('js-top')
     </head>
@@ -34,5 +35,7 @@
         </div>
         <script src="{{ mix('js/app.js') }}"></script>
         @stack('js')
+        @toastr_js
+        @toastr_render
     </body>
 </html>
