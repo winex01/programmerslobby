@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -79,7 +79,6 @@ class LoginController extends Controller
                 'email_verified_at' => true  
             ]);
 
-            // clock($providerUser);            
             if (!$user->providers->contains(['provider_id' => $provider->id, 'provider_unique_id' => $providerUser->id])) {
                 $user->providers()->attach($provider->id, [
                     'provider_unique_id' => $providerUser->id
@@ -89,6 +88,7 @@ class LoginController extends Controller
 
         auth()->login($user, true);
 
+        toastr()->success('Welcome back '.$providerUser->name.'!');
         return redirect($this->redirectTo);
     }
 }
