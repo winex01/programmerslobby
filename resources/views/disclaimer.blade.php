@@ -44,11 +44,11 @@
                         <h2>If you see your content</h2>
 
                         <p>
-                            All posts of <span class="text-primary">Programmers Lobby</span> are mostly created on our own and collected from various websites examples. We do not copy of anyone websites example, but we always research from other websites and make our own. We will also add various packages that might belong to you, but our intention is not to copy your work. If you find any of the posts originally belong to you, if you don't want to display them, please do <a href="/contact">Contact</a> us on this site. Please consider the fact that we don't want to intentionally distributing your posts and example, idea. We always respect your packages, example, articles etc for creating and produce those wonderful posts.
+                            All posts of <span class="text-primary">Programmers Lobby</span> are mostly created on our own and collected from various websites examples. We do not copy of anyone websites example, but we always research from other websites and make our own. We will also add various packages that might belong to you, but our intention is not to copy your work. If you find any of the posts originally belong to you, if you don't want to display them, please do <a href="{{ route('about') }}">Contact</a> us on this site. Please consider the fact that we don't want to intentionally distributing your posts and example, idea. We always respect your packages, example, articles etc for creating and produce those wonderful posts.
                         </p>
 
                         <p>
-                           If you have any concern or question regarding our copyright policy, Please don't forget to <a href="/contact">Contact</a> Us on this website. So we can take a proper action as soon as possible.
+                           If you have any concern or question regarding our copyright policy, Please don't forget to <a href="{{ route('about') }}">Contact</a> Us on this website. So we can take a proper action as soon as possible.
                         </p>
 
                         <br>
