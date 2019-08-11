@@ -18,7 +18,7 @@ Route::get('/project/{project}', 'ProjectController@show')->middleware('project.
 Route::get('/disclaimer', 'StaticPageController@disclaimer')->name('disclaimer');
 Route::get('/terms-and-privacy', 'StaticPageController@tos')->name('tos');
 Route::get('/about-us', 'StaticPageController@about')->name('about');
-Route::get('/contact-us', 'StaticPageController@about')->name('contact');
+Route::get('/contact-us', 'StaticPageController@contact')->name('contact');
 
 //auth
 Auth::routes();

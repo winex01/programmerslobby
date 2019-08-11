@@ -36,4 +36,12 @@ class StaticPageController extends Controller
             'suggestedProject' => $this->suggestedProject
         ]);
     }
+
+    public function contact()
+    {
+        return view('contact-us', [
+            'suggestedProject' => $this->suggestedProject
+        ]);
+    }
+
 }
