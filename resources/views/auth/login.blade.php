@@ -69,25 +69,30 @@
                     <hr>
 
                     <div class="row">
-                        <div class="col-md-4 form-group">
-                            <a href="{{ route('login.provider', 'github') }}" class="btn btn-block btn-dark">
-                                <i class="fa fa-github" aria-hidden="true"></i> {{ __('Sign in with Github') }}
-                            </a>
-                        </div>
+                        @if (config('services.github.enable'))
+                            <div class="col-md-12 form-group">
+                                <a href="{{ route('login.provider', 'github') }}" class="btn btn-block btn-dark">
+                                    <i class="fa fa-github" aria-hidden="true"></i> {{ __('Sign in with Github') }}
+                                </a>
+                            </div>
+                        @endif
 
-                        <div class="col-md-4 form-group">
-                            <a href="#" class="btn btn-block btn-danger">
-                                <i class="fa fa-google" aria-hidden="true"></i> {{ __('Sign in with Gmail') }}
-                            </a>
-                        </div>
+                        @if (config('services.google.enable'))
+                            <div class="col-md-12 form-group">
+                                <a href="{{ route('login.provider', 'google') }}" class="btn btn-block btn-danger">
+                                    <i class="fa fa-google" aria-hidden="true"></i> {{ __('Sign in with Gmail') }}
+                                </a>
+                            </div>
+                        @endif
 
-                        <div class="col-md-4 form-group">
-                            <a href="#" class="btn btn-block btn-primary">
-                                <i class="fa fa-twitter" aria-hidden="true"></i> {{ __('Sign in with Twitter') }}
-                            </a>
-                        </div>
+                        @if (config('services.twitter.enable'))
+                            <div class="col-md-12 form-group">
+                                <a href="{{ route('login.provider', 'twitter') }}" class="btn btn-block btn-primary">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i> {{ __('Sign in with Twitter') }}
+                                </a>
+                            </div>
+                        @endif
                     </div>
-
 
                 </div>
             </div>
