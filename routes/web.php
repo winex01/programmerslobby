@@ -15,7 +15,7 @@
 //guest
 Route::get('/', 'ProjectController@index')->name('home');
 Route::get('/project/{project}', 'ProjectController@show')->middleware('project.views')->name('project');
-Route::get('/disclaimer', 'StaticPageController@disclaimer');
+Route::get('/disclaimer', 'StaticPageController@disclaimer')->name('disclaimer');
 
 //auth
 Auth::routes();
