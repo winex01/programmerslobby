@@ -76,13 +76,13 @@
                         </div>
 
                         <div class="col-md-4 form-group">
-                            <a href="#" class="btn btn-block btn-danger">
+                            <a href="{{ route('login.provider', 'google') }}" class="btn btn-block btn-danger">
                                 <i class="fa fa-google" aria-hidden="true"></i> {{ __('Sign in with Gmail') }}
                             </a>
                         </div>
 
                         <div class="col-md-4 form-group">
-                            <a href="#" class="btn btn-block btn-primary">
+                            <a href="{{ route('login.provider', 'twitter') }}" class="btn btn-block btn-primary">
                                 <i class="fa fa-twitter" aria-hidden="true"></i> {{ __('Sign in with Twitter') }}
                             </a>
                         </div>

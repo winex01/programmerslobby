@@ -31,8 +31,9 @@
 ## One line install reinstall for dev
 - php artisan migrate:fresh && php artisan voyager:install --with-dummy && php artisan db:seed --class=ApplicationMenuTableSeeder && php artisan db:seed --class=ApplicationBreadTableSeeder && php artisan db:seed --class=ApplicationPermissionRolesTableSeeder && php artisan db:seed --class=ApplicationSettingsTableSeeder
 
-## Clean cache 
+## Clean cache and cache
 - php artisan view:clear && php artisan route:clear && php artisan cache:clear && php artisan config:clear
+- php artisan config:cache
 
 ## Production Reminders:
 - APP_ENV=production
