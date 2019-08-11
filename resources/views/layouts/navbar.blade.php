@@ -9,7 +9,11 @@
     <div class="navbar-collapse collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active"><a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">{{ __('Blog') }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">{{ __('Privacy Policy') }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">{{ __('About Us') }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">{{ __('Contact Us') }}</a></li>
+            <li class="nav-item"><a class="btn btn-primary btn-sm mt-1 mb-1" href="#">{{ __('Submit Code!') }}</a></li>
         </ul>
 
         {{-- search box --}}
