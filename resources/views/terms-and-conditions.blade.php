@@ -8,18 +8,18 @@
             <div class="card border-0 shadow mb-4">
                 <div class="card-body">
 
-                    <h1>Terms And Conditions</h1>
+                    <h1>Terms And Privacy</h1>
 
                         <p>
                             Welcome aboard. If you continue to browse and use this website, you are 
                             agreeing to comply with and be bound by the following terms and conditions of use, 
-                            which together with our privacy policy govern <a href="#">Programmers Lobby</a> relationship with 
+                            which together with our privacy policy govern <span class="text-primary">Programmers Lobby</span> relationship with 
                             you in relation to this website. If you disagree with any part of these terms and 
                             conditions, please do not use our website.
                         </p>
 
                         <p>
-                            The term '<a href="#">Programmers Lobby</a>' or 'us' or 'we' refers to the owner of the website. 
+                            The term '<span class="text-primary">Programmers Lobby</span>' or 'us' or 'we' refers to the owner of the website. 
                             The term 'you' refers to the user or viewer of our website.
                         </p>
 
