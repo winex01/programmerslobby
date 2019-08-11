@@ -22,4 +22,11 @@ class StaticPageController extends Controller
     		'suggestedProject' => $this->suggestedProject
     	]);
     }
+
+    public function tos()
+    {
+    	return view('terms-and-conditions', [
+    		'suggestedProject' => $this->suggestedProject
+    	]);
+    }
 }

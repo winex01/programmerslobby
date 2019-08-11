@@ -16,6 +16,7 @@
 Route::get('/', 'ProjectController@index')->name('home');
 Route::get('/project/{project}', 'ProjectController@show')->middleware('project.views')->name('project');
 Route::get('/disclaimer', 'StaticPageController@disclaimer')->name('disclaimer');
+Route::get('/terms-and-conditions', 'StaticPageController@tos')->name('tos');
 
 //auth
 Auth::routes();
