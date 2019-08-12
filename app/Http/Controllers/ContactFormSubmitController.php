@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\ContactUs;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 
 class ContactFormSubmitController extends Controller
 {
@@ -21,7 +24,16 @@ class ContactFormSubmitController extends Controller
             'message' => 'required|min:10'
         ]);
 
+        Notification::route('mail', 'taylor@example.com')
+            ->notify(new ContactUs(
+                $request->name,
+                $request->email,
+                $request->message
+            ));
 
-        dd($request->all());
+
+        toastr()->success('Thank you for reaching us, We will contact you soon.');
+        return redirect()->back();
+
     }
 }
