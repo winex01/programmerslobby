@@ -28,8 +28,9 @@ class ContactFormSubmitController extends Controller
         // TODO use programmerslobby gmail to send
         // TODO forward to my personal email 
         // TODO use config files and env
+        // TODO add captcha
 
-        Notification::route('mail', 'taylor@example.com')
+        Notification::route('mail', config('mail.contact_us'))
             ->notify(new ContactUs(
                 $request->name,
                 $request->email,

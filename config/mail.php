@@ -133,4 +133,6 @@ return [
 
     'log_channel' => env('MAIL_LOG_CHANNEL'),
 
+
+    'contact_us' => env('MAIL_CONTACTUS')
 ];

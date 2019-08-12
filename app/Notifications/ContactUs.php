@@ -51,7 +51,7 @@ class ContactUs extends Notification implements ShouldQueue
                     ->level('info')
                     ->subject('A person contacted you')
                     ->greeting('Hello Master Winnie,')
-                    ->line(ucwords($this->name).' contacted you using this email: '. $this->email)
+                    ->line(ucwords($this->name).'('.$this->email.') contacted you')
                     ->line($this->message);
     }
 
