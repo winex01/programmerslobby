@@ -24,10 +24,6 @@ class ContactFormSubmitController extends Controller
             'message' => 'required|min:10'
         ]);
 
-        // TODO use gmail
-        // TODO use programmerslobby gmail to send
-        // TODO forward to my personal email 
-        // TODO use config files and env
         // TODO add captcha
 
         Notification::route('mail', config('mail.contact_us'))
