@@ -20,9 +20,16 @@
                 </div>
                 <div class="col-md-6 item text">
                     <h3>{{ config('app.name') }}</h3>
-                    <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                    <p>
+                        Like us on Facebook and ask your questions in comment section, 
+                        don't forget to leave a comment on a project you visit, And always 
+                        remember keep it DRY :) ...
+                    </p>
                 </div>
-                <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                <div class="col item social">
+                    <a href="https://www.facebook.com/ProgrammersLobby404/"><i class="icon ion-social-facebook"></i></a>
+                    <a href="https://twitter.com/proglobby404"><i class="icon ion-social-twitter"></i></a>
+                </div>
             </div>
             <p class="copyright">{{ config('app.name') }} © {{ date('Y') }}</p>
         </div>

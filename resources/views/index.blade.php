@@ -3,9 +3,6 @@
 
 @section('content')
     <h1 class="text-center">Get Source Code For Free</h1>
-    <p class="text-center">Like us on <a href="https://www.facebook.com/ProgrammersLobby404/" target="_blank">Facebook</a> and ask your questions in comment section, <br>
-    don't forget to leave a comment on a project you visit, And always remember keep it <a target="__blank" href="https://www.google.com/search?rlz=1C1CHBD_enPH835PH835&ei=XpdPXbiZMcLbhwOo8pCABg&q=DRY+programming&oq=DRY+programming&gs_l=psy-ab.3..0l3j0i22i30l7.6786.8657..8801...0.0..0.130.1735.0j15....2..0....1..gws-wiz.......0i71j35i39j0i67j0i273j0i131j0i22i10i30.sw6jODDTGI4&ved=0ahUKEwi4wOm7-_njAhXC7WEKHSg5BGAQ4dUDCAo&uact=5">DRY</a> :) ...
-    </p>
 
     <div class="mb-n4">
         @include('layouts.inspire')
