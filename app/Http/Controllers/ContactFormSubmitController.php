@@ -21,10 +21,12 @@ class ContactFormSubmitController extends Controller
         $request->validate([
             'name' => 'required|min:3',
             'email' => 'required|email',
-            'message' => 'required|min:10'
+            'message' => 'required|min:10',
+            'g-recaptcha-response' => 'required|captcha'
+        ],[
+            'g-recaptcha-response.required' => 'Please verify that you are not a robocop :)',
+            'g-recaptcha-response.captcha' => 'Captcha error! try again later or contact site admin.'
         ]);
-
-        // TODO add captcha
 
         Notification::route('mail', config('mail.contact_us'))
             ->notify(new ContactUs(
@@ -32,7 +34,6 @@ class ContactFormSubmitController extends Controller
                 $request->email,
                 $request->message
             ));
-
 
         toastr()->success('Thank you for reaching us, We will contact you soon.');
         return redirect()->back();
