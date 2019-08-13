@@ -8,8 +8,13 @@
     </button>
     <div class="navbar-collapse collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+            <li class="nav-item {{ active(['home', 'project/*']) }}"><a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">{{ __('Blog') }}</a></li>
+            <li class="nav-item"><a class="nav-link {{ active('disclaimer') }}" href="/disclaimer">{{ __('Disclaimer') }}</a></li>
+            <li class="nav-item"><a class="nav-link {{ active('tos') }}" href="{{ route('tos') }}">{{ __('Terms And Privacy') }}</a></li>
+            <li class="nav-item"><a class="nav-link {{ active('about') }}" href="{{ route('about') }}">{{ __('About') }}</a></li>
+            <li class="nav-item"><a class="nav-link {{ active('contact') }}" href="{{ route('contact') }}">{{ __('Contact') }}</a></li>
+            <li class="nav-item"><a class="btn btn-primary btn-sm mt-1 mb-1" href="#">{{ __('Submit Code!') }}</a></li>
         </ul>
 
         {{-- search box --}}

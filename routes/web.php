@@ -15,6 +15,11 @@
 //guest
 Route::get('/', 'ProjectController@index')->name('home');
 Route::get('/project/{project}', 'ProjectController@show')->middleware('project.views')->name('project');
+Route::get('/disclaimer', 'StaticPageController@disclaimer')->name('disclaimer');
+Route::get('/terms-and-privacy', 'StaticPageController@tos')->name('tos');
+Route::get('/about-us', 'StaticPageController@about')->name('about');
+Route::get('/contact-us', 'StaticPageController@contact')->name('contact');
+Route::post('/contact', 'ContactFormSubmitController@store')->name('contact.submit');
 
 //auth
 Auth::routes();
