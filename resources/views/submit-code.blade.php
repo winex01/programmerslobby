@@ -24,6 +24,17 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="cover">Cover Photo: </label>
+                                <input type="file" class="form-control @error('cover') is-invalid @enderror" id="cover" placeholder="Your cover" name="cover" value="{{ old('cover') }}">
+
+                                @error('cover')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
                                 <label for="description">Description: </label>
                                 <textarea type="text" class="form-control richTextBox @error('description') is-invalid @enderror" id="description" placeholder="Type your messages here" name="description">{{ old('description') }}</textarea>
 
@@ -34,16 +45,19 @@
                                 @enderror
                             </div>
 
+                            {{-- link code --}}
                             <div class="form-group">
-                                <label for="cover">Cover Photo: </label>
-                                <input type="file" class="form-control @error('cover') is-invalid @enderror" id="cover" placeholder="Your cover" name="cover" value="{{ old('cover') }}">
+                                <label for="code">Sourcecode Link: (ex. <a target="__blank" href="https://github.com/">Github</a>, <a target="__blank" href="https://gitlab.com/">Gitlab</a>, <a target="__blank" href="https://mediafire.com/">Mediafire</a> etc.) </label>
+                                <input type="text" class="form-control @error('code') is-invalid @enderror" id="code" placeholder="github.com/winex01/programmerslobby" name="code" value="{{ old('code') }}">
 
-                                @error('cover')
+                                @error('code')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
+
+                            {{-- TODO tags --}}
 
                             <div class="form-group">
                                 {!! NoCaptcha::display() !!}
@@ -56,7 +70,7 @@
                             </div>
 
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Send</button>
+                                <button type="submit" class="btn btn-success btn-block">Submit Code</button>
                             </div>
                         </form>
 
