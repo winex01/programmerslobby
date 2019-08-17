@@ -71,3 +71,5 @@
 @push('js')
  {!! NoCaptcha::renderJs() !!}
 @endpush
+
+@include('layouts.tiny-mce')
