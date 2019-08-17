@@ -24,10 +24,21 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="message">Message: </label>
-                                <textarea type="text" class="form-control @error('message') is-invalid @enderror" id="message" placeholder="Type your messages here" name="message">{{ old('message') }}</textarea>
+                                <label for="description">Description: </label>
+                                <textarea type="text" class="form-control richTextBox @error('description') is-invalid @enderror" id="description" placeholder="Type your messages here" name="description">{{ old('description') }}</textarea>
 
-                                @error('message')
+                                @error('description')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cover">Cover Photo: </label>
+                                <input type="file" class="form-control @error('cover') is-invalid @enderror" id="cover" placeholder="Your cover" name="cover" value="{{ old('cover') }}">
+
+                                @error('cover')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -43,8 +54,6 @@
                                     </span>
                                 @enderror
                             </div>
-
-
 
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Send</button>
