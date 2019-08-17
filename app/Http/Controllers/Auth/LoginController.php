@@ -47,10 +47,6 @@ class LoginController extends Controller
      */
     public function redirectToProvider($provider)
     {
-        Provider::firstOrNew([
-            'name' => $provider
-        ]);
-        
         return Socialite::driver($provider)->redirect();
     }
 
