@@ -25,6 +25,8 @@ Route::post('/contact', 'ContactFormSubmitController@store')->name('contact.subm
 Auth::routes();
 Route::get('login/provider/{provider}', 'Auth\LoginController@redirectToProvider')->name('login.provider');
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('login.provider.callback');
+// TODO submit code
+Route::get('submit-code', 'SubmitCodeController@create')->middleware('auth')->name('submit.code');
 
 
 //authenticated

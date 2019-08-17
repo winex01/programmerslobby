@@ -14,7 +14,7 @@
             <li class="nav-item"><a class="nav-link {{ active('tos') }}" href="{{ route('tos') }}">{{ __('Terms And Privacy') }}</a></li>
             <li class="nav-item"><a class="nav-link {{ active('about') }}" href="{{ route('about') }}">{{ __('About') }}</a></li>
             <li class="nav-item"><a class="nav-link {{ active('contact') }}" href="{{ route('contact') }}">{{ __('Contact') }}</a></li>
-            <li class="nav-item"><a class="btn btn-primary btn-sm mt-1 mb-1" href="#">{{ __('Submit Code!') }}</a></li>
+            <li class="nav-item"><a class="btn btn-primary btn-sm mt-1 mb-1 {{ active('submit.code') }}" href="{{ route('submit.code') }}">{{ __('Submit Code!') }}</a></li>
         </ul>
 
         {{-- search box --}}
