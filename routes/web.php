@@ -25,12 +25,12 @@ Route::post('/contact', 'ContactFormSubmitController@store')->name('contact.subm
 Auth::routes();
 Route::get('login/provider/{provider}', 'Auth\LoginController@redirectToProvider')->name('login.provider');
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('login.provider.callback');
-// TODO submit code
-Route::get('submit-code', 'SubmitCodeController@create')->middleware('auth')->name('submit.code');
+Route::middleware(['auth'])->group(function () {
+	Route::get('submit-code', 'SubmitCodeController@create')->name('submit.code');
+	Route::post('submit-code', 'SubmitCodeController@store')->name('submit.code.store');
+});
 
-
-//authenticated
-Route::get('/home', 'HomeController@index')->name('dashboard');
+// auth admin
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
