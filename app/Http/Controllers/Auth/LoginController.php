@@ -91,4 +91,10 @@ class LoginController extends Controller
         toastr()->success('Welcome back '.$providerUser->name.'!');
         return redirect($this->redirectTo);
     }
+
+    protected function authenticated()
+    {
+        toastr()->success('Welcome back '.auth()->user()->name.'!');
+    }
+
 }
