@@ -24,10 +24,10 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="cover">Cover Photo: </label>
-                                <input type="file" class="form-control @error('cover') is-invalid @enderror" id="cover" placeholder="Your cover" name="cover" value="{{ old('cover') }}">
+                                <label for="image">Cover Photo: </label>
+                                <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" placeholder="Your cover photo" name="image" value="{{ old('image') }}">
 
-                                @error('cover')
+                                @error('image')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

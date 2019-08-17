@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SubmitCodeRequest;
 use App\Project;
-use Illuminate\Http\Request;
 
 class SubmitCodeController extends Controller
 {
@@ -29,9 +29,10 @@ class SubmitCodeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SubmitCodeRequest $request)
     {
         //
+        dd($request);
     }
 
 }
