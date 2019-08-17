@@ -3,16 +3,21 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 use TCG\Voyager\Traits\Resizable;
 
 class Project extends Model
 {
     use Resizable; 
+    use HasSlug;
+
+    protected $guarded = [];
 
     // Carbon instance fields
     protected $dates = ['created_at'];
 
-    //
+    // Relationship
     public function author()
     {
     	return $this->belongsTo('App\User');
@@ -27,8 +32,9 @@ class Project extends Model
     {
         return $this->belongsToMany('App\User', 'project_views')->withTimestamps();
     }
+    // end Relationship
 
-    //QUERY SCOPE
+    // Query Scope
     public function scopePublished($query)
     {
     	return $query->where('status', 'PUBLISHED');
@@ -55,8 +61,9 @@ class Project extends Model
 
         return false;
     }
+    // end Query Scope
 
-    //attributes
+    // Attributes
     public function getMetaDescriptionAttribute($value)
     {
         return (empty($value)) ? $this->description : $value;
@@ -80,5 +87,15 @@ class Project extends Model
     public function getModifiedAtAttribute()
     {
         return $this->updated_at;
+    }
+
+    /**
+     * Get the options for generating the slug.
+     */
+    public function getSlugOptions() : SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('title')
+            ->saveSlugsTo('slug');
     }
 }

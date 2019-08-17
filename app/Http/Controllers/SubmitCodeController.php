@@ -31,8 +31,16 @@ class SubmitCodeController extends Controller
      */
     public function store(SubmitCodeRequest $request)
     {
-        //
-        dd($request);
+        auth()->user()->projects()->create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => 'https://lorempixel.com/330/220/?29435',
+            'sourcecode_link' => 'https://github.com',
+            'status' => 'PUBLISHED',
+        ]);
+
+        toastr()->success('Submitted successfully!');
+        return redirect()->back();
     }
 
 }
