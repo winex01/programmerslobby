@@ -37,7 +37,7 @@ class User extends \TCG\Voyager\Models\User
         'email_verified_at' => 'datetime',
     ];
 
-    // 
+    // Relationship
     public function viewedProjects()
     {
         return $this->belongsToMany('App\Project', 'project_views')->withTimestamps();
@@ -46,5 +46,10 @@ class User extends \TCG\Voyager\Models\User
     public function providers()
     {
         return $this->belongsToMany('App\Provider')->withTimestamps();
+    }
+
+    public function projects()
+    {
+        return $this->hasMany('App\Project', 'author_id');
     }
 }
