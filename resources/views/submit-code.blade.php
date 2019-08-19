@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <h1>Submit Code!</h1>
 
-                        <form class="form-horizontal" method="POST" action="#">
+                        <form class="form-horizontal" method="POST" action="{{ route('submit.code.store') }}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group">

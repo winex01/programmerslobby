@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SubmitCodeRequest;
 use App\Project;
+use Carbon\Carbon;
 
 class SubmitCodeController extends Controller
 {
@@ -31,10 +32,15 @@ class SubmitCodeController extends Controller
      */
     public function store(SubmitCodeRequest $request)
     {
+        $date = Carbon::now();
+        $monthYear = $date->format('F').$date->year;
+        $imageName = $request->image->store('public/projects/'.$monthYear);
+        $imageName = str_replace('public/', '', $imageName);
+        
         auth()->user()->projects()->create([
             'title' => $request->title,
             'description' => $request->description,
-            'image' => 'https://lorempixel.com/330/220/?29435',
+            'image' => $imageName,
             'sourcecode_link' => 'https://github.com',
             'status' => 'PUBLISHED',
         ]);
