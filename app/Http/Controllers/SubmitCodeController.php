@@ -36,12 +36,12 @@ class SubmitCodeController extends Controller
         $monthYear = $date->format('F').$date->year;
         $imageName = $request->image->store('public/projects/'.$monthYear);
         $imageName = str_replace('public/', '', $imageName);
-        
+
         auth()->user()->projects()->create([
             'title' => $request->title,
             'description' => $request->description,
             'image' => $imageName,
-            'sourcecode_link' => 'https://github.com',
+            'sourcecode_link' => $request->code,
             'status' => 'PUBLISHED',
         ]);
 
