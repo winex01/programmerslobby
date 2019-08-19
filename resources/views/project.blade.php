@@ -6,11 +6,7 @@
 		<div class="col-lg-8">
 
 			<div class="d-block shadow-lg rounded mb-4">
-				@if(config('app.env') != 'production')
-					<img src="https://lorempixel.com/730/400/" class="img-fluid" alt="{{ $project->title }}">
-				@else
-					<img src="{{ Voyager::image($project->thumbnail('medium', 'image')) }}" class="img-fluid" alt="{{ $project->title }}">
-				@endif
+				<img src="{{ Voyager::image($project->thumbnail('medium', 'image')) }}" class="img-fluid" alt="{{ $project->title }}">
 			</div>
 
 			<div class="card border-0 shadow mb-4">
