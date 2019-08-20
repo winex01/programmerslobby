@@ -42,7 +42,7 @@ class SubmitCodeController extends Controller
             'description' => $request->description,
             'image' => $imageName,
             'sourcecode_link' => $request->code,
-            'status' => 'PUBLISHED',
+            'status' => 'PENDING',
         ]);
 
         toastr()->success('Submitted successfully!');
