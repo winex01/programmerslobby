@@ -62,10 +62,6 @@
                                 <button type="submit" class="btn btn-primary">Send</button>
                             </div>
                         </form>
-
-                        <br>
-
-                        @include('layouts.inspire')
                 </div>
             </div>
 

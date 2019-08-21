@@ -93,10 +93,6 @@
                                 <button type="submit" class="btn btn-success btn-block">Submit Code</button>
                             </div>
                         </form>
-
-                        <br>
-
-                        @include('layouts.inspire')
                 </div>
             </div>
 

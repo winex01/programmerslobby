@@ -27,6 +27,8 @@
         <div id="app">
             @include('layouts.navbar')
             <div class="container mt-70">
+                @yield('main_title')
+                @include('layouts.inspire')
                @yield('content')
             </div>
             {{-- footer --}}

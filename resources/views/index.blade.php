@@ -1,13 +1,11 @@
 
 @extends('layouts.master')
 
-@section('content')
+@section('main_title')
     <h1 class="text-center">Get Source Code For Free</h1>
+@endsection
 
-    <div class="mb-n4">
-        @include('layouts.inspire')
-    </div>
-
+@section('content')
     @foreach($projects->chunk('3') as $chunk)
         <div class="row">
             @foreach($chunk as $project)

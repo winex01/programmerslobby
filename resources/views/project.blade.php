@@ -30,7 +30,6 @@
 						</span>
 					</p>
 					<hr>
-					@include('layouts.inspire')
 					{!! $project->description !!}
 				</div>
 			</div>
