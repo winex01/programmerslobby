@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SubmitCodeRequest;
 use App\Project;
+use App\Tag;
+use Carbon\Carbon;
 
 class SubmitCodeController extends Controller
 {
@@ -20,7 +22,8 @@ class SubmitCodeController extends Controller
                                     ->inRandomOrder()
                                     ->limit(6)->get();
                                     
-        return view('submit-code', compact('suggestedProject'));
+        $tags = Tag::orderBy('description')->get();                                    
+        return view('submit-code', compact('suggestedProject', 'tags'));
     }
 
     /**
@@ -31,15 +34,20 @@ class SubmitCodeController extends Controller
      */
     public function store(SubmitCodeRequest $request)
     {
+        $date = Carbon::now();
+        $monthYear = $date->format('F').$date->year;
+        $imageName = $request->image->store('public/projects/'.$monthYear);
+        $imageName = str_replace('public/', '', $imageName);
+
         auth()->user()->projects()->create([
             'title' => $request->title,
             'description' => $request->description,
-            'image' => 'https://lorempixel.com/330/220/?29435',
-            'sourcecode_link' => 'https://github.com',
-            'status' => 'PUBLISHED',
-        ]);
+            'image' => $imageName,
+            'sourcecode_link' => $request->code,
+            'status' => 'PENDING',
+        ])->tags()->attach($request->tags);
 
-        toastr()->success('Submitted successfully!');
+        toastr()->success('Submitted successfully! Your code are now being reviewed!');
         return redirect()->back();
     }
 

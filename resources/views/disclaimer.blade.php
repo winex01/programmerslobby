@@ -51,9 +51,6 @@
                            If you have any concern or question regarding our copyright policy, Please don't forget to <a href="{{ route('about') }}">Contact</a> Us on this website. So we can take a proper action as soon as possible.
                         </p>
 
-                        <br>
-
-                        @include('layouts.inspire')
                 </div>
             </div>
 

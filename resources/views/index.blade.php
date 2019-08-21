@@ -1,13 +1,11 @@
 
 @extends('layouts.master')
 
-@section('content')
+@section('main_title')
     <h1 class="text-center">Get Source Code For Free</h1>
+@endsection
 
-    <div class="mb-n4">
-        @include('layouts.inspire')
-    </div>
-
+@section('content')
     @foreach($projects->chunk('3') as $chunk)
         <div class="row">
             @foreach($chunk as $project)
@@ -16,11 +14,7 @@
                         <p class="blog-meta">By <a href="#">{{ $project->author->name }}</a> <span>{{ $project->created_at->toFormattedDateString() }}</span></p>
                         
                         <div class="hovereffect">
-                            @if(config('app.env') != 'production')
-                                <img class="mb-1" src="{{ $project->image }}" class="img-responsive" alt="{{ $project->title }}">
-                            @else
-                                <img class="mb-1" src="{{ Voyager::image($project->thumbnail('cropped', 'image')) }}" class="img-responsive" alt="{{ $project->title }}">
-                            @endif
+                            <img class="mb-1" src="{{ Voyager::image($project->thumbnail('cropped', 'image')) }}" class="img-responsive" alt="{{ $project->title }}">
                             <div class="overlay">
                                <h2>
                                     @foreach($project->tags->pluck('description') as $tag)

@@ -19,10 +19,6 @@
                         <p>Always Remember Keep it <a target="__blank" href="https://www.google.com/search?rlz=1C1CHBD_enPH835PH835&ei=XpdPXbiZMcLbhwOo8pCABg&q=DRY+programming&oq=DRY+programming&gs_l=psy-ab.3..0l3j0i22i30l7.6786.8657..8801...0.0..0.130.1735.0j15....2..0....1..gws-wiz.......0i71j35i39j0i67j0i273j0i131j0i22i10i30.sw6jODDTGI4&ved=0ahUKEwi4wOm7-_njAhXC7WEKHSg5BGAQ4dUDCAo&uact=5">DRY</a> :)</p>
 
                         <p>If you have any concerns or question please contact us <a href="{{ route('contact') }}">here.</a></p>
-
-                        <br>
-
-                        @include('layouts.inspire')
                 </div>
             </div>
 

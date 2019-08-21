@@ -38,9 +38,6 @@
                             <li class="mb-2">From time to time this website may also include links to other websites. These links are provided for your convenience to provide further information. They do not signify that we endorse the website(s). We have no responsibility for the content of the linked website(s).</li>
                         </ul>
 
-                        <br>
-
-                        @include('layouts.inspire')
                 </div>
             </div>
 

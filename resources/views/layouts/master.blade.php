@@ -27,9 +27,8 @@
         <div id="app">
             @include('layouts.navbar')
             <div class="container mt-70">
-                <div class="alert alert-warning">
-                    <strong>BETA TEST!</strong> All info or uploaded projects will get deleted in OPEN BETA
-                </div>
+                @yield('main_title')
+                @include('layouts.inspire')
                @yield('content')
             </div>
             {{-- footer --}}

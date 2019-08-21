@@ -28,7 +28,8 @@ class SubmitCodeRequest extends FormRequest
             'description' => 'required|min:200',
             'image' => 'required',
             'code' => 'required',
-            'g-recaptcha-response' => 'required|captcha'
+            'g-recaptcha-response' => 'required|captcha',
+            'tags' => 'required'
         ];
     }
 
