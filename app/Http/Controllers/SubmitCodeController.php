@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SubmitCodeRequest;
 use App\Project;
+use App\Tag;
 use Carbon\Carbon;
 
 class SubmitCodeController extends Controller
@@ -21,7 +22,8 @@ class SubmitCodeController extends Controller
                                     ->inRandomOrder()
                                     ->limit(6)->get();
                                     
-        return view('submit-code', compact('suggestedProject'));
+        $tags = Tag::orderBy('description')->get();                                    
+        return view('submit-code', compact('suggestedProject', 'tags'));
     }
 
     /**

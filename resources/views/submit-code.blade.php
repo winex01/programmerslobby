@@ -57,7 +57,15 @@
                                 @enderror
                             </div>
 
-                            {{-- TODO tags --}}
+                            {{-- tags --}}
+                            <div class="form-group">
+                                <label for="tags">Tags: </label>
+                                <select class="form-control js-example-basic-multiple" id="tags" name="tags[]" multiple="multiple">
+                                  @foreach($tags as $tag)
+                                    <option value="{{ $tag->id }}">{{ $tag->description }}</option>
+                                  @endforeach
+                                </select>
+                            </div>
 
                             <div class="form-group">
                                 {!! NoCaptcha::display() !!}
@@ -91,8 +99,18 @@
     <br>
 @endsection
 
+@push('css')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
+@endpush
+
 @push('js')
  {!! NoCaptcha::renderJs() !!}
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
+ <script type="text/javascript">
+     $(document).ready(function() {
+        $('.js-example-basic-multiple').select2();
+    });
+ </script>
 @endpush
 
 @include('layouts.tiny-mce')
