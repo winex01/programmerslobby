@@ -4,11 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 use TCG\Voyager\Traits\Resizable;
 
 class Project extends Model
 {
     use Resizable; 
+    use HasSlug;
 
     protected $guarded = [];
 

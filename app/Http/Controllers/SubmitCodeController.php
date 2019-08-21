@@ -45,7 +45,7 @@ class SubmitCodeController extends Controller
             'image' => $imageName,
             'sourcecode_link' => $request->code,
             'status' => 'PENDING',
-        ]);
+        ])->tags()->attach($request->tags);
 
         toastr()->success('Submitted successfully! Your code are now being reviewed!');
         return redirect()->back();

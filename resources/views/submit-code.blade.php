@@ -60,11 +60,23 @@
                             {{-- tags --}}
                             <div class="form-group">
                                 <label for="tags">Tags: </label>
-                                <select class="form-control js-example-basic-multiple" id="tags" name="tags[]" multiple="multiple">
+                                <select class="form-control @error('description') is-invalid @enderror" id="tags" name="tags[]" multiple="multiple">
                                   @foreach($tags as $tag)
-                                    <option value="{{ $tag->id }}">{{ $tag->description }}</option>
+                                    <option 
+                                        @if(old('tags'))
+                                            @if(in_array($tag->id, old('tags') )) 
+                                                selected 
+                                            @endif 
+                                        @endif
+                                    value="{{ $tag->id }}">{{ $tag->description }}</option>
                                   @endforeach
                                 </select>
+
+                                @error('tags')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
 
                             <div class="form-group">
@@ -108,7 +120,7 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
  <script type="text/javascript">
      $(document).ready(function() {
-        $('.js-example-basic-multiple').select2();
+        $('#tags').select2();
     });
  </script>
 @endpush
