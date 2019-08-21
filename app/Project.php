@@ -64,12 +64,14 @@ class Project extends Model
     // Attributes
     public function getMetaDescriptionAttribute($value)
     {
-        return (empty($value)) ? $this->description : $value;
+        $attr = (empty($value)) ? $this->description : $value;
+        return strip_tags($attr);
     }
 
     public function getSeoTitleAttribute($value)
     {
-        return (empty($value)) ? $this->title : $value;
+        $attr = (empty($value)) ? $this->title : $value;
+        return strip_tags($attr);
     }
 
     public function getTagDescriptionAttribute()

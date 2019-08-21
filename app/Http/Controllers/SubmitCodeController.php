@@ -45,7 +45,7 @@ class SubmitCodeController extends Controller
             'status' => 'PENDING',
         ]);
 
-        toastr()->success('Submitted successfully!');
+        toastr()->success('Submitted successfully! Your code are now being reviewed!');
         return redirect()->back();
     }
 

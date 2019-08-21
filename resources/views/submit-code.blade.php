@@ -47,7 +47,7 @@
 
                             {{-- link code --}}
                             <div class="form-group">
-                                <label for="code">Sourcecode Link: (ex. <a target="__blank" href="https://github.com/">Github</a>, <a target="__blank" href="https://gitlab.com/">Gitlab</a>, <a target="__blank" href="https://mediafire.com/">Mediafire</a> etc.) </label>
+                                <label for="code">Sourcecode Link: (ex. <a target="__blank" href="https://github.com/">Github</a>, <a target="__blank" href="https://gitlab.com/">Gitlab</a>, <a target="__blank" href="https://mediafire.com/">Mediafire</a>, <a target="__blank" href="https://sourceforge.net/">Sourceforge</a> etc.) </label>
                                 <input type="text" class="form-control @error('code') is-invalid @enderror" id="code" placeholder="github.com/winex01/programmerslobby" name="code" value="{{ old('code') }}">
 
                                 @error('code')

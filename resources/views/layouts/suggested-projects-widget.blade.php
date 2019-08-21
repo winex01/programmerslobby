@@ -7,12 +7,7 @@
 			@foreach($suggestedProject as $row)
 				<div class="col-6 mb-4">
 					<div class="hovereffect">
-                        @if(config('app.env') != 'production')
-                        	<img id="suggested-widget" class="mb-1" src="https://lorempixel.com/250/167/" class="img-responsive" alt="{{ $row->title }}">
-                        @else
-                        	<img id="suggested-widget" class="mb-1" src="{{ Voyager::image($row->thumbnail('small', 'image')) }}" class="img-responsive" alt="{{ $row->title }}">
-                        @endif
-
+                    	<img id="suggested-widget" class="mb-1" src="{{ Voyager::image($row->thumbnail('small', 'image')) }}" class="img-responsive" alt="{{ $row->title }}">
                         <div class="overlay">
                            <a class="info" style="font-size: 10px;" href="{{ route('project', $row->slug) }}">
                            		{{ $row->title }}
