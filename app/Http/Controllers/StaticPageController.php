@@ -77,16 +77,16 @@ class StaticPageController extends Controller
 
     public function contact()
     {
-        SEOMeta::setTitle('About Us');
+        SEOMeta::setTitle('Contact Us');
         SEOMeta::setCanonical(url()->current());
         // desc default
 
-        OpenGraph::setTitle('About Us');
+        OpenGraph::setTitle('Contact Us');
         OpenGraph::setUrl(url()->current());
         OpenGraph::addProperty('type', 'article');
         // desc default
 
-        Twitter::setTitle('About Us');
+        Twitter::setTitle('Contact Us');
         // site default
         
         return view('contact-us', [
