@@ -6,6 +6,9 @@ use App\Http\Requests\SubmitCodeRequest;
 use App\Project;
 use App\Tag;
 use Carbon\Carbon;
+use SEOMeta;
+use OpenGraph;
+use Twitter;
 
 class SubmitCodeController extends Controller
 {
@@ -18,6 +21,18 @@ class SubmitCodeController extends Controller
     public function create()
     {
         //
+        SEOMeta::setTitle('Submit Code');
+        SEOMeta::setCanonical(url()->current());
+        // desc default
+
+        OpenGraph::setTitle('Submit Code');
+        OpenGraph::setUrl(url()->current());
+        OpenGraph::addProperty('type', 'article');
+        // desc default
+
+        Twitter::setTitle('Submit Code');
+        // site default
+
         $suggestedProject = Project::select('slug', 'title', 'image')
                                     ->inRandomOrder()
                                     ->limit(6)->get();

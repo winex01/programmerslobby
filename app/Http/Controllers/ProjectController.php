@@ -19,15 +19,15 @@ class ProjectController extends Controller
     {
         
         SEOMeta::setTitle('Home');
-        SEOMeta::setCanonical('http://programmerslobby.com/');
+        SEOMeta::setCanonical(url()->current());
         // desc default
 
         OpenGraph::setTitle('Home');
-        OpenGraph::setUrl('http://programmerslobby.com/');
+        OpenGraph::setUrl(url()->current());
         OpenGraph::addProperty('type', 'article');
         // desc default
 
-        Twitter::setTitle('Homepage');
+        Twitter::setTitle('Home');
         // site default
 
         $projects = Project::published()->orderBy('created_at', 'DESC')->paginate(6);
