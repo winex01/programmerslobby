@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use App\Traits\SuggestedProjects;
 use Illuminate\Http\Request;
 use SEOMeta;
 use OpenGraph;
@@ -10,15 +11,7 @@ use Twitter;
 
 class MyProjectController extends Controller
 {
-
-    protected $suggestedProject;
-
-	public function __construct()
-	{
-		$this->suggestedProject = Project::select('slug', 'title', 'image')
-									->inRandomOrder()
-									->limit(6)->get();
-	}
+    use SuggestedProjects;
 
     /**
      * Display a listing of the resource.
@@ -41,7 +34,7 @@ class MyProjectController extends Controller
         // site default
 
         return view('my-projects', [
-    		'suggestedProject' => $this->suggestedProject
+    		'suggestedProject' => $this->suggestedProjects()
     	]);
     }
 

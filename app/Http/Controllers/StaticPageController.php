@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use App\Traits\SuggestedProjects;
 use Illuminate\Http\Request;
 use SEOMeta;
 use OpenGraph;
@@ -10,13 +11,13 @@ use Twitter;
 
 class StaticPageController extends Controller
 {
+    use SuggestedProjects;
+
 	protected $suggestedProject;
 
 	public function __construct()
 	{
-		$this->suggestedProject = Project::select('slug', 'title', 'image')
-									->inRandomOrder()
-									->limit(6)->get();
+        $this->suggestedProject = $this->suggestedProjects();
 	}
 
     public function disclaimer()
@@ -69,7 +70,7 @@ class StaticPageController extends Controller
 
         Twitter::setTitle('About Us');
         // site default
-        
+
         return view('about-us', [
             'suggestedProject' => $this->suggestedProject
         ]);
@@ -88,7 +89,7 @@ class StaticPageController extends Controller
 
         Twitter::setTitle('Contact Us');
         // site default
-        
+
         return view('contact-us', [
             'suggestedProject' => $this->suggestedProject
         ]);

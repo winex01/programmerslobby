@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SubmitCodeRequest;
 use App\Project;
 use App\Tag;
+use App\Traits\SuggestedProjects;
 use Carbon\Carbon;
 use SEOMeta;
 use OpenGraph;
@@ -12,6 +13,7 @@ use Twitter;
 
 class SubmitCodeController extends Controller
 {
+    use SuggestedProjects;
 
     /**
      * Show the form for creating a new resource.
@@ -33,11 +35,9 @@ class SubmitCodeController extends Controller
         Twitter::setTitle('Submit Code');
         // site default
 
-        $suggestedProject = Project::select('slug', 'title', 'image')
-                                    ->inRandomOrder()
-                                    ->limit(6)->get();
-                                    
-        $tags = Tag::orderBy('description')->get();                                    
+        $suggestedProject = $this->suggestedProjects();
+
+        $tags = Tag::orderBy('description')->get();
         return view('submit-code', compact('suggestedProject', 'tags'));
     }
 
