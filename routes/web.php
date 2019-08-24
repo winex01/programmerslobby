@@ -27,7 +27,8 @@ Route::get('login/provider/{provider}', 'Auth\LoginController@redirectToProvider
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('login.provider.callback');
 Route::middleware(['auth'])->group(function () {
 	Route::get('submit-code', 'SubmitCodeController@create')->name('submit.code');
-	Route::post('submit-code', 'SubmitCodeController@store')->name('submit.code.store');
+    Route::post('submit-code', 'SubmitCodeController@store')->name('submit.code.store');
+	Route::get('my-projects', 'MyProjectController@index')->name('my.projects');
 });
 
 // auth admin

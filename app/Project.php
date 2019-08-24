@@ -9,7 +9,7 @@ use TCG\Voyager\Traits\Resizable;
 
 class Project extends Model
 {
-    use Resizable; 
+    use Resizable;
     use HasSlug;
 
     protected $guarded = [];
