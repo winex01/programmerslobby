@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use App\Traits\SuggestedProjects;
 use Illuminate\Http\Request;
 use SEOMeta;
 use OpenGraph;
@@ -10,6 +11,8 @@ use Twitter;
 
 class ProjectController extends Controller
 {
+    use SuggestedProjects;
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +20,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        
+
         SEOMeta::setTitle('Home');
         SEOMeta::setCanonical(url()->current());
         // desc default
@@ -42,11 +45,8 @@ class ProjectController extends Controller
      */
     public function show($slug)
     {
-        $project = Project::where('slug', $slug)->published()->first();
-        $suggestedProject = Project::select('slug', 'title', 'image')
-                                    ->where('slug', '!=', $slug)
-                                    ->inRandomOrder()
-                                    ->limit(6)->get();
+        $project = Project::where('slug', $slug)->published()->firstOrFail();
+        $suggestedProject = $this->suggestedProjects();
 
         SEOMeta::setTitle($project->seo_title);
         SEOMeta::setDescription($project->meta_description);
@@ -70,11 +70,11 @@ class ProjectController extends Controller
             ->setArticle([
                 'published_time' => $project->published_at->toW3CString(),
                 'modified_time' => $project->modified_at->toW3CString(),
-                'author' => $project->author->name, 
+                'author' => $project->author->name,
                 'section' => 'Application',
                 'tag' => $project->tag_description->toArray()
         ]);
-            
+
         return view('project', compact('project', 'suggestedProject'));
     }
 

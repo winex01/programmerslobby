@@ -22,7 +22,7 @@
             <input id="search-box" class="form-control form-control-sm" type="search" placeholder="Search..." aria-label="Search">
         </form> --}}
 
-        
+
         <!-- Right Side Of Navbar -->
         <ul class="navbar-nav">
             <!-- Authentication Links -->
@@ -42,6 +42,10 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('my.projects') }}">
+                            {{ __('My Projects') }}
+                        </a>
+
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
