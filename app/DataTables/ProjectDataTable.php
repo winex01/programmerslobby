@@ -49,6 +49,10 @@ class ProjectDataTable extends DataTable
     {
         return $this->builder()
                     ->columns($this->getColumns())
+                    ->parameters([
+                        'responsive' => true,
+                        'autoWidth' => false
+                    ])
                     ->minifiedAjax();
                     // ->addAction(['width' => '80px']);
                     // ->parameters($this->getBuilderParameters());
