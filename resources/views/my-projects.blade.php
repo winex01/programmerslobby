@@ -8,7 +8,8 @@
             <div class="card border-0 shadow mb-4">
                 <div class="card-body">
 
-                    <h1>My Projects</h1>
+                    <h3>My Projects</h3>
+                    <hr>
 
                     {!! $dataTable->table() !!}
 
@@ -27,9 +28,14 @@
 @endsection
 
 
-@section('js')
+@push('css')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css">
-    <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
+@endpush
+@push('js')
+    {{-- <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.js"></script> --}}
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js" defer ></script>
     <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
     {!! $dataTable->scripts() !!}
-@stop
+@endpush

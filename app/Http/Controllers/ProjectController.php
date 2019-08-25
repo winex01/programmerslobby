@@ -45,7 +45,7 @@ class ProjectController extends Controller
      */
     public function show($slug)
     {
-        $project = Project::where('slug', $slug)->published()->first();
+        $project = Project::where('slug', $slug)->published()->firstOrFail();
         $suggestedProject = $this->suggestedProjects();
 
         SEOMeta::setTitle($project->seo_title);

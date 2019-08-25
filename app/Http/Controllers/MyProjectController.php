@@ -2,24 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\DataTables\ProjectsDataTable;
-use App\Project;
-use App\Traits\SuggestedProjects;
-use Illuminate\Http\Request;
 use SEOMeta;
-use OpenGraph;
 use Twitter;
+use OpenGraph;
+use App\Project;
+use Illuminate\Http\Request;
+use App\Traits\SuggestedProjects;
+use App\DataTables\ProjectDataTable;
+use App\DataTables\Scopes\ProjectScopeDataTable;
 
 class MyProjectController extends Controller
 {
     use SuggestedProjects;
+
+    protected $dataTable;
+
+    public function __construct(ProjectDataTable $projectDataTable)
+    {
+        $this->dataTable = $projectDataTable;
+    }
 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(ProjectsDataTable $projectsDataTable)
+    public function index()
     {
         //
         SEOMeta::setTitle('My Projects');
@@ -34,17 +42,11 @@ class MyProjectController extends Controller
         Twitter::setTitle('My Projects');
         // site default
 
-
-        return $projectsDataTable
-            ->render('my-projects', [
-                'suggestedProject' => $this->suggestedProjects()
+        return $this->dataTable
+        ->addScope(new ProjectScopeDataTable)
+        ->render('my-projects', [
+            'suggestedProject' => $this->suggestedProjects()
         ]);
-
-        // return $this->dataTable
-        // ->addScope(new ActivityLogDataTableScope)
-        // ->render('vendor.voyager.activity-log.browse', [
-        //     'dataType' => $this->dataType($slug)
-        // ]);
     }
 
 }
