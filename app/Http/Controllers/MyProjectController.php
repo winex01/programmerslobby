@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\ProjectsDataTable;
 use App\Project;
 use App\Traits\SuggestedProjects;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class MyProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(ProjectsDataTable $projectsDataTable)
     {
         //
         SEOMeta::setTitle('My Projects');
@@ -33,9 +34,17 @@ class MyProjectController extends Controller
         Twitter::setTitle('My Projects');
         // site default
 
-        return view('my-projects', [
-    		'suggestedProject' => $this->suggestedProjects()
-    	]);
+
+        return $projectsDataTable
+            ->render('my-projects', [
+                'suggestedProject' => $this->suggestedProjects()
+        ]);
+
+        // return $this->dataTable
+        // ->addScope(new ActivityLogDataTableScope)
+        // ->render('vendor.voyager.activity-log.browse', [
+        //     'dataType' => $this->dataType($slug)
+        // ]);
     }
 
 }
