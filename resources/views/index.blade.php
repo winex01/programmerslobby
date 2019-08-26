@@ -12,17 +12,12 @@
                 <div class="col-md-4">
                     <div class="single-blog">
                         <p class="blog-meta">By <a href="#">{{ $project->author->name }}</a> <span>{{ $project->created_at->toFormattedDateString() }}</span></p>
-                        
+
                         <div class="hovereffect">
                             <img class="mb-1" src="{{ Voyager::image($project->thumbnail('cropped', 'image')) }}" class="img-responsive" alt="{{ $project->title }}">
                             <div class="overlay">
                                <h2>
-                                    @foreach($project->tags->pluck('description') as $tag)
-                                        {{ $tag }}
-                                         @if (!$loop->last)
-                                            {{ __(',') }}
-                                        @endif
-                                    @endforeach
+                                    {{ implode(', ', $project->tags->pluck('description')->toArray()) }}
                                </h2>
                                <a class="info" href="{{ route('project', $project->slug) }}">{{ __('Download Code') }}</a>
                             </div>
@@ -35,18 +30,18 @@
                         <p><a class="read-more-btn" href="{{ route('project', $project->slug) }}">{{ __('Read More') }}</a>
                             <span>
                                 {{-- <i class="fa fa-thumbs-o-up"></i> 7 {{ __('People like') }},  --}}
-                                
-                                <i class="fa fa-eye"></i> 
-                                {{ $project->views->count() }} 
-                                {{ str_plural(__('View'), $project->views->count() ) }}, 
-                                
+
+                                <i class="fa fa-eye"></i>
+                                {{ $project->views->count() }}
+                                {{ str_plural(__('View'), $project->views->count() ) }},
+
                                 <i class="fa fa-comments-o" aria-hidden="true"></i>
                                 <a href="{{ route('project', $project->slug) }}#disqus_thread">{{ __('...') }}</a>
 
                             </span>
                         </p>
-                    </div>  
-                </div>        
+                    </div>
+                </div>
             @endforeach
         </div>
     @endforeach
@@ -61,7 +56,7 @@
 <script id="dsq-count-scr" src="//{{ config('disqus.username') }}.disqus.com/count.js" async></script>
 <script>
     $(document).ready(function(){
-      $('[data-toggle="tooltip"]').tooltip(); 
+      $('[data-toggle="tooltip"]').tooltip();
     });
 </script>
 @endpush
