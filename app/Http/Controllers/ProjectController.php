@@ -48,6 +48,8 @@ class ProjectController extends Controller
         $project = Project::where('slug', $slug)->published()->firstOrFail();
         $suggestedProject = $this->suggestedProjects();
 
+        $projectImage = url('storage/'.$project->image);
+
         SEOMeta::setTitle($project->seo_title);
         SEOMeta::setDescription($project->meta_description);
         SEOMeta::addMeta('article:published_time', $project->published_at->toW3CString(), 'property');
@@ -59,10 +61,10 @@ class ProjectController extends Controller
         OpenGraph::setUrl(url()->current());
         OpenGraph::addProperty('type', 'article');
 
-        OpenGraph::addImage($project->image);
-        // OpenGraph::addImage($project->images->list('url'));
-        OpenGraph::addImage(['url' => $project->image, 'size' => 300]);
-        OpenGraph::addImage($project->image, ['height' => 300, 'width' => 300]);
+        OpenGraph::addImage($projectImage);
+        // OpenGraph::addImage($projectImages->list('url'));
+        OpenGraph::addImage(['url' => $projectImage, 'size' => 300]);
+        OpenGraph::addImage($projectImage, ['height' => 300, 'width' => 300]);
 
         OpenGraph::setTitle($project->seo_title)
             ->setDescription($project->meta_description)
