@@ -39,7 +39,7 @@ class ContactUsRequest extends FormRequest
     public function messages()
     {
         return [
-            'g-recaptcha-response.required' => 'Please verify that you are not a robocop :)',
+            'g-recaptcha-response.required' => 'Please verify that you are not robocop :)',
             'g-recaptcha-response.captcha' => 'Captcha error! try again later or contact site admin.'
         ];
     }
