@@ -91,6 +91,11 @@ class Project extends Model
         return $this->updated_at;
     }
 
+    public function getSubmittedByAttribute($value)
+    {
+        return $this->coded_by ?? $this->author->name;
+    }
+
     /**
      * Get the options for generating the slug.
      */
