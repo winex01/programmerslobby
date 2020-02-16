@@ -13,7 +13,7 @@
 				<div class="card-body">
 					<h4 class="m-0">{{ $project->title }}</h4>
 					<p class="blog-meta">
-						{{ __('Submitted by') }} <a href="javascript:(void);">{{ $project->author->name }}</a> 
+						{{ __('Submitted by') }} <a href="javascript:(void);">{{ $project->submittedBy }}</a> 
 						<span class="text-muted">
 							<br>
 							<sub>
