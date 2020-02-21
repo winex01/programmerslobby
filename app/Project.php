@@ -64,12 +64,6 @@ class Project extends Model
     // end Query Scope
 
     // Attributes
-    public function getSeoTitleAttribute($value)
-    {
-        $attr = (empty($value)) ? $this->title : $value;
-        return strip_tags($attr);
-    }
-
     public function getTagDescriptionAttribute()
     {
         return $this->tags->pluck('description');
