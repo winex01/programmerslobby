@@ -7,8 +7,8 @@
         <meta name="google-site-verification" content="AY_zW90WQDMzg72Wc-b2whZDKnEo2EjZfB_G0nnqTgA" />
 
         {!! SEOMeta::generate(true) !!}
-        {{-- {!! OpenGraph::generate(true) !!} --}}
-        {{-- {!! Twitter::generate(true) !!} --}}
+        {!! OpenGraph::generate(true) !!}
+        {!! Twitter::generate(true) !!}
 
         <title>{{ config('app.name') }}</title>
         <link rel="stylesheet" type="text/css" href="{{ mix('/css/app.css') }}">
