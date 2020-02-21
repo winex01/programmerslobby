@@ -51,14 +51,15 @@ class ProjectController extends Controller
         $projectImage = url('storage/'.$project->image);
         $projectDescription = removeWhiteSpaceAndSpecialChars($project->description);
 
-        SEOMeta::setTitle($project->seo_title);
+        SEOMeta::setTitle($project->title);
         SEOMeta::setDescription($projectDescription);
         SEOMeta::addMeta('article:published_time', $project->published_at->toW3CString(), 'property');
         SEOMeta::addMeta('article:section', 'Application', 'property');
+        SEOMeta::addKeyword($project->meta_keywords);
         SEOMeta::addKeyword($project->tag_description->toArray());
 
         OpenGraph::setDescription($projectDescription);
-        OpenGraph::setTitle($project->seo_title);
+        OpenGraph::setTitle($project->title);
         OpenGraph::setUrl(url()->current());
         OpenGraph::addProperty('type', 'article');
 
@@ -67,7 +68,7 @@ class ProjectController extends Controller
         OpenGraph::addImage(['url' => $projectImage, 'size' => 300]);
         OpenGraph::addImage($projectImage, ['height' => 300, 'width' => 300]);
 
-        OpenGraph::setTitle($project->seo_title)
+        OpenGraph::setTitle($project->title)
             ->setDescription($projectDescription)
             ->setType('article')
             ->setArticle([
