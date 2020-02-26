@@ -5,10 +5,10 @@ on:
     branches: master
 
 jobs:
-  phpunit:
+  building-application:
     runs-on: ubuntu-latest
     container:
-      image: kirschbaumdevelopment/laravel-test-runner:7.3
+      image: kirschbaumdevelopment/laravel-test-runner:7.2
 
     services:
       mysql:
