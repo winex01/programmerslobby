@@ -27,11 +27,10 @@ jobs:
 
     - name: Install composer dependencies
       run: |
-        composer install --no-scripts
+        composer install --no-dev
 
     - name: Prepare Laravel Application
       run: |
-        composer install --no-dev
         cp .env.ci .env
         php artisan key:generate
         php artisan migrate:fresh
