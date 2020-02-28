@@ -13,6 +13,8 @@
         "algolia/algoliasearch-client-php": "^2.3",
         "anhskohbo/no-captcha": "^3.0",
         "artesaos/seotools": "^0.14.0",
+        "deployer/deployer": "^6.7",
+        "deployer/recipes": "^6.2",
         "fideloper/proxy": "^4.0",
         "itsgoingd/clockwork": "^4.0",
         "laravel/framework": "5.8.*",
