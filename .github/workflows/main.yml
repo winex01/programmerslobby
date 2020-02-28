@@ -58,6 +58,10 @@ jobs:
         extension-csv: mbstring, bcmath
     - name: Composer install
       run: composer install
+    - name: Prepare env file
+      run: |
+        cp .env.ci .env
+        php artisan key:generate
     - name: Setup Deployer
       uses: atymic/deployer-php-action@master
       with:
