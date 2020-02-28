@@ -5,7 +5,8 @@ on:
     branches: master
 
 jobs:
-  building-application:
+  build-test:
+    name: Building & Testing Application
     runs-on: ubuntu-18.04
     container:
       image: kirschbaumdevelopment/laravel-test-runner:7.2
@@ -38,3 +39,15 @@ jobs:
 
     - name: Run Test
       run: vendor/bin/phpunit
+  deploy:
+    name: Deploy code to prod
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Deploy
+        uses: musps/action-deployer-php@master
+        with:
+          args: deploy prod
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
