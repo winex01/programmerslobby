@@ -46,15 +46,15 @@ jobs:
     if: github.ref == 'refs/heads/master'
     steps:
     - uses: actions/checkout@v1
-    - name: Download build assets
-      uses: actions/download-artifact@v1
-      with:
-        name: assets
-        path: public
+    # - name: Download build assets
+    #   uses: actions/download-artifact@v1
+    #   with:
+    #     name: assets
+    #     path: public
     - name: Setup PHP
       uses: shivammathur/setup-php@master
       with:
-        php-version: 7.3
+        php-version: 7.3 #7.3 sa package nga gamit
         extension-csv: mbstring, bcmath
     - name: Composer install
       run: composer install
