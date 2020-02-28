@@ -21,20 +21,20 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
-      - uses: actions/checkout@v1
-        with:
-          fetch-depth: 1
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
 
-      - name: Install composer dependencies
-        run: |
-          composer install --no-scripts
+    - name: Install composer dependencies
+      run: |
+        composer install --no-scripts
 
-      - name: Prepare Laravel Application
-        run: |
-          cp .env.ci .env
-          php artisan key:generate
-          php artisan migrate:fresh
-          php artisan voyager:install --with-dummy
+    - name: Prepare Laravel Application
+      run: |
+        cp .env.ci .env
+        php artisan key:generate
+        php artisan migrate:fresh
+        php artisan voyager:install --with-dummy
 
-      - name: Run Test
-        run: vendor/bin/phpunit
+    - name: Run Test
+      run: vendor/bin/phpunit
