@@ -76,13 +76,11 @@ jobs:
     #     DOT_ENV: ${{ secrets.DOT_ENV }}
     #   run: dep deploy production --tag=${{ env.GITHUB_REF }} -vvv
 
-
-
       
   deploy:
     name: Deploy code to prod
     runs-on: ubuntu-18.04
-    needs: [build-js, test-php]
+    # needs: [build-js, test-php]
     if: github.ref == 'refs/heads/master'
     steps:
       - name: Checkout
