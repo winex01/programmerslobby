@@ -1,5 +1,11 @@
 <?php 
 
+use App\Quotes\Programming;
+
+/**
+ * 
+ * 
+ */
 function removeWhiteSpaceAndSpecialChars($string) {
 
     return strip_tags(
@@ -8,3 +14,14 @@ function removeWhiteSpaceAndSpecialChars($string) {
 	    )
     );
 }
+
+/**
+ * 
+ * 
+ */
+function randomQuote() {
+	return Programming::quote();
+}
+
+
+
