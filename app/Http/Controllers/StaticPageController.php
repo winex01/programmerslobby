@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Project;
-use App\Traits\SuggestedProjects;
+use App\Traits\ProjectTrait;
 use Illuminate\Http\Request;
 use SEOMeta;
 use OpenGraph;
@@ -11,7 +11,7 @@ use Twitter;
 
 class StaticPageController extends Controller
 {
-    use SuggestedProjects;
+    use ProjectTrait;
 
 	protected $suggestedProject;
 

@@ -1,6 +1,12 @@
 <?php 
 
-use App\Quotes\Programming;
+/**
+ * 
+ * 
+ */
+function randomQuote() {
+	return \App\Quotes\Programming::quote();
+}
 
 /**
  * 
@@ -14,14 +20,3 @@ function removeWhiteSpaceAndSpecialChars($string) {
 	    )
     );
 }
-
-/**
- * 
- * 
- */
-function randomQuote() {
-	return Programming::quote();
-}
-
-
-
