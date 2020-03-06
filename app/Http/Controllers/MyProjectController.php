@@ -16,6 +16,7 @@ class MyProjectController extends Controller
     use ProjectTrait;
 
     protected $dataTable;
+    protected $viewFolder = 'my-projects.';
 
     public function __construct(ProjectDataTable $projectDataTable)
     {
@@ -44,7 +45,7 @@ class MyProjectController extends Controller
 
         return $this->dataTable
         ->addScope(new ProjectScopeDataTable)
-        ->render('my-projects', [
+        ->render($this->viewFolder.'index', [
             'suggestedProject' => $this->suggestedProjects()
         ]);
     }

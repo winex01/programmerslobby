@@ -14,6 +14,7 @@ class StaticPageController extends Controller
     use ProjectTrait;
 
 	protected $suggestedProject;
+    protected $viewFolder = 'static-pages.';
 
 	public function __construct()
 	{
@@ -34,7 +35,7 @@ class StaticPageController extends Controller
         Twitter::setTitle('Disclaimer');
         // site default
 
-    	return view('disclaimer', [
+    	return view($this->viewFolder.'disclaimer', [
     		'suggestedProject' => $this->suggestedProject
     	]);
     }
@@ -52,7 +53,7 @@ class StaticPageController extends Controller
 
         Twitter::setTitle('Terms And Privacy');
         // site default
-    	return view('terms-and-conditions', [
+    	return view($this->viewFolder.'terms-and-conditions', [
     		'suggestedProject' => $this->suggestedProject
     	]);
     }
@@ -71,7 +72,7 @@ class StaticPageController extends Controller
         Twitter::setTitle('About Us');
         // site default
 
-        return view('about-us', [
+        return view($this->viewFolder.'about-us', [
             'suggestedProject' => $this->suggestedProject
         ]);
     }
@@ -90,7 +91,7 @@ class StaticPageController extends Controller
         Twitter::setTitle('Contact Us');
         // site default
 
-        return view('contact-us', [
+        return view($this->viewFolder.'contact-us', [
             'suggestedProject' => $this->suggestedProject
         ]);
     }
