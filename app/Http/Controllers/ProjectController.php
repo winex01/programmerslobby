@@ -48,7 +48,7 @@ class ProjectController extends Controller
     public function show($slug)
     {
         $project = Project::where('slug', $slug)->published()->firstOrFail();
-        $suggestedProject = $this->suggestedProjects();
+        $suggestedProjects = $this->suggestedProjects();
 
         $projectImage = url('storage/'.$project->image);
         $projectDescription = removeWhiteSpaceAndSpecialChars($project->description);
@@ -81,7 +81,7 @@ class ProjectController extends Controller
                 'tag' => $project->tag_description->toArray()
         ]);
 
-        return view($this->viewFolder.'show', compact('project', 'suggestedProject'));
+        return view($this->viewFolder.'show', compact('project', 'suggestedProjects'));
     }
 
 }

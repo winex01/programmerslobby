@@ -46,7 +46,7 @@ class MyProjectController extends Controller
         return $this->dataTable
         ->addScope(new ProjectScopeDataTable)
         ->render($this->viewFolder.'index', [
-            'suggestedProject' => $this->suggestedProjects()
+            'suggestedProjects' => $this->suggestedProjects()
         ]);
     }
 
