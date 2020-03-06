@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Project;
-use App\Traits\SuggestedProjects;
+use App\Traits\ProjectTrait;
 use Illuminate\Http\Request;
-use SEOMeta;
 use OpenGraph;
+use SEOMeta;
 use Twitter;
 
 class ProjectController extends Controller
 {
-    use SuggestedProjects;
+    use ProjectTrait;
 
     /**
      * Display a listing of the resource.

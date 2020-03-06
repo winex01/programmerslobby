@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SubmitCodeRequest;
 use App\Project;
 use App\Tag;
-use App\Traits\SuggestedProjects;
+use App\Traits\ProjectTrait;
 use Carbon\Carbon;
 use SEOMeta;
 use OpenGraph;
@@ -13,7 +13,7 @@ use Twitter;
 
 class SubmitCodeController extends Controller
 {
-    use SuggestedProjects;
+    use ProjectTrait;
 
     /**
      * Show the form for creating a new resource.

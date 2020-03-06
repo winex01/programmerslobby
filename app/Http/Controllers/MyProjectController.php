@@ -7,13 +7,13 @@ use Twitter;
 use OpenGraph;
 use App\Project;
 use Illuminate\Http\Request;
-use App\Traits\SuggestedProjects;
+use App\Traits\ProjectTrait;
 use App\DataTables\ProjectDataTable;
 use App\DataTables\Scopes\ProjectScopeDataTable;
 
 class MyProjectController extends Controller
 {
-    use SuggestedProjects;
+    use ProjectTrait;
 
     protected $dataTable;
 

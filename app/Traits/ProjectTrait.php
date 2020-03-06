@@ -4,7 +4,7 @@ namespace App\Traits;
 
 use App\Project;
 
-trait SuggestedProjects {
+trait ProjectTrait {
 
     public function suggestedProjects($limit = 6)
     {
