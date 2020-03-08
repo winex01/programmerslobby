@@ -20,3 +20,12 @@ function removeWhiteSpaceAndSpecialChars($string) {
 	    )
     );
 }
+
+/**
+ * 
+ * 
+ */
+function shortenString($string, $limit = 180) {
+
+	return str_limit(strip_tags($string), $limit);
+}
