@@ -14,7 +14,7 @@ class AppBreadDataTypesTableSeeder extends Seeder
     {
         
 
-        \DB::table('data_types')->delete();
+        // \DB::table('data_types')->delete();
         
         \DB::table('data_types')->insert(array (
             0 => 
@@ -32,8 +32,8 @@ class AppBreadDataTypesTableSeeder extends Seeder
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => NULL,
-                'created_at' => '2019-07-21 01:58:57',
-                'updated_at' => '2019-07-21 01:58:57',
+                'created_at' => '2019-07-21 09:58:57',
+                'updated_at' => '2019-07-21 09:58:57',
             ),
             1 => 
             array (
@@ -50,8 +50,8 @@ class AppBreadDataTypesTableSeeder extends Seeder
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => NULL,
-                'created_at' => '2019-07-21 01:58:57',
-                'updated_at' => '2019-07-21 01:58:57',
+                'created_at' => '2019-07-21 09:58:57',
+                'updated_at' => '2019-07-21 09:58:57',
             ),
             2 => 
             array (
@@ -68,8 +68,8 @@ class AppBreadDataTypesTableSeeder extends Seeder
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => NULL,
-                'created_at' => '2019-07-21 01:58:57',
-                'updated_at' => '2019-07-21 01:58:57',
+                'created_at' => '2019-07-21 09:58:57',
+                'updated_at' => '2019-07-21 09:58:57',
             ),
             3 => 
             array (
@@ -86,8 +86,8 @@ class AppBreadDataTypesTableSeeder extends Seeder
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => NULL,
-                'created_at' => '2019-07-21 01:58:57',
-                'updated_at' => '2019-07-21 01:58:57',
+                'created_at' => '2019-07-21 09:58:57',
+                'updated_at' => '2019-07-21 09:58:57',
             ),
             4 => 
             array (
@@ -104,8 +104,8 @@ class AppBreadDataTypesTableSeeder extends Seeder
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":null,"scope":null}',
-                'created_at' => '2019-07-21 01:58:57',
-                'updated_at' => '2019-07-21 02:11:29',
+                'created_at' => '2019-07-21 09:58:57',
+                'updated_at' => '2019-07-21 10:11:29',
             ),
             5 => 
             array (
@@ -122,8 +122,8 @@ class AppBreadDataTypesTableSeeder extends Seeder
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => NULL,
-                'created_at' => '2019-07-21 01:58:57',
-                'updated_at' => '2019-07-21 01:58:57',
+                'created_at' => '2019-07-21 09:58:57',
+                'updated_at' => '2019-07-21 09:58:57',
             ),
             6 => 
             array (
@@ -140,8 +140,8 @@ class AppBreadDataTypesTableSeeder extends Seeder
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
-                'created_at' => '2019-07-21 02:04:00',
-                'updated_at' => '2019-08-03 13:49:38',
+                'created_at' => '2019-07-21 10:04:00',
+                'updated_at' => '2020-02-22 07:54:53',
             ),
             7 => 
             array (
@@ -158,8 +158,26 @@ class AppBreadDataTypesTableSeeder extends Seeder
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
-                'created_at' => '2019-07-26 13:30:04',
-                'updated_at' => '2019-07-26 13:32:59',
+                'created_at' => '2019-07-26 21:30:04',
+                'updated_at' => '2019-07-26 21:32:59',
+            ),
+            8 => 
+            array (
+                'id' => 12,
+                'name' => 'blogs',
+                'slug' => 'blogs',
+                'display_name_singular' => 'Blog',
+                'display_name_plural' => 'Blogs',
+                'icon' => 'voyager-treasure',
+                'model_name' => 'App\\Blog',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2020-03-08 12:25:26',
+                'updated_at' => '2020-03-08 12:37:20',
             ),
         ));
         
