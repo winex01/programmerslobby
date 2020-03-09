@@ -13,8 +13,6 @@ class ProjectController extends Controller
 {
     use ProjectTrait;
 
-    protected $viewFolder = 'projects.';
-
     /**
      * Display a listing of the resource.
      *
@@ -36,7 +34,7 @@ class ProjectController extends Controller
         // site default
 
         $projects = Project::published()->orderBy('created_at', 'DESC')->paginate(6);
-        return view($this->viewFolder.'index', compact('projects'));
+        return view(viewIndex('projects'), compact('projects'));
     }
 
     /**
@@ -81,7 +79,7 @@ class ProjectController extends Controller
                 'tag' => $project->tag_description->toArray()
         ]);
 
-        return view($this->viewFolder.'show', compact('project', 'suggestedProjects'));
+        return view(viewShow('projects'), compact('project', 'suggestedProjects'));
     }
 
 }

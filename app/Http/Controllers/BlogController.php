@@ -13,8 +13,6 @@ class BlogController extends Controller
 {
     use ProjectTrait;
 
-    protected $viewFolder = 'blogs.';
-
     /**
      * Display a listing of the resource.
      *
@@ -37,7 +35,7 @@ class BlogController extends Controller
         Twitter::setTitle('Blog');
         // site default
 
-        return view($this->viewFolder.'index', compact('blogs', 'suggestedProjects'));
+        return view(viewIndex('blogs'), compact('blogs', 'suggestedProjects'));
     }
 
     /**
@@ -80,6 +78,6 @@ class BlogController extends Controller
                 'tag' => $blog->meta_keywords
         ]);
 
-        return view($this->viewFolder.'show', compact('blog', 'suggestedProjects'));
+        return view(viewShow('blogs'), compact('blog', 'suggestedProjects'));
     }
 }
