@@ -34,7 +34,7 @@ class ProjectController extends Controller
         // site default
 
         $projects = Project::published()->orderBy('created_at', 'DESC')->paginate(6);
-        return view('index', compact('projects'));
+        return view(viewIndex('projects'), compact('projects'));
     }
 
     /**
@@ -46,7 +46,7 @@ class ProjectController extends Controller
     public function show($slug)
     {
         $project = Project::where('slug', $slug)->published()->firstOrFail();
-        $suggestedProject = $this->suggestedProjects();
+        $suggestedProjects = $this->suggestedProjects();
 
         $projectImage = url('storage/'.$project->image);
         $projectDescription = removeWhiteSpaceAndSpecialChars($project->description);
@@ -74,12 +74,12 @@ class ProjectController extends Controller
             ->setArticle([
                 'published_time' => $project->published_at->toW3CString(),
                 'modified_time' => $project->modified_at->toW3CString(),
-                'author' => $project->author->name,
+                'author' => $project->submittedBy,
                 'section' => 'Application',
                 'tag' => $project->tag_description->toArray()
         ]);
 
-        return view('project', compact('project', 'suggestedProject'));
+        return view(viewShow('projects'), compact('project', 'suggestedProjects'));
     }
 
 }

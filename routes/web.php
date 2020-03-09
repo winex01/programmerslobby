@@ -20,6 +20,8 @@ Route::get('/terms-and-privacy', 'StaticPageController@tos')->name('tos');
 Route::get('/about-us', 'StaticPageController@about')->name('about');
 Route::get('/contact-us', 'StaticPageController@contact')->name('contact');
 Route::post('/contact', 'ContactFormSubmitController@store')->name('contact.submit');
+Route::get('/blog', 'BlogController@index')->name('blog');
+Route::get('/blog/{blog}', 'BlogController@show')->name('blog.show');
 
 //auth
 Auth::routes();

@@ -6,7 +6,7 @@
                     <h3>Content</h3>
                     <ul>
                         <li><a href="{{ route('home') }}">{{ __('Projects') }}</a></li>
-                        <li><a href="#">{{ __('Blog') }}</a></li>
+                        <li><a href="{{ route('blog') }}">{{ __('Blog') }}</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-md-3 item">

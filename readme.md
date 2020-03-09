@@ -6,14 +6,14 @@
 - Composer install --no-dev
 - Configure .env file
 - php artisan key:generate
-- php artisan migrate:fresh
+- php artisan migrate
 - php artisan voyager:install --with-dummy
 	- email: admin@admin.com
 	- password: password
 - php artisan db:seed --class=ApplicationMenuTableSeeder
 - php artisan db:seed --class=ApplicationBreadTableSeeder
 - php artisan db:seed --class=ApplicationPermissionRolesTableSeeder
-- php artisan db:seed --class=ApplicationSettingsTableSeeder
+- php artisan db:seed --class=ApplicationSettingsTableSeeder(fresh install only)
 
 
 ## Make seeders

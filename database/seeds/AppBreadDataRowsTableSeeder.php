@@ -14,7 +14,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
     {
         
 
-        \DB::table('data_rows')->delete();
+        // \DB::table('data_rows')->delete();
         
         \DB::table('data_rows')->insert(array (
             0 => 
@@ -959,7 +959,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"slugify":{"origin":"title","forceUpdate":true},"validation":{"rule":"unique:posts,slug"}}',
-                'order' => 13,
+                'order' => 14,
             ),
             59 => 
             array (
@@ -970,12 +970,12 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'display_name' => 'Seo Title',
                 'required' => 0,
                 'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
                 'details' => '{}',
-                'order' => 14,
+                'order' => 15,
             ),
             60 => 
             array (
@@ -986,12 +986,12 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'display_name' => 'Meta Description',
                 'required' => 0,
                 'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
                 'details' => '{}',
-                'order' => 15,
+                'order' => 16,
             ),
             61 => 
             array (
@@ -1007,7 +1007,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{}',
-                'order' => 16,
+                'order' => 17,
             ),
             62 => 
             array (
@@ -1023,7 +1023,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"default":"DRAFT","options":{"PUBLISHED":"published","DRAFT":"draft","PENDING":"pending"}}',
-                'order' => 17,
+                'order' => 18,
             ),
             63 => 
             array (
@@ -1039,7 +1039,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{}',
-                'order' => 12,
+                'order' => 13,
             ),
             64 => 
             array (
@@ -1055,7 +1055,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{}',
-                'order' => 11,
+                'order' => 12,
             ),
             65 => 
             array (
@@ -1071,7 +1071,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 18,
+                'order' => 19,
             ),
             66 => 
             array (
@@ -1087,7 +1087,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 19,
+                'order' => 20,
             ),
             67 => 
             array (
@@ -1264,6 +1264,198 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'delete' => 1,
                 'details' => '{}',
                 'order' => 8,
+            ),
+            78 => 
+            array (
+                'id' => 101,
+                'data_type_id' => 8,
+                'field' => 'coded_by',
+                'type' => 'text',
+                'display_name' => 'Coded By',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"description":"Optional"}',
+                'order' => 11,
+            ),
+            79 => 
+            array (
+                'id' => 102,
+                'data_type_id' => 12,
+                'field' => 'id',
+                'type' => 'text',
+                'display_name' => 'Id',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 1,
+            ),
+            80 => 
+            array (
+                'id' => 103,
+                'data_type_id' => 12,
+                'field' => 'title',
+                'type' => 'text',
+                'display_name' => 'Title',
+                'required' => 1,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"validation":{"rule":"required|min:10"}}',
+                'order' => 2,
+            ),
+            81 => 
+            array (
+                'id' => 104,
+                'data_type_id' => 12,
+                'field' => 'slug',
+                'type' => 'text',
+                'display_name' => 'Slug',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{"slugify":{"origin":"title","forceUpdate":true},"validation":{"rule":"unique:posts,slug"}}',
+                'order' => 3,
+            ),
+            82 => 
+            array (
+                'id' => 105,
+                'data_type_id' => 12,
+                'field' => 'image',
+                'type' => 'image',
+                'display_name' => 'Image',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"resize":{"width":"1000","height":"null"},"quality":"70%","upsize":true,"thumbnails":[{"name":"small","scale":"25%"},{"name":"medium","crop":{"width":"730","height":"400"}},{"name":"cropped","crop":{"width":"330","height":"220"}}]}',
+                'order' => 4,
+            ),
+            83 => 
+            array (
+                'id' => 106,
+                'data_type_id' => 12,
+                'field' => 'body',
+                'type' => 'rich_text_box',
+                'display_name' => 'Body',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"validation":{"rule":"required|min:200"}}',
+                'order' => 5,
+            ),
+            84 => 
+            array (
+                'id' => 107,
+                'data_type_id' => 12,
+                'field' => 'meta_keywords',
+                'type' => 'text',
+                'display_name' => 'Meta Keywords',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 6,
+            ),
+            85 => 
+            array (
+                'id' => 108,
+                'data_type_id' => 12,
+                'field' => 'status',
+                'type' => 'select_dropdown',
+                'display_name' => 'Status',
+                'required' => 1,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"default":"DRAFT","options":{"PUBLISHED":"published","DRAFT":"draft","PENDING":"pending"}}',
+                'order' => 8,
+            ),
+            86 => 
+            array (
+                'id' => 109,
+                'data_type_id' => 12,
+                'field' => 'author_id',
+                'type' => 'text',
+                'display_name' => 'Author Id',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 11,
+            ),
+            87 => 
+            array (
+                'id' => 110,
+                'data_type_id' => 12,
+                'field' => 'created_at',
+                'type' => 'timestamp',
+                'display_name' => 'Created At',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 9,
+            ),
+            88 => 
+            array (
+                'id' => 111,
+                'data_type_id' => 12,
+                'field' => 'updated_at',
+                'type' => 'timestamp',
+                'display_name' => 'Updated At',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 10,
+            ),
+            89 => 
+            array (
+                'id' => 112,
+                'data_type_id' => 12,
+                'field' => 'blog_belongsto_user_relationship',
+                'type' => 'relationship',
+                'display_name' => 'Author',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"model":"\\\\App\\\\User","table":"users","type":"belongsTo","column":"author_id","key":"id","label":"name","pivot_table":"blogs","pivot":"0","taggable":"0"}',
+                'order' => 7,
             ),
         ));
         

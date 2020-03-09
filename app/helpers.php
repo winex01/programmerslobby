@@ -20,3 +20,30 @@ function removeWhiteSpaceAndSpecialChars($string) {
 	    )
     );
 }
+
+/**
+ * 
+ * 
+ */
+function shortenString($string, $limit = 180) {
+
+	return str_limit(strip_tags($string), $limit);
+}
+
+/**
+ * 
+ * 
+ */
+ function viewIndex($folder) {
+
+ 	return $folder.'.index';
+ }
+
+ /**
+ * 
+ * 
+ */
+ function viewShow($folder) {
+ 	
+ 	return $folder.'.show';
+ }

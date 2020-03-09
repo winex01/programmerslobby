@@ -4,7 +4,7 @@
 		<p class="small mb-4">{{ __('Browse one of these random projects!') }}</p>
 	
 		<div class="row">
-			@foreach($suggestedProject as $row)
+			@foreach($suggestedProjects as $row)
 				<div class="col-6 mb-4">
 					<div class="hovereffect">
                     	<img id="suggested-widget" class="mb-1" src="{{ Voyager::image($row->thumbnail('small', 'image')) }}" class="img-responsive" alt="{{ $row->title }}">

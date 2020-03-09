@@ -14,7 +14,7 @@ class AppPermissionRolesRolesTableSeeder extends Seeder
     {
         
 
-        \DB::table('roles')->delete();
+        // \DB::table('roles')->delete();
         
         \DB::table('roles')->insert(array (
             0 => 
@@ -22,16 +22,16 @@ class AppPermissionRolesRolesTableSeeder extends Seeder
                 'id' => 1,
                 'name' => 'admin',
                 'display_name' => 'Administrator',
-                'created_at' => '2019-07-21 01:58:57',
-                'updated_at' => '2019-07-21 01:58:57',
+                'created_at' => '2019-07-21 09:58:57',
+                'updated_at' => '2019-07-21 09:58:57',
             ),
             1 => 
             array (
                 'id' => 2,
                 'name' => 'user',
                 'display_name' => 'Normal User',
-                'created_at' => '2019-07-21 01:58:57',
-                'updated_at' => '2019-07-21 01:58:57',
+                'created_at' => '2019-07-21 09:58:57',
+                'updated_at' => '2019-07-21 09:58:57',
             ),
         ));
         

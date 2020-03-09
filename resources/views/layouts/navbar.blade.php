@@ -8,8 +8,8 @@
     </button>
     <div class="navbar-collapse collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item {{ active(['home', 'project/*']) }}"><a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a></li>
-            {{-- <li class="nav-item"><a class="nav-link" href="#">{{ __('Blog') }}</a></li> --}}
+            <li class="nav-item"><a class="nav-link {{ active(['home', 'project/*']) }}" href="{{ route('home') }}">{{ __('Home') }}</a></li>
+            <li class="nav-item"><a class="nav-link {{ active(['blog', 'blog/*']) }}" href="{{ route('blog') }}">{{ __('Blog') }}</a></li>
             <li class="nav-item"><a class="nav-link {{ active('disclaimer') }}" href="{{ route('disclaimer') }}">{{ __('Disclaimer') }}</a></li>
             <li class="nav-item"><a class="nav-link {{ active('tos') }}" href="{{ route('tos') }}">{{ __('Terms & Privacy') }}</a></li>
             <li class="nav-item"><a class="nav-link {{ active('about') }}" href="{{ route('about') }}">{{ __('About') }}</a></li>
