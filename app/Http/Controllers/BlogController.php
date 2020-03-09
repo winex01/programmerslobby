@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Blog;
 use App\Traits\ProjectTrait;
 use Illuminate\Http\Request;
+use OpenGraph;
+use SEOMeta;
+use Twitter;
 
 class BlogController extends Controller
 {
@@ -22,7 +25,18 @@ class BlogController extends Controller
         $suggestedProjects = $this->suggestedProjects();
         $blogs = Blog::published()->orderBy('created_at', 'DESC')->simplePaginate(3); //Temporary lng
 
-        //TODO: SEO
+        SEOMeta::setTitle('Blog');
+        SEOMeta::setCanonical(url()->current());
+        // desc default
+
+        OpenGraph::setTitle('Blog');
+        OpenGraph::setUrl(url()->current());
+        OpenGraph::addProperty('type', 'article');
+        // desc default
+
+        Twitter::setTitle('Blog');
+        // site default
+
         return view($this->viewFolder.'index', compact('blogs', 'suggestedProjects'));
     }
 
@@ -37,7 +51,35 @@ class BlogController extends Controller
         $blog = Blog::where('slug', $slug)->published()->firstOrFail();
         $suggestedProjects = $this->suggestedProjects();
         
-        //TODO: SEO 
+        $image = url('storage/'.$blog->image);
+        $desc = removeWhiteSpaceAndSpecialChars($blog->body);
+
+        SEOMeta::setTitle($blog->title);
+        SEOMeta::setDescription($desc);
+        SEOMeta::addMeta('article:published_time', $blog->published_at->toW3CString(), 'property');
+        SEOMeta::addMeta('article:section', 'Application', 'property');
+        SEOMeta::addKeyword($blog->meta_keywords);
+
+        OpenGraph::setDescription($desc);
+        OpenGraph::setTitle($blog->title);
+        OpenGraph::setUrl(url()->current());
+        OpenGraph::addProperty('type', 'article');
+
+        OpenGraph::addImage($image);
+        OpenGraph::addImage(['url' => $image, 'size' => 300]);
+        OpenGraph::addImage($image, ['height' => 300, 'width' => 300]);
+
+        OpenGraph::setTitle($blog->title)
+            ->setDescription($desc)
+            ->setType('article')
+            ->setArticle([
+                'published_time' => $blog->published_at->toW3CString(),
+                'modified_time' => $blog->modified_at->toW3CString(),
+                'author' => $blog->submittedBy,
+                'section' => 'Application',
+                'tag' => $blog->meta_keywords
+        ]);
+
         return view($this->viewFolder.'show', compact('blog', 'suggestedProjects'));
     }
 }

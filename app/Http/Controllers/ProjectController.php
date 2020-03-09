@@ -76,7 +76,7 @@ class ProjectController extends Controller
             ->setArticle([
                 'published_time' => $project->published_at->toW3CString(),
                 'modified_time' => $project->modified_at->toW3CString(),
-                'author' => $project->author->name,
+                'author' => $project->submittedBy,
                 'section' => 'Application',
                 'tag' => $project->tag_description->toArray()
         ]);

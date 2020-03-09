@@ -46,6 +46,11 @@ class Blog extends Model
         return $this->author->name;
     }
 
+    public function getModifiedAtAttribute()
+    {
+        return $this->updated_at;
+    }
+
     /**
      * Get the options for generating the slug.
      */
