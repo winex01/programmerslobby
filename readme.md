@@ -49,6 +49,7 @@
 - CLOCKWORK_WEB=false #http://your.app/__clockwork
 - CLOCKWORK_WEB_DARK_THEME=false #dark theme
 
+- php artisan cache:clear
 - php artisan config:cache
 - php artisan view:cache
 - php artisan route:cache
