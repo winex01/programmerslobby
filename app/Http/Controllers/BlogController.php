@@ -22,7 +22,7 @@ class BlogController extends Controller
         $suggestedProjects = $this->suggestedProjects();
         $blogs = Blog::published()->orderBy('created_at', 'DESC')->simplePaginate(3); //Temporary lng
 
-        //
+        //TODO: SEO
         return view($this->viewFolder.'index', compact('blogs', 'suggestedProjects'));
     }
 
@@ -34,6 +34,10 @@ class BlogController extends Controller
      */
     public function show($slug)
     {
-        //
+        $blog = Blog::where('slug', $slug)->published()->firstOrFail();
+        $suggestedProjects = $this->suggestedProjects();
+        
+        //TODO: SEO 
+        return view($this->viewFolder.'show', compact('blog', 'suggestedProjects'));
     }
 }
