@@ -17,6 +17,9 @@
         {{-- @toastr_css --}}
         @stack('css')
         @stack('js-top')
+
+        <script data-ad-client="ca-pub-5207069007168829" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
     </head>
     <body>
         <div id="app">
