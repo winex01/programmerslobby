@@ -43,9 +43,7 @@
 		
 	</div>
 
-	<div class="row">
-		@include('adsense.square')
-	</div>
+	@include('adsense.square')
 
 	<br>
 @endsection
