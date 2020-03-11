@@ -96,13 +96,10 @@
                 </div>
             </div>
 
-            @include('adsense.square')
-            
         </div>
 
         <div class="col-lg-4">
             @include('layouts.facebook-page-widget')
-            @include('adsebse.side')
             @include('layouts.suggested-projects-widget')
         </div>
         

@@ -28,6 +28,7 @@
                 @yield('main_title')
                 @include('layouts.inspire')
                @yield('content')
+               @include('adsense.square')
             </div>
             {{-- footer --}}
             @include('layouts.footer')
