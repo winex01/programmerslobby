@@ -26,6 +26,7 @@
 
         <div class="col-lg-4">
             @include('layouts.facebook-page-widget')
+            @include('adsense.side')
             @include('layouts.suggested-projects-widget')
         </div>
         
