@@ -6,7 +6,7 @@ use App\Project;
 
 trait ProjectTrait {
 
-    public function suggestedProjects($limit = 6)
+    public function suggestedProjects($limit = 4)
     {
         return Project::select('slug', 'title', 'image')
         ->published()

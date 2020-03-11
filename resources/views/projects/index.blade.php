@@ -51,8 +51,6 @@
         {{ $projects->links() }}
     </div>
 
-    @include('adsense.square')
-    
 @endsection
 
 @push('js')

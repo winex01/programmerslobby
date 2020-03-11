@@ -20,3 +20,5 @@
 		<a href="{{ route('home') }}" class="btn btn-outline-primary btn-block">{{ __('View More Projects') }}</a>
 	</div>
 </div>
+
+@include('adsense.vertical')
