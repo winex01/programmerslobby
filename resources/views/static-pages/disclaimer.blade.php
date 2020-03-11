@@ -54,6 +54,8 @@
                 </div>
             </div>
 
+            @include('adsense.square')
+            
         </div>
 
         <div class="col-lg-4">
@@ -64,7 +66,5 @@
         
     </div>
 
-    @include('adsense.square')
-   
     <br>
 @endsection
