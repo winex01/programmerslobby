@@ -177,7 +177,7 @@ class AppBreadDataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2020-03-08 12:25:26',
-                'updated_at' => '2020-03-08 12:37:20',
+                'updated_at' => '2020-03-11 13:31:58',
             ),
         ));
         

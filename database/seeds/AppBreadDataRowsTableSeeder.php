@@ -1391,7 +1391,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"default":"DRAFT","options":{"PUBLISHED":"published","DRAFT":"draft","PENDING":"pending"}}',
-                'order' => 8,
+                'order' => 9,
             ),
             86 => 
             array (
@@ -1407,7 +1407,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{}',
-                'order' => 11,
+                'order' => 12,
             ),
             87 => 
             array (
@@ -1423,7 +1423,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 9,
+                'order' => 10,
             ),
             88 => 
             array (
@@ -1439,7 +1439,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 10,
+                'order' => 11,
             ),
             89 => 
             array (
@@ -1456,6 +1456,22 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'delete' => 1,
                 'details' => '{"model":"\\\\App\\\\User","table":"users","type":"belongsTo","column":"author_id","key":"id","label":"name","pivot_table":"blogs","pivot":"0","taggable":"0"}',
                 'order' => 7,
+            ),
+            90 => 
+            array (
+                'id' => 114,
+                'data_type_id' => 12,
+                'field' => 'blog_belongstomany_blog_relationship',
+                'type' => 'relationship',
+                'display_name' => 'Total Views',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{"model":"\\\\App\\\\Blog","table":"blogs","type":"hasOne","column":"id","key":"id","label":"totalViews","pivot_table":"blog_views","pivot":"0","taggable":"0"}',
+                'order' => 8,
             ),
         ));
         
