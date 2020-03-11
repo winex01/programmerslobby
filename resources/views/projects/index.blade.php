@@ -24,7 +24,7 @@
                         </div>
 
                         <h2><a href="{{ route('project', $project->slug) }}" data-toggle="tooltip" title="{{ $project->title }}">{{ str_limit($project->title, 35) }}</a></h2>
-                        <p class="blog-text">
+                        <p class="blog-text mt-n2">
                             {!! shortenString($project->description, 180) !!}
                         </p>
                         <p><a class="read-more-btn" href="{{ route('project', $project->slug) }}">{{ __('Read More') }}</a>
