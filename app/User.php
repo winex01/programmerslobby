@@ -43,6 +43,11 @@ class User extends \TCG\Voyager\Models\User
         return $this->belongsToMany('App\Project', 'project_views')->withTimestamps();
     }
 
+    public function viewedBlogs()
+    {
+        return $this->belongsToMany('App\Project', 'blog_views')->withTimestamps();
+    }
+
     public function providers()
     {
         return $this->belongsToMany('App\Provider')->withTimestamps();
