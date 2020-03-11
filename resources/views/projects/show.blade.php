@@ -35,6 +35,7 @@
 				</div>
 			</div>
 
+			@include('adsense.square')
 			@include('layouts.disqus-comments-widget')
 			
 		</div>
@@ -42,6 +43,7 @@
 		<div class="col-lg-4">
 			@include('layouts.download-links-widget')
 			@include('layouts.facebook-page-widget')
+			@include('adsense.side')
 			@include('layouts.suggested-projects-widget')
 		</div>
 		
