@@ -14,7 +14,7 @@
                         <p class="blog-meta">By <a href="#">{{ $project->submittedBy }}</a> <span>{{ $project->created_at->toFormattedDateString() }}</span></p>
 
                         <div class="hovereffect">
-                            <img class="mb-1" src="{{ Voyager::image($project->thumbnail('cropped', 'image')) }}" class="img-responsive" alt="{{ $project->title }}">
+                            <img class="mb-2" src="{{ Voyager::image($project->thumbnail('cropped', 'image')) }}" class="img-responsive" alt="{{ $project->title }}">
                             <div class="overlay">
                                <h2>
                                     {{ implode(', ', $project->tags->pluck('description')->toArray()) }}
