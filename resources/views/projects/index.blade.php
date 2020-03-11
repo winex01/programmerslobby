@@ -50,6 +50,10 @@
     <div class="mt-4">
         {{ $projects->links() }}
     </div>
+
+    <div class="row">
+        @include('adsense.square')
+    </div>
 @endsection
 
 @push('js')
