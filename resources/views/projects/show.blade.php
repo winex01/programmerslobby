@@ -18,17 +18,18 @@
 							<br>
 							<sub>
 								{{ __('Published') }} {{ $project->created_at->toDayDateTimeString() }}
-								{{-- {{ __('Last Updated').' '.$project->updated_at->toDayDateTimeString() }} --}}
 							</sub>
 						</span>
 						
-
 						<span class="text-dark pull-right">
 							<i class="fa fa-eye" aria-hidden="true"></i> 
 							{{ $project->totalViews }}
 							{{ str_plural(__('view'), $project->views->count() ) }}
 						</span>
 					</p>
+					
+					@include('layouts.social-media-share')
+
 					<hr>
 					{!! $project->description !!}
 				</div>
@@ -47,3 +48,12 @@
 	</div>
 	<br>
 @endsection
+
+@push('js')
+	<script src="{{ asset('js/share.js') }}"></script>
+	<script type="text/javascript">
+		$('#social-links').find('ul').addClass('list-inline list-group list-group-horizontal');
+		$('#social-links').find('li').css('margin-right', 10);
+	</script>
+@endpush
+
