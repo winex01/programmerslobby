@@ -15,6 +15,12 @@
 							{{ __('Published') }} {{ $blog->created_at->toDayDateTimeString() }}
 						</span>
 					</p>
+
+					@include('layouts.social-media-share', [
+						'description' => $blog->body,
+						'author' => $blog->submittedBy
+					])
+					
 					<hr>
 					{!! $blog->body !!}
 				</div>

@@ -18,17 +18,18 @@
 							<br>
 							<sub>
 								{{ __('Published') }} {{ $project->created_at->toDayDateTimeString() }}
-								{{-- {{ __('Last Updated').' '.$project->updated_at->toDayDateTimeString() }} --}}
 							</sub>
 						</span>
 						
-
 						<span class="text-dark pull-right">
 							<i class="fa fa-eye" aria-hidden="true"></i> 
 							{{ $project->totalViews }}
 							{{ str_plural(__('view'), $project->views->count() ) }}
 						</span>
 					</p>
+					
+					@include('layouts.social-media-share')
+
 					<hr>
 					{!! $project->description !!}
 				</div>

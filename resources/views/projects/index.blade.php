@@ -14,7 +14,7 @@
                         <p class="blog-meta">By <a href="#">{{ $project->submittedBy }}</a> <span>{{ $project->created_at->toFormattedDateString() }}</span></p>
 
                         <div class="hovereffect">
-                            <img class="mb-1" src="{{ Voyager::image($project->thumbnail('cropped', 'image')) }}" class="img-responsive" alt="{{ $project->title }}">
+                            <img class="mb-2" src="{{ Voyager::image($project->thumbnail('cropped', 'image')) }}" class="img-responsive" alt="{{ $project->title }}">
                             <div class="overlay">
                                <h2>
                                     {{ implode(', ', $project->tags->pluck('description')->toArray()) }}
@@ -24,7 +24,7 @@
                         </div>
 
                         <h2><a href="{{ route('project', $project->slug) }}" data-toggle="tooltip" title="{{ $project->title }}">{{ str_limit($project->title, 35) }}</a></h2>
-                        <p class="blog-text">
+                        <p class="blog-text mt-n2">
                             {!! shortenString($project->description, 180) !!}
                         </p>
                         <p><a class="read-more-btn" href="{{ route('project', $project->slug) }}">{{ __('Read More') }}</a>
