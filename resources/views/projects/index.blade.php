@@ -32,7 +32,7 @@
                                 {{-- <i class="fa fa-thumbs-o-up"></i> 7 {{ __('People like') }},  --}}
 
                                 <i class="fa fa-eye"></i>
-                                {{ $project->views->count() }}
+                                {{ $project->totalViews }}
                                 {{ str_plural(__('View'), $project->views->count() ) }},
 
                                 <i class="fa fa-comments-o" aria-hidden="true"></i>

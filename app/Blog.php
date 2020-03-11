@@ -15,6 +15,8 @@ class Blog extends Model
 
     protected $guarded = [];
 
+    public $additional_attributes = ['totalViews'];
+
     // Carbon instance fields
     protected $dates = ['created_at'];
 
@@ -22,6 +24,11 @@ class Blog extends Model
     public function author()
     {
     	return $this->belongsTo('App\User');
+    }
+
+    public function views()
+    {
+        return $this->belongsToMany('App\User', 'blog_views')->withTimestamps();
     }
 
     // Query Scope
@@ -49,6 +56,11 @@ class Blog extends Model
     public function getModifiedAtAttribute()
     {
         return $this->updated_at;
+    }
+
+    public function getTotalViewsAttribute()
+    {
+        return $this->views->count();
     }
 
     /**

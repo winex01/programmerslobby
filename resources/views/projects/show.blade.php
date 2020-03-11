@@ -25,7 +25,7 @@
 
 						<span class="text-dark pull-right">
 							<i class="fa fa-eye" aria-hidden="true"></i> 
-							{{ $project->views->count() }} 
+							{{ $project->totalViews }}
 							{{ str_plural(__('view'), $project->views->count() ) }}
 						</span>
 					</p>

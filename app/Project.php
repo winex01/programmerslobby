@@ -84,6 +84,11 @@ class Project extends Model
         return $this->coded_by ?? $this->author->name;
     }
 
+    public function getTotalViewsAttribute()
+    {
+        return $this->views->count();
+    }
+
     /**
      * Get the options for generating the slug.
      */
