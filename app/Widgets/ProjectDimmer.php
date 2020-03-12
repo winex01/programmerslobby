@@ -2,12 +2,12 @@
 
 namespace App\Widgets;
 
-use App\Blog;
+use App\Project;
 use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Widgets\BaseDimmer;
 
-class BlogDimmer extends BaseDimmer
+class ProjectDimmer extends BaseDimmer
 {
     /**
      * The configuration array.
@@ -20,10 +20,10 @@ class BlogDimmer extends BaseDimmer
      * Treat this method as a controller action.
      * Return view() or other content to display.
      */
-    public function run(Blog $blog)
+    public function run(Project $project)
     {
-        $count = $blog->totalPublishedCount;
-        $string = 'Published Blogs';
+        $count = $project->totalPublishedCount;
+        $string = 'Published Projects';
 
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-news',
@@ -31,9 +31,9 @@ class BlogDimmer extends BaseDimmer
             'text'   => widgetText($string,$count),
             'button' => [
                 'text' => widgetButton($string),
-                'link' => route('voyager.blogs.index'),
+                'link' => route('voyager.projects.index'),
             ],
-            'image' => voyager_asset('images/widget-backgrounds/02.jpg'),
+            'image' => voyager_asset('images/widget-backgrounds/03.jpg'),
         ]));
     }
 
@@ -44,6 +44,6 @@ class BlogDimmer extends BaseDimmer
      */
     public function shouldBeDisplayed()
     {
-        return auth()->user()->can('browse', app(Blog::class));
+        return auth()->user()->can('browse', app(Project::class));
     }
 }

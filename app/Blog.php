@@ -63,12 +63,12 @@ class Blog extends Model
         return $this->views->count();
     }
 
-    public function getTotalBlogsAttribute()
+    public function getTotalCountAttribute()
     {
         return $this->count();
     }
 
-    public function getTotalPublishedBlogsAttribute()
+    public function getTotalPublishedCountAttribute()
     {
         return $this->published()->count();
     }

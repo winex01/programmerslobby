@@ -89,6 +89,16 @@ class Project extends Model
         return $this->views->count();
     }
 
+    public function getTotalCountAttribute()
+    {
+        return $this->count();
+    }
+
+    public function getTotalPublishedCountAttribute()
+    {
+        return $this->published()->count();
+    }
+
     /**
      * Get the options for generating the slug.
      */
