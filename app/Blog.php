@@ -63,6 +63,16 @@ class Blog extends Model
         return $this->views->count();
     }
 
+    public function getTotalBlogsAttribute()
+    {
+        return $this->count();
+    }
+
+    public function getTotalPublishedBlogsAttribute()
+    {
+        return $this->published()->count();
+    }
+
     /**
      * Get the options for generating the slug.
      */
