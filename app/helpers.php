@@ -4,6 +4,25 @@
  * 
  * 
  */
+function widgetButton($string)
+{
+	return 'View all '.$string;
+}
+
+/**
+ * 
+ * 
+ */
+function widgetText($string, $count = 0)
+{
+	$string = strtolower($string);
+	return 'You have '.$count.' '.$string.' in your database. Click on button below to view all '.$string.'.';
+}
+
+/**
+ * 
+ * 
+ */
 function randomQuote() {
 	return \App\Quotes\Programming::quote();
 }
