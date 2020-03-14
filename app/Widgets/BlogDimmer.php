@@ -22,7 +22,7 @@ class BlogDimmer extends BaseDimmer
      */
     public function run(Blog $blog)
     {
-        $count = $blog->totalPublishedCount;
+        $count = number_format($blog->totalPublishedCount);
         $string = 'Published Blogs';
 
         return view('voyager::dimmer', array_merge($this->config, [
