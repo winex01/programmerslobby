@@ -73,6 +73,16 @@ class Blog extends Model
         return $this->published()->count();
     }
 
+    public function getOverallViewsAttribute()
+    {   
+        $total = 0;
+        foreach ($this->all() as $temp) {
+            $total += $temp->totalViews;
+        }
+        return $total;
+    }
+
+
     /**
      * Get the options for generating the slug.
      */

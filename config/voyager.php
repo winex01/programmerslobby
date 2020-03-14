@@ -148,9 +148,11 @@ return [
             'TCG\\Voyager\\Widgets\\UserDimmer',
             'App\\Widgets\\BlogDimmer',
             'App\\Widgets\\ProjectDimmer',
+            'App\\Widgets\\TagDimmer',
+            'App\\Widgets\\OverallProjectViewsDimmer',
+            'App\\Widgets\\OverallBlogViewsDimmer',
             // 'TCG\\Voyager\\Widgets\\PostDimmer',
             // 'TCG\\Voyager\\Widgets\\PageDimmer',
-            // TODO: tags, overall blogs view, overall project views
         ],
 
     ],

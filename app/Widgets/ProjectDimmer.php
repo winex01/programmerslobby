@@ -22,11 +22,11 @@ class ProjectDimmer extends BaseDimmer
      */
     public function run(Project $project)
     {
-        $count = $project->totalPublishedCount;
+        $count = number_format($project->totalPublishedCount);
         $string = 'Published Projects';
 
         return view('voyager::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-news',
+            'icon'   => 'voyager-documentation',
             'title'  => "{$count} {$string}",
             'text'   => widgetText($string,$count),
             'button' => [
