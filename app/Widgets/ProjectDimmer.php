@@ -26,7 +26,7 @@ class ProjectDimmer extends BaseDimmer
         $string = 'Published Projects';
 
         return view('voyager::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-news',
+            'icon'   => 'voyager-documentation',
             'title'  => "{$count} {$string}",
             'text'   => widgetText($string,$count),
             'button' => [
