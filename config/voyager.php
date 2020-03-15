@@ -146,6 +146,8 @@ return [
 
         'widgets' => [
             'TCG\\Voyager\\Widgets\\UserDimmer',
+            'App\\Widgets\\UnfinishedBlogDimmer',
+            'App\\Widgets\\PendingProjectDimmer',
             'App\\Widgets\\BlogDimmer',
             'App\\Widgets\\ProjectDimmer',
             'App\\Widgets\\TagDimmer',

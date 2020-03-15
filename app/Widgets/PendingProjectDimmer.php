@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Widgets\BaseDimmer;
 
-class OverallProjectViewsDimmer extends BaseDimmer
+class PendingProjectDimmer extends BaseDimmer
 {
     /**
      * The configuration array.
@@ -22,18 +22,18 @@ class OverallProjectViewsDimmer extends BaseDimmer
      */
     public function run(Project $project)
     {
-        $count = number_format($project->overallViews);
-        $string = 'Overall Project Views';
+        $count = number_format($project->totalPendingCount);
+        $string = 'Pending Projects';
 
         return view('voyager::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-receipt',
+            'icon'   => 'voyager-warning',
             'title'  => "{$count} {$string}",
             'text'   => widgetText($string,$count),
             'button' => [
                 'text' => widgetButton($string),
                 'link' => route('voyager.projects.index'),
             ],
-            'image' => 'images/widgets/overall-project-views.jpg',
+            'image' => 'images/widgets/pending-projects.jpg',
         ]));
     }
 

@@ -45,6 +45,11 @@ class Project extends Model
     	return $query->where('status', '!=', 'PUBLISHED');
     }
 
+    public function scopePending($query)
+    {
+        return $query->where('status', 'PENDING');
+    }
+
     public function getHasCodeLinkAttribute()
     {
         if($this->github_link) {
@@ -97,6 +102,11 @@ class Project extends Model
     public function getTotalPublishedCountAttribute()
     {
         return $this->published()->count();
+    }
+
+    public function getTotalPendingCountAttribute()
+    {
+        return $this->pending()->count();
     }
 
     public function getOverallViewsAttribute()

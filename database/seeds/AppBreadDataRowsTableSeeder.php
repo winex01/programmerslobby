@@ -12,10 +12,6 @@ class AppBreadDataRowsTableSeeder extends Seeder
      */
     public function run()
     {
-        
-
-        // \DB::table('data_rows')->delete();
-        
         \DB::table('data_rows')->insert(array (
             0 => 
             array (
@@ -1022,7 +1018,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{"default":"DRAFT","options":{"PUBLISHED":"published","DRAFT":"draft","PENDING":"pending"}}',
+                'details' => '{"default":"DRAFT","options":{"PUBLISHED":"published","DRAFT":"draft","PENDING":"pending","REJECT":"reject"}}',
                 'order' => 18,
             ),
             63 => 
@@ -1390,7 +1386,7 @@ class AppBreadDataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{"default":"DRAFT","options":{"PUBLISHED":"published","DRAFT":"draft","PENDING":"pending"}}',
+                'details' => '{"default":"DRAFT","options":{"PUBLISHED":"published","DRAFT":"draft","PENDING":"pending","REJECT":"reject"}}',
                 'order' => 9,
             ),
             86 => 
