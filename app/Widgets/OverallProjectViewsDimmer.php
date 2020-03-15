@@ -26,7 +26,7 @@ class OverallProjectViewsDimmer extends BaseDimmer
         $string = 'Overall Project Views';
 
         return view('voyager::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-documentation',
+            'icon'   => 'voyager-receipt',
             'title'  => "{$count} {$string}",
             'text'   => widgetText($string,$count),
             'button' => [
