@@ -30,7 +30,7 @@ class ProjectDimmer extends BaseDimmer
             'title'  => "{$count} {$string}",
             'text'   => widgetText($string,$count),
             'button' => [
-                'text' => 'View all projects',
+                'text' => widgetButton($string),
                 'link' => route('voyager.projects.index'),
             ],
             'image' => voyager_asset('images/widget-backgrounds/03.jpg'),

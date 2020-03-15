@@ -2,12 +2,12 @@
 
 namespace App\Widgets;
 
-use App\Blog;
+use App\Project;
 use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Widgets\BaseDimmer;
 
-class OverallBlogViewsDimmer extends BaseDimmer
+class PendingProjectDimmer extends BaseDimmer
 {
     /**
      * The configuration array.
@@ -20,20 +20,20 @@ class OverallBlogViewsDimmer extends BaseDimmer
      * Treat this method as a controller action.
      * Return view() or other content to display.
      */
-    public function run(Blog $blog)
+    public function run(Project $project)
     {
-        $count = number_format($blog->overallViews);
-        $string = 'Overall Blog Views';
+        $count = number_format($project->totalPendingCount);
+        $string = 'Pending Projects';
 
         return view('voyager::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-pie-chart',
+            'icon'   => 'voyager-warning',
             'title'  => "{$count} {$string}",
             'text'   => widgetText($string,$count),
             'button' => [
                 'text' => widgetButton($string),
-                'link' => route('voyager.blogs.index'),
+                'link' => route('voyager.projects.index'),
             ],
-            'image' => 'images/widgets/overall-blog-views.jpg',
+            'image' => 'images/widgets/pending-projects.jpg',
         ]));
     }
 
@@ -44,6 +44,6 @@ class OverallBlogViewsDimmer extends BaseDimmer
      */
     public function shouldBeDisplayed()
     {
-        return auth()->user()->can('browse', app(Blog::class));
+        return auth()->user()->can('browse', app(Project::class));
     }
 }

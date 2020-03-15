@@ -30,7 +30,7 @@ class BlogDimmer extends BaseDimmer
             'title'  => "{$count} {$string}",
             'text'   => widgetText($string,$count),
             'button' => [
-                'text' => 'View all blogs',
+                'text' => widgetButton($string),
                 'link' => route('voyager.blogs.index'),
             ],
             'image' => voyager_asset('images/widget-backgrounds/02.jpg'),

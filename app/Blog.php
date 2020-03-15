@@ -42,6 +42,17 @@ class Blog extends Model
     	return $query->where('status', '!=', 'PUBLISHED');
     }
 
+    public function scopePending($query)
+    {
+        return $query->where('status', 'PENDING');
+    }
+
+    public function scopeUnfinished($query)
+    {
+        return $query->where('status', '!=', 'REJECT')
+        ->unpublished();
+    }
+
     // Attributes
     public function getPublishedAtAttribute()
     {
@@ -71,6 +82,16 @@ class Blog extends Model
     public function getTotalPublishedCountAttribute()
     {
         return $this->published()->count();
+    }
+
+    public function getTotalPendingCountAttribute()
+    {
+        return $this->pending()->count();
+    }
+
+    public function getTotalUnfinishedCountAttribute()
+    {
+        return $this->unfinished()->count();
     }
 
     public function getOverallViewsAttribute()

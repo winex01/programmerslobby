@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Widgets\BaseDimmer;
 
-class OverallBlogViewsDimmer extends BaseDimmer
+class UnfinishedBlogDimmer extends BaseDimmer
 {
     /**
      * The configuration array.
@@ -22,18 +22,18 @@ class OverallBlogViewsDimmer extends BaseDimmer
      */
     public function run(Blog $blog)
     {
-        $count = number_format($blog->overallViews);
-        $string = 'Overall Blog Views';
+        $count = number_format($blog->totalUnfinishedCount);
+        $string = 'Unfinished Blogs';
 
         return view('voyager::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-pie-chart',
+            'icon'   => 'voyager-dot-3',
             'title'  => "{$count} {$string}",
             'text'   => widgetText($string,$count),
             'button' => [
                 'text' => widgetButton($string),
                 'link' => route('voyager.blogs.index'),
             ],
-            'image' => 'images/widgets/overall-blog-views.jpg',
+            'image' => 'images/widgets/unfinished-blogs.jpg',
         ]));
     }
 
