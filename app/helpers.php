@@ -6,7 +6,7 @@
  */
 function widgetButton($string)
 {
-	return 'View all '.$string;
+	return 'View all '.strtolower($string);
 }
 
 /**
