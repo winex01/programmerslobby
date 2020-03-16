@@ -13,7 +13,7 @@
 						<img src="{{ Voyager::image($blog->thumbnail('medium', 'image')) }}" class="img-fluid" alt="{{ $blog->title }}">
 						<h4 class="m-0 mt-2">{{ $blog->title }}</h4>
 						<p class="blog-meta">
-							{{ __('By') }} {{ $blog->submittedBy }} 
+							{{ __('By') }} <strong class="text-primary">{{ $blog->submittedBy }}</strong> 
 							<span class="text-muted">
 								{{ __('Published') }} {{ $blog->publishedDate }}
 							</span>
