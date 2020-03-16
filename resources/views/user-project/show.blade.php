@@ -11,7 +11,7 @@
 				<div class="card border-0 shadow mb-4">
 					<div class="card-body">
 						<img src="{{ Voyager::image($project->thumbnail('medium', 'image')) }}" class="img-fluid" alt="{{ $project->title }}">
-						<h4 class="m-0 mt-2"><a href="{{ route('project', $project->slug) }}">{{ $project->title }}</a></h4>
+						<h4 class="m-0 mt-2">{{ $project->title }}</h4>
 						<p class="blog-meta">
 							{{ __('By') }} <a href="{{ route('user.projects', [$project->author_id, $project->submittedBy]) }}">{{ $project->submittedBy }}</a> 
 							<span class="text-muted">
