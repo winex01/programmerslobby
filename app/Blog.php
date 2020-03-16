@@ -94,6 +94,11 @@ class Blog extends Model
         return $this->unfinished()->count();
     }
 
+    public function getPublishedDateAttribute()
+    {
+        return $this->created_at->toDayDateTimeString();
+    }
+
     public function getOverallViewsAttribute()
     {   
         $total = 0;

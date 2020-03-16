@@ -21,7 +21,7 @@ class BlogController extends Controller
     public function index()
     {
         $suggestedProjects = $this->suggestedProjects();
-        $blogs = Blog::published()->orderBy('created_at', 'DESC')->simplePaginate(3); //Temporary lng
+        $blogs = Blog::published()->latest()->simplePaginate(3); //Temporary lng
 
         SEOMeta::setTitle('Blog');
         SEOMeta::setCanonical(url()->current());

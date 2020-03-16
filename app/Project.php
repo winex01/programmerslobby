@@ -109,6 +109,11 @@ class Project extends Model
         return $this->pending()->count();
     }
 
+    public function getPublishedDateAttribute()
+    {
+        return $this->created_at->toFormattedDateString();
+    }
+
     public function getOverallViewsAttribute()
     {   
         $total = 0;
