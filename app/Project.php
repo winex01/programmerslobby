@@ -91,7 +91,7 @@ class Project extends Model
 
     public function getTotalViewsAttribute()
     {
-        return $this->views->count();
+        return $this->views->count(); // TODO: how to add parameter in attribute, number_format
     }
 
     public function getTotalCountAttribute()

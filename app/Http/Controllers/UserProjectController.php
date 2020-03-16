@@ -21,7 +21,7 @@ class UserProjectController extends Controller
      */
     public function show(User $user, $submittedBy)
     {
-        //
+        // TODO: if user is guest select like from submittedBy/Name provided
         $suggestedProjects = $this->suggestedProjects();
         $projects = $user->projects()
                     ->published()

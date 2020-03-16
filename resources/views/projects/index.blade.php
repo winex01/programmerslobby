@@ -33,7 +33,7 @@
 
                                 <i class="fa fa-eye"></i>
                                 {{ $project->totalViews }}
-                                {{ str_plural(__('View'), $project->views->count() ) }},
+                                {{ str_plural(__('View'), $project->totalViews ) }},
 
                                 <i class="fa fa-comments-o" aria-hidden="true"></i>
                                 <a href="{{ route('project', $project->slug) }}#disqus_thread">{{ __('...') }}</a>
