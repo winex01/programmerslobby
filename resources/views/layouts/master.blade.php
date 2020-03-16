@@ -18,7 +18,9 @@
         @stack('css')
         @stack('js-top')
 
-        <script data-ad-client="ca-pub-5207069007168829" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        @if(config('adsense.enabled'))
+            <script data-ad-client="ca-pub-5207069007168829" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        @endif
         
     </head>
     <body>
