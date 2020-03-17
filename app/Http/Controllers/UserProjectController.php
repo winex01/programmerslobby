@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Project;
 use App\Traits\ProjectTrait;
 use App\User;
 use Illuminate\Http\Request;
@@ -21,14 +22,11 @@ class UserProjectController extends Controller
      */
     public function show(User $user, $submittedBy)
     {
-        // TODO: if user is guest select like from submittedBy/Name provided
         $suggestedProjects = $this->suggestedProjects();
-        $projects = $user->projects()
-                    ->published()
-                    ->latest()
-                    ->paginate(3);
 
-        $author = $user->name;
+        $projects = $this->userProjects($user, $submittedBy);
+
+        $author = $user->id == 2 ? $submittedBy : $user->name; //2 == Guest
 
         SEOMeta::setTitle($author);
         SEOMeta::setCanonical(url()->current());
