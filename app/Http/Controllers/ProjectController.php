@@ -33,7 +33,7 @@ class ProjectController extends Controller
         Twitter::setTitle('Home');
         // site default
 
-        $projects = Project::published()->orderBy('created_at', 'DESC')->paginate(6);
+        $projects = Project::published()->latest()->paginate(6);
         return view(viewIndex('projects'), compact('projects'));
     }
 

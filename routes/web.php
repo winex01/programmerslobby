@@ -22,6 +22,7 @@ Route::get('/contact-us', 'StaticPageController@contact')->name('contact');
 Route::post('/contact', 'ContactFormSubmitController@store')->name('contact.submit');
 Route::get('/blog', 'BlogController@index')->name('blog');
 Route::get('/blog/{blog}', 'BlogController@show')->middleware('blog.views')->name('blog.show');
+Route::get('/user/{user}/{submittedBy}', 'UserProjectController@show')->name('user.projects');
 
 //auth
 Auth::routes();

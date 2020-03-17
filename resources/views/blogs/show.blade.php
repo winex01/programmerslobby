@@ -10,9 +10,9 @@
 					<img src="{{ Voyager::image($blog->thumbnail('medium', 'image')) }}" class="img-fluid" alt="{{ $blog->title }}">
 					<h4 class="m-0 mt-2">{{ $blog->title }}</h4>
 					<p class="blog-meta">
-						{{ __('By') }} <a href="javascript:(void);">{{ $blog->submittedBy }}</a> 
+						{{ __('By') }} <strong class="text-primary">{{ $blog->submittedBy }}</strong>
 						<span class="text-muted">
-							{{ __('Published') }} {{ $blog->created_at->toDayDateTimeString() }}
+							{{ __('Published') }} {{ $blog->publishedDate }}
 						</span>
 					</p>
 

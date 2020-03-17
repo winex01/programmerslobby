@@ -1,3 +1,4 @@
+@if(config('adsense.enabled'))
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<!-- horizontal -->
 	<ins class="adsbygoogle"
@@ -9,3 +10,4 @@
 	<script>
 	     (adsbygoogle = window.adsbygoogle || []).push({});
 	</script>
+@endif

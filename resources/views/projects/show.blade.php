@@ -13,7 +13,7 @@
 				<div class="card-body">
 					<h4 class="m-0">{{ $project->title }}</h4>
 					<p class="blog-meta">
-						{{ __('Submitted by') }} <a href="javascript:(void);">{{ $project->submittedBy }}</a> 
+						{{ __('Submitted by') }} <a href="{{ route('user.projects', [$project->author_id, $project->submittedBy]) }}">{{ $project->submittedBy }}</a> 
 						<span class="text-muted">
 							<br>
 							<sub>
@@ -24,7 +24,7 @@
 						<span class="text-dark pull-right">
 							<i class="fa fa-eye" aria-hidden="true"></i> 
 							{{ $project->totalViews }}
-							{{ str_plural(__('view'), $project->views->count() ) }}
+							{{ str_plural(__('view'), $project->totalViews ) }}
 						</span>
 					</p>
 					
