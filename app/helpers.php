@@ -66,3 +66,12 @@ function shortenString($string, $limit = 180) {
  	
  	return $folder.'.show';
  }
+
+  /**
+ * 
+ * 
+ */
+ function viewCreate($folder) {
+ 	
+ 	return $folder.'.create';
+ }

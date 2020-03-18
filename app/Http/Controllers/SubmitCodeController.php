@@ -15,8 +15,6 @@ class SubmitCodeController extends Controller
 {
     use ProjectTrait;
 
-    protected $viewFolder = 'static-pages.';
-
     /**
      * Show the form for creating a new resource.
      *
@@ -40,7 +38,7 @@ class SubmitCodeController extends Controller
         $suggestedProjects = $this->suggestedProjects();
 
         $tags = Tag::orderBy('description')->get();
-        return view($this->viewFolder.'submit-code', compact('suggestedProjects', 'tags'));
+        return view(viewCreate('submit-code'), compact('suggestedProjects', 'tags'));
     }
 
     /**
