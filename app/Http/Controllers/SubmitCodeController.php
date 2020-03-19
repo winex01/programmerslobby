@@ -59,7 +59,7 @@ class SubmitCodeController extends Controller
             'description' => $request->description,
             'image' => $imageName,
             'sourcecode_link' => $request->code,
-            'status' => 'PENDING',
+            'status' => (strtolower($request->submit_code) == 'submit' ? 'PENDING' : 'DRAFT'),
         ])->tags()->attach($request->tags);
 
         toastr()->success('Submitted successfully! Your code are now being reviewed!');

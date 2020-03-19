@@ -89,9 +89,19 @@
                                 @enderror
                             </div>
 
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-success btn-block">Submit Code</button>
-                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <button name="submit_code" type="submit" value="submit" class="btn btn-primary btn-block">Submit Code</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <button name="submit_code" type="submit" value="draft" class="btn btn-success btn-block">Save as Draft</button>
+                                    </div>
+                                </div>
+                            </div>{{-- end row --}}
                         </form>
                 </div>
             </div>
