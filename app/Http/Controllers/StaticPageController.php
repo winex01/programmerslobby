@@ -40,7 +40,7 @@ class StaticPageController extends Controller
 
     public function about()
     {
-        this->basicSEO('About Us');
+        $this->basicSEO('About Us');
 
         return view($this->viewFolder.'about-us', [
             'suggestedProjects' => $this->suggestedProjects
@@ -49,7 +49,7 @@ class StaticPageController extends Controller
 
     public function contact()
     {
-        this->basicSEO('Contact Us');
+        $this->basicSEO('Contact Us');
 
         return view($this->viewFolder.'contact-us', [
             'suggestedProjects' => $this->suggestedProjects
