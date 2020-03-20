@@ -8,12 +8,24 @@ use App\Tag;
 use App\Traits\ProjectTrait;
 use App\Traits\SeoTrait;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 
 class SubmitCodeController extends Controller
 {
     use ProjectTrait;
     use SeoTrait;
+
+    protected $tags;
+    protected $suggestedProjects;
+
+    /**
+     * 
+     * 
+     */
+    public function __construct()
+    {
+        $this->tags = Tag::orderBy('description')->get();
+        $this->suggestedProjects = $this->suggestedProjects();
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -24,10 +36,10 @@ class SubmitCodeController extends Controller
     {
         $this->basicSEO('Submit Code');        
 
-        $suggestedProjects = $this->suggestedProjects();
-        $tags = Tag::orderBy('description')->get();
-        
-        return view(viewCreate('submit-code'), compact('suggestedProjects', 'tags'));
+        return view(viewCreate('submit-code'), [
+            'suggestedProjects' => $this->suggestedProjects,
+            'tags' => $this->tags
+        ]);
     }
 
     /**
@@ -38,21 +50,16 @@ class SubmitCodeController extends Controller
      */
     public function store(SubmitCodeRequest $request)
     {
-        $date = Carbon::now();
-        $monthYear = $date->format('F').$date->year;
-        $imageName = $request->image->store('public/projects/'.$monthYear);
-        $imageName = str_replace('public/', '', $imageName);
-
         auth()->user()->projects()->create([
             'title' => $request->title,
             'description' => $request->description,
-            'image' => $imageName,
+            'image' => $this->storeProjectImage($request),
             'sourcecode_link' => $request->code,
             'status' => (strtolower($request->submit_code) == 'submit' ? 'PENDING' : 'DRAFT'),
         ])->tags()->attach($request->tags);
 
         toastr()->success('Submitted successfully! Your code are now being reviewed!');
-        return redirect()->back();
+        return redirect()->route('my.projects');
     }
 
     /**
@@ -66,14 +73,11 @@ class SubmitCodeController extends Controller
         //
         $this->basicSEO('Edit Submitted Code');        
 
-        $suggestedProjects = $this->suggestedProjects();
-        $tags = Tag::orderBy('description')->get();
-        
-        return view(viewEdit('submit-code'), compact(
-            'suggestedProjects', 
-            'tags',
-            'project'
-        ));
+        return view(viewEdit('submit-code'), [
+            'suggestedProjects' => $this->suggestedProjects,
+            'tags' => $this->tags,
+            'project' => $project
+        ]);
     }
 
     /**
@@ -86,14 +90,32 @@ class SubmitCodeController extends Controller
     public function update(SubmitCodeRequest $request, Project $project)
     {
         //
-        // dd($request->all());
-        $project->update([
-            'title' => $request->title
-        ]);
+        $status = 'DRAFT'; 
+        $messageInfo = 'Save as Draft!';
 
-        toastr()->success('Submitted successfully! Your code are now being reviewed!');//TODO: reviewed for pending and not for draft
-        return redirect()->back();
+        if (strtolower($request->submit_code) == 'submit') {
+            $status = 'PENDING';
+            $messageInfo = 'Submitted successfully! Your code are now being reviewed!';
+        }
 
+        $data = [
+            'title' => $request->title,
+            'description' => $request->description,
+            'sourcecode_link' => $request->code,
+            'status' => $status
+        ];
+
+        if ($request->image) {
+            $imagePath = $this->storeProjectImage($request);
+            $data['image'] = $imagePath;
+        }
+
+        $project->update($data);
+
+        $project->tags()->sync($request->tags);
+
+        toastr()->success($messageInfo);
+        return redirect()->route('my.projects');
     }
 
 }

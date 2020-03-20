@@ -4,6 +4,7 @@ namespace App\Traits;
 
 use App\Project;
 use App\User;
+use Carbon\Carbon;
 
 trait ProjectTrait {
 
@@ -42,6 +43,20 @@ trait ProjectTrait {
         }
 
         return $projects;
+    }
+
+    /**
+     * 
+     * 
+     */
+    public function storeProjectImage($request)
+    {
+        $date = Carbon::now();
+        $monthYear = $date->format('F').$date->year;
+        $imagePath = $request->image->store('public/projects/'.$monthYear);
+        $imagePath = str_replace('public/', '', $imagePath);
+
+        return $imagePath;
     }
 
 }
