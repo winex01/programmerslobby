@@ -17,14 +17,53 @@ class ProjectDataTable extends DataTable
     {
         return datatables($query)
             ->editColumn('status', function ($query) {
-                $badge = $query->status == 'PENDING' ? 'badge-warning' : 'badge-success';
-                return '<span class="badge '.$badge.'">'.$query->status.'</span>';
+                $status = strtoupper($query->status);
+                $badge = '';
+
+                switch ($status) {
+                    case 'PUBLISHED':
+                        $badge = 'badge-primary';
+                        break;
+
+                    case 'PENDING':
+                        $badge = 'badge-warning';
+                        break;
+
+                    case 'REJECT':
+                        $badge = 'badge-danger';
+                        break;
+                    
+                    default:
+                        $badge = 'badge-success'; // draft
+                        break;
+                }
+
+                $status = ($status == 'REJECT') ? 'REJECTED' : $status;
+
+                return '<span class="badge '.$badge.'">'.$status.'</span>';
             })
             ->editColumn('created_at', function ($query) {
                 return $query->created_at->toDateString();
             })
             ->addColumn('slug', function ($query) {
-                return '<a href="'.route('project', $query->slug).'">View</a>';
+                // TODO: project owner can only edit his own project
+                $status = strtoupper($query->status);
+                $action = '';
+
+                switch ($status) {
+                    case 'PUBLISHED':
+                        // view
+                        $action = '<a href="'.route('project', $query->slug).'">View</a>';
+                        break;
+                    
+                    case 'PENDING':
+                    case 'DRAFT':
+                        // edit
+                        $action = '<a href="'.route('submit.code.edit', $query->id).'">Edit</a>';
+                        break;
+                }
+
+                return $action;
             })
             ->rawColumns(['status', 'created_at', 'slug']);
     }

@@ -14,15 +14,15 @@
 
 //guest
 Route::get('/', 'ProjectController@index')->name('home');
-Route::get('/project/{project}', 'ProjectController@show')->middleware('project.views')->name('project');
-Route::get('/disclaimer', 'StaticPageController@disclaimer')->name('disclaimer');
-Route::get('/terms-and-privacy', 'StaticPageController@tos')->name('tos');
-Route::get('/about-us', 'StaticPageController@about')->name('about');
-Route::get('/contact-us', 'StaticPageController@contact')->name('contact');
-Route::post('/contact', 'ContactFormSubmitController@store')->name('contact.submit');
-Route::get('/blog', 'BlogController@index')->name('blog');
-Route::get('/blog/{blog}', 'BlogController@show')->middleware('blog.views')->name('blog.show');
-Route::get('/user/{user}/{submittedBy}', 'UserProjectController@show')->name('user.projects');
+Route::get('project/{project}', 'ProjectController@show')->middleware('project.views')->name('project');
+Route::get('disclaimer', 'StaticPageController@disclaimer')->name('disclaimer');
+Route::get('terms-and-privacy', 'StaticPageController@tos')->name('tos');
+Route::get('about-us', 'StaticPageController@about')->name('about');
+Route::get('contact-us', 'StaticPageController@contact')->name('contact');
+Route::post('contact', 'ContactFormSubmitController@store')->name('contact.submit');
+Route::get('blog', 'BlogController@index')->name('blog');
+Route::get('blog/{blog}', 'BlogController@show')->middleware('blog.views')->name('blog.show');
+Route::get('user/{user}/{submittedBy}', 'UserProjectController@show')->name('user.projects');
 
 //auth
 Auth::routes();
@@ -31,6 +31,8 @@ Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCall
 Route::middleware(['auth'])->group(function () {
 	Route::get('submit-code', 'SubmitCodeController@create')->name('submit.code');
     Route::post('submit-code', 'SubmitCodeController@store')->name('submit.code.store');
+	Route::get('submit-code/{project}/edit', 'SubmitCodeController@edit')->name('submit.code.edit');
+	Route::patch('submit-code/{project}', 'SubmitCodeController@update')->name('submit.code.update');
 	Route::get('my-projects', 'MyProjectController@index')->name('my.projects');
 });
 

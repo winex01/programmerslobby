@@ -4,11 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactUsRequest;
 use App\Notifications\ContactUs;
-use App\User;
 use Illuminate\Support\Facades\Notification;
 
 class ContactFormSubmitController extends Controller
 {
+
+    /**
+     * 
+     * 
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     /**
      * Store a newly created resource in storage.
      *

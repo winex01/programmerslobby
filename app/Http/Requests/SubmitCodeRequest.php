@@ -23,14 +23,19 @@ class SubmitCodeRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        $data = [
             'title' => 'required|min:10',
             'description' => 'required|min:200',
-            'image' => 'required',
             'code' => 'required',
             'g-recaptcha-response' => 'required|captcha',
             'tags' => 'required'
         ];
+
+        if ($this->method() != 'PATCH') {
+            $data['image'] = 'required';// TODO: check if it only accept image
+        }
+
+        return $data;
     }
 
     /**

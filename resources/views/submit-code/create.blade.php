@@ -7,13 +7,13 @@
 
             <div class="card border-0 shadow mb-4">
                 <div class="card-body">
-                    <h1>Submit Code!</h1>
+                    <h1>{{ __('Submit Code!') }}</h1>
 
                         <form class="form-horizontal" method="POST" action="{{ route('submit.code.store') }}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group">
-                                <label for="title">Title: </label>
+                                <label for="title">{{  __('Title:') }}</label>
                                 <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="Your title" name="title" value="{{ old('title') }}">
 
                                 @error('title')
@@ -24,7 +24,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="image">Cover Photo: </label>
+                                <label for="image">{{ __('Cover Photo:') }}</label>
                                 <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" placeholder="Your cover photo" name="image" value="{{ old('image') }}">
 
                                 @error('image')
@@ -35,8 +35,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="description">Description: </label>
-                                <textarea type="text" class="form-control richTextBox @error('description') is-invalid @enderror" id="description" placeholder="Type your messages here" name="description">{{ old('description') }}</textarea>
+                                <label for="description">{{ __('Description:') }}</label>
+                                <textarea type="text" class="form-control richTextBox @error('description') is-invalid @enderror" id="description" placeholder="Type your description here" name="description">{{ old('description') }}</textarea>
 
                                 @error('description')
                                     <span class="invalid-feedback" role="alert">
@@ -47,7 +47,7 @@
 
                             {{-- link code --}}
                             <div class="form-group">
-                                <label for="code">Sourcecode Link: (ex. <a target="__blank" href="https://github.com/">Github</a>, <a target="__blank" href="https://gitlab.com/">Gitlab</a>, <a target="__blank" href="https://mediafire.com/">Mediafire</a>, <a target="__blank" href="https://sourceforge.net/">Sourceforge</a> etc.) </label>
+                                <label for="code">{{ __('Sourcecode Link:') }} (ex. <a target="__blank" href="https://github.com/">Github</a>, <a target="__blank" href="https://gitlab.com/">Gitlab</a>, <a target="__blank" href="https://mediafire.com/">Mediafire</a>, <a target="__blank" href="https://sourceforge.net/">Sourceforge</a> etc.) </label>
                                 <input type="text" class="form-control @error('code') is-invalid @enderror" id="code" placeholder="github.com/winex01/programmerslobby" name="code" value="{{ old('code') }}">
 
                                 @error('code')
@@ -59,7 +59,7 @@
 
                             {{-- tags --}}
                             <div class="form-group">
-                                <label for="tags">Tags: </label>
+                                <label for="tags">{{ __('Tags:') }}</label>
                                 <select class="form-control @error('description') is-invalid @enderror" id="tags" name="tags[]" multiple="multiple">
                                   @foreach($tags as $tag)
                                     <option 
@@ -89,9 +89,19 @@
                                 @enderror
                             </div>
 
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-success btn-block">Submit Code</button>
-                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <button name="submit_code" type="submit" value="submit" class="btn btn-primary btn-block">Submit Code</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <button name="submit_code" type="submit" value="draft" class="btn btn-success btn-block">Save as Draft</button>
+                                    </div>
+                                </div>
+                            </div>{{-- end row --}}
                         </form>
                 </div>
             </div>

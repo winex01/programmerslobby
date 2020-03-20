@@ -2,17 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Project;
 use App\Traits\ProjectTrait;
+use App\Traits\SeoTrait;
 use App\User;
 use Illuminate\Http\Request;
-use OpenGraph;
-use SEOMeta;
-use Twitter;
 
 class UserProjectController extends Controller
 {
     use ProjectTrait;
+    use SeoTrait;
+
+    /**
+     * 
+     * 
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
     /**
      * Display the specified resource.
@@ -22,28 +29,14 @@ class UserProjectController extends Controller
      */
     public function show(User $user, $submittedBy)
     {
-        $suggestedProjects = $this->suggestedProjects();
-
-        $projects = $this->userProjects($user, $submittedBy);
-
         $author = $user->id == 2 ? $submittedBy : $user->name; //2 == Guest
 
-        SEOMeta::setTitle($author);
-        SEOMeta::setCanonical(url()->current());
-        // desc default
+        $this->basicSEO($author);
 
-        OpenGraph::setTitle($author);
-        OpenGraph::setUrl(url()->current());
-        OpenGraph::addProperty('type', 'article');
-        // desc default
-
-        Twitter::setTitle($author);
-        // site default
-
-        return view(viewShow('user-project'), compact(
-            'projects', 
-            'suggestedProjects')
-        );
+        return view(viewShow('user-project'), [
+            'projects' => $this->userProjects($user, $submittedBy),
+            'suggestedProjects' => $this->suggestedProjects()
+        ]);
     }
 
 }
