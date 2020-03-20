@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SubmitCodeRequest;
-use App\Project;
 use App\Tag;
 use App\Traits\ProjectTrait;
 use App\Traits\SeoTrait;
-use Carbon\Carbon;
 
 class SubmitCodeController extends Controller
 {

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Project;
 use App\Traits\ProjectTrait;
 use App\Traits\SeoTrait;
 use App\User;

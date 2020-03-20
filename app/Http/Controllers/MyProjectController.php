@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\DataTables\ProjectDataTable;
 use App\DataTables\Scopes\ProjectScopeDataTable;
-use App\Project;
 use App\Traits\ProjectTrait;
 use App\Traits\SeoTrait;
 use Illuminate\Http\Request;

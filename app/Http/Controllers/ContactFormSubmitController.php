@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactUsRequest;
 use App\Notifications\ContactUs;
-use App\User;
 use Illuminate\Support\Facades\Notification;
 
 class ContactFormSubmitController extends Controller
