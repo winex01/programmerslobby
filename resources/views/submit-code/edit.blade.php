@@ -7,14 +7,15 @@
 
             <div class="card border-0 shadow mb-4">
                 <div class="card-body">
-                    <h1>{{ __('Submit Code!') }}</h1>
+                    <h1>{{ __('Edit Project') }}</h1>
 
-                        <form class="form-horizontal" method="POST" action="{{ route('submit.code.store') }}" enctype="multipart/form-data">
+                        <form class="form-horizontal" method="POST" action="{{ route('submit.code.update', $project->id) }}" enctype="multipart/form-data">
                             @csrf
+                            @method('PATCH')
 
                             <div class="form-group">
-                                <label for="title">{{  __('Title:') }}</label>
-                                <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="Your title" name="title" value="{{ old('title') }}">
+                                <label for="title">{{ __('Title:') }}</label>
+                                <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="Your title" name="title" value="{{ $project->title }}">
 
                                 @error('title')
                                     <span class="invalid-feedback" role="alert">
@@ -23,6 +24,7 @@
                                 @enderror
                             </div>
 
+                            {{-- TODO: fix validation should not required on edit --}}
                             <div class="form-group">
                                 <label for="image">{{ __('Cover Photo:') }}</label>
                                 <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" placeholder="Your cover photo" name="image" value="{{ old('image') }}">
@@ -36,7 +38,7 @@
 
                             <div class="form-group">
                                 <label for="description">{{ __('Description:') }}</label>
-                                <textarea type="text" class="form-control richTextBox @error('description') is-invalid @enderror" id="description" placeholder="Type your description here" name="description">{{ old('description') }}</textarea>
+                                <textarea type="text" class="form-control richTextBox @error('description') is-invalid @enderror" id="description" placeholder="Type your description here" name="description">{{ $project->description }}</textarea>
 
                                 @error('description')
                                     <span class="invalid-feedback" role="alert">
@@ -48,7 +50,7 @@
                             {{-- link code --}}
                             <div class="form-group">
                                 <label for="code">{{ __('Sourcecode Link:') }} (ex. <a target="__blank" href="https://github.com/">Github</a>, <a target="__blank" href="https://gitlab.com/">Gitlab</a>, <a target="__blank" href="https://mediafire.com/">Mediafire</a>, <a target="__blank" href="https://sourceforge.net/">Sourceforge</a> etc.) </label>
-                                <input type="text" class="form-control @error('code') is-invalid @enderror" id="code" placeholder="github.com/winex01/programmerslobby" name="code" value="{{ old('code') }}">
+                                <input type="text" class="form-control @error('code') is-invalid @enderror" id="code" placeholder="github.com/winex01/programmerslobby" name="code" value="{{ $project->repository }}">
 
                                 @error('code')
                                     <span class="invalid-feedback" role="alert">
@@ -63,12 +65,11 @@
                                 <select class="form-control @error('description') is-invalid @enderror" id="tags" name="tags[]" multiple="multiple">
                                   @foreach($tags as $tag)
                                     <option 
-                                        @if(old('tags'))
-                                            @if(in_array($tag->id, old('tags') )) 
-                                                selected 
-                                            @endif 
-                                        @endif
-                                    value="{{ $tag->id }}">{{ $tag->description }}</option>
+                                        @if(in_array($tag->description, $project->tagDescription->toArray() )) 
+                                            selected 
+                                        @endif 
+                                        value="{{ $tag->id }}">{{ $tag->description }}
+                                    </option>
                                   @endforeach
                                 </select>
 

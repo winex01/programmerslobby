@@ -8,6 +8,7 @@ use App\Tag;
 use App\Traits\ProjectTrait;
 use App\Traits\SeoTrait;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class SubmitCodeController extends Controller
 {
@@ -60,9 +61,19 @@ class SubmitCodeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Project $project)
     {
         //
+        $this->basicSEO('Edit Submitted Code');        
+
+        $suggestedProjects = $this->suggestedProjects();
+        $tags = Tag::orderBy('description')->get();
+        
+        return view(viewEdit('submit-code'), compact(
+            'suggestedProjects', 
+            'tags',
+            'project'
+        ));
     }
 
     /**
@@ -72,9 +83,17 @@ class SubmitCodeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SubmitCodeRequest $request, Project $project)
     {
         //
+        // dd($request->all());
+        $project->update([
+            'title' => $request->title
+        ]);
+
+        toastr()->success('Submitted successfully! Your code are now being reviewed!');//TODO: reviewed for pending and not for draft
+        return redirect()->back();
+
     }
 
 }

@@ -123,6 +123,26 @@ class Project extends Model
         return $total;
     }
 
+    public function getRepositoryAttribute()
+    {
+        if ($this->sourcecode_link) {
+            return $this->sourcecode_link;
+        }
+
+        if ($this->gitlab_link) {
+            return $this->gitlab_link;
+        }
+
+        if ($this->github_link) {
+            return $this->github_link;
+        }
+
+        if ($this->download_link) {
+            return $this->download_link;
+        }
+
+    }
+
     /**
      * Get the options for generating the slug.
      */
