@@ -13,6 +13,17 @@ class BlogController extends Controller
     use SeoTrait;
 
     /**
+     * 
+     * 
+     */
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->suggestedProjects = $this->suggestedProjects();
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -21,10 +32,10 @@ class BlogController extends Controller
     {
         $this->basicSEO('Blog');
 
-        $suggestedProjects = $this->suggestedProjects();
-        $blogs = Blog::published()->latest()->simplePaginate(3); //Temporary lng
-
-        return view(viewIndex('blogs'), compact('blogs', 'suggestedProjects'));
+        return view(viewIndex('blogs'), [
+            'suggestedProjects' => $this->suggestedProjects,
+            'blogs' => Blog::published()->latest()->simplePaginate(3)
+        ]);
     }
 
     /**
@@ -36,7 +47,6 @@ class BlogController extends Controller
     public function show($slug)
     {
         $blog = Blog::where('slug', $slug)->published()->firstOrFail();
-        $suggestedProjects = $this->suggestedProjects();
         
         $this->detailedSEO([
             'image' => $blog->image,
@@ -48,7 +58,9 @@ class BlogController extends Controller
             'author' => $blog->submittedBy,
         ]);
 
-
-        return view(viewShow('blogs'), compact('blog', 'suggestedProjects'));
+        return view(viewShow('blogs'), [
+            'blog' => $blog,
+            'suggestedProjects' => $this->suggestedProjects
+        ]);
     }
 }

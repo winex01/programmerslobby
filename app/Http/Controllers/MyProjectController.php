@@ -18,6 +18,8 @@ class MyProjectController extends Controller
 
     public function __construct(ProjectDataTable $projectDataTable)
     {
+        parent::__construct();
+        
         $this->dataTable = $projectDataTable;
     }
 

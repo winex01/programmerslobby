@@ -14,6 +14,15 @@ class UserProjectController extends Controller
     use SeoTrait;
 
     /**
+     * 
+     * 
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -21,18 +30,14 @@ class UserProjectController extends Controller
      */
     public function show(User $user, $submittedBy)
     {
-        $suggestedProjects = $this->suggestedProjects();
-
-        $projects = $this->userProjects($user, $submittedBy);
-
         $author = $user->id == 2 ? $submittedBy : $user->name; //2 == Guest
 
         $this->basicSEO($author);
 
-        return view(viewShow('user-project'), compact(
-            'projects', 
-            'suggestedProjects')
-        );
+        return view(viewShow('user-project'), [
+            'projects' => $this->userProjects($user, $submittedBy),
+            'suggestedProjects' => $this->suggestedProjects()
+        ]);
     }
 
 }

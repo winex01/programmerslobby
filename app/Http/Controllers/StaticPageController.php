@@ -15,11 +15,21 @@ class StaticPageController extends Controller
 	protected $suggestedProjects;
     protected $viewFolder = 'static-pages.';
 
+    /**
+     * 
+     * 
+     */
 	public function __construct()
 	{
+        parent::__construct();
+        
         $this->suggestedProjects = $this->suggestedProjects();
 	}
 
+    /**
+     * 
+     * 
+     */
     public function disclaimer()
     {
         $this->basicSEO('Disclaimer');
@@ -29,6 +39,10 @@ class StaticPageController extends Controller
     	]);
     }
 
+    /**
+     * 
+     * 
+     */
     public function tos()
     {
         $this->basicSEO('Terms And Privacy');
@@ -38,6 +52,10 @@ class StaticPageController extends Controller
     	]);
     }
 
+    /**
+     * 
+     * 
+     */
     public function about()
     {
         $this->basicSEO('About Us');
@@ -47,6 +65,10 @@ class StaticPageController extends Controller
         ]);
     }
 
+    /**
+     * 
+     * 
+     */
     public function contact()
     {
         $this->basicSEO('Contact Us');

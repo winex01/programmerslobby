@@ -13,13 +13,22 @@ class ProjectController extends Controller
     use SeoTrait;
 
     /**
+     * 
+     * 
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-       $this->basicSEO('Home');
+        $this->basicSEO('Home');
 
         $projects = Project::published()->latest()->paginate(6);
         return view(viewIndex('projects'), compact('projects'));
@@ -34,7 +43,6 @@ class ProjectController extends Controller
     public function show($slug)
     {
         $project = Project::where('slug', $slug)->published()->firstOrFail();
-        $suggestedProjects = $this->suggestedProjects();
 
         $this->detailedSEO([
             'image' => $project->image,
@@ -49,7 +57,10 @@ class ProjectController extends Controller
             'author' => $project->submittedBy,
         ]);
 
-        return view(viewShow('projects'), compact('project', 'suggestedProjects'));
+        return view(viewShow('projects'), [
+            'project' => $project,
+            'suggestedProjects' => $this->suggestedProjects()
+        ]);
     }
 
 }

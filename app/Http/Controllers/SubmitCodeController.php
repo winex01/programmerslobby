@@ -23,6 +23,8 @@ class SubmitCodeController extends Controller
      */
     public function __construct()
     {
+        parent::__construct();
+        
         $this->tags = Tag::orderBy('description')->get();
         $this->suggestedProjects = $this->suggestedProjects();
     }
