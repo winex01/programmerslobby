@@ -24,7 +24,6 @@
                                 @enderror
                             </div>
 
-                            {{-- TODO: fix validation should not required on edit --}}
                             <div class="form-group">
                                 <label for="image">{{ __('Cover Photo:') }}</label>
                                 <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" placeholder="Your cover photo" name="image" value="{{ old('image') }}">
