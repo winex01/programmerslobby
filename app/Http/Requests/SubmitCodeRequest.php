@@ -28,7 +28,7 @@ class SubmitCodeRequest extends FormRequest
             'description' => 'required|min:200',
             'image' => 'required', // TODO: check if it only accept image
             'code' => 'required',
-            // 'g-recaptcha-response' => 'required|captcha', //TODO: uncomment this line
+            'g-recaptcha-response' => 'required|captcha',
             'tags' => 'required'
         ];
     }
