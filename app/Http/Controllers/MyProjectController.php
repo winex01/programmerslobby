@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use SEOMeta;
-use Twitter;
-use OpenGraph;
-use App\Project;
-use Illuminate\Http\Request;
-use App\Traits\ProjectTrait;
 use App\DataTables\ProjectDataTable;
 use App\DataTables\Scopes\ProjectScopeDataTable;
+use App\Project;
+use App\Traits\ProjectTrait;
+use App\Traits\SeoTrait;
+use Illuminate\Http\Request;
 
 class MyProjectController extends Controller
 {
     use ProjectTrait;
+    use SeoTrait;
 
     protected $dataTable;
 
@@ -29,18 +28,7 @@ class MyProjectController extends Controller
      */
     public function index()
     {
-        //
-        SEOMeta::setTitle('My Projects');
-        SEOMeta::setCanonical(url()->current());
-        // desc default
-
-        OpenGraph::setTitle('My Projects');
-        OpenGraph::setUrl(url()->current());
-        OpenGraph::addProperty('type', 'article');
-        // desc default
-
-        Twitter::setTitle('My Projects');
-        // site default
+        $this->basicSEO('My Projects');
 
         return $this->dataTable
         ->addScope(new ProjectScopeDataTable)

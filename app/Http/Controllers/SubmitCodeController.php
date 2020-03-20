@@ -6,14 +6,13 @@ use App\Http\Requests\SubmitCodeRequest;
 use App\Project;
 use App\Tag;
 use App\Traits\ProjectTrait;
+use App\Traits\SeoTrait;
 use Carbon\Carbon;
-use SEOMeta;
-use OpenGraph;
-use Twitter;
 
 class SubmitCodeController extends Controller
 {
     use ProjectTrait;
+    use SeoTrait;
 
     /**
      * Show the form for creating a new resource.
@@ -22,22 +21,11 @@ class SubmitCodeController extends Controller
      */
     public function create()
     {
-        //
-        SEOMeta::setTitle('Submit Code');
-        SEOMeta::setCanonical(url()->current());
-        // desc default
-
-        OpenGraph::setTitle('Submit Code');
-        OpenGraph::setUrl(url()->current());
-        OpenGraph::addProperty('type', 'article');
-        // desc default
-
-        Twitter::setTitle('Submit Code');
-        // site default
+        $this->basicSEO('Submit Code');        
 
         $suggestedProjects = $this->suggestedProjects();
-
         $tags = Tag::orderBy('description')->get();
+        
         return view(viewCreate('submit-code'), compact('suggestedProjects', 'tags'));
     }
 
@@ -64,6 +52,29 @@ class SubmitCodeController extends Controller
 
         toastr()->success('Submitted successfully! Your code are now being reviewed!');
         return redirect()->back();
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
     }
 
 }

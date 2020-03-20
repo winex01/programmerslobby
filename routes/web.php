@@ -31,6 +31,7 @@ Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCall
 Route::middleware(['auth'])->group(function () {
 	Route::get('submit-code', 'SubmitCodeController@create')->name('submit.code');
     Route::post('submit-code', 'SubmitCodeController@store')->name('submit.code.store');
+	Route::get('submit-code/{project}/edit', 'SubmitCodeController@edit')->name('submit.code.edit');
 	Route::get('my-projects', 'MyProjectController@index')->name('my.projects');
 });
 

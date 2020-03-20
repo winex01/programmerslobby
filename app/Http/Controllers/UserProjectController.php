@@ -4,15 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use App\Traits\ProjectTrait;
+use App\Traits\SeoTrait;
 use App\User;
 use Illuminate\Http\Request;
-use OpenGraph;
-use SEOMeta;
-use Twitter;
 
 class UserProjectController extends Controller
 {
     use ProjectTrait;
+    use SeoTrait;
 
     /**
      * Display the specified resource.
@@ -28,17 +27,7 @@ class UserProjectController extends Controller
 
         $author = $user->id == 2 ? $submittedBy : $user->name; //2 == Guest
 
-        SEOMeta::setTitle($author);
-        SEOMeta::setCanonical(url()->current());
-        // desc default
-
-        OpenGraph::setTitle($author);
-        OpenGraph::setUrl(url()->current());
-        OpenGraph::addProperty('type', 'article');
-        // desc default
-
-        Twitter::setTitle($author);
-        // site default
+        $this->basicSEO($author);
 
         return view(viewShow('user-project'), compact(
             'projects', 

@@ -59,7 +59,7 @@ class ProjectDataTable extends DataTable
                     case 'PENDING':
                     case 'DRAFT':
                         // edit
-                        $action = '<a href="'.route('project', $query->slug).'">Edit</a>';
+                        $action = '<a href="'.route('submit.code.edit', $query->id).'">Edit</a>';
                         break;
                 }
 
