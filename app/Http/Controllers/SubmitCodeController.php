@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SubmitCodeRequest;
+use App\Project;
 use App\Tag;
 use App\Traits\ProjectTrait;
 use App\Traits\SeoTrait;
@@ -70,7 +71,6 @@ class SubmitCodeController extends Controller
      */
     public function edit(Project $project)
     {
-        //
         $this->basicSEO('Edit Submitted Code');        
 
         return view(viewEdit('submit-code'), [

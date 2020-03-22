@@ -31,8 +31,10 @@ class SubmitCodeRequest extends FormRequest
             'tags' => 'required'
         ];
 
+        $data['image'] = 'mimes:jpeg,jpg,png,gif';
+        
         if ($this->method() != 'PATCH') {
-            $data['image'] = 'required';// TODO: check if it only accept image
+            $data['image'] = 'required|mimes:jpeg,jpg,png,gif';
         }
 
         return $data;

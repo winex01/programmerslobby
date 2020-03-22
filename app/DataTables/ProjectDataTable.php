@@ -46,22 +46,19 @@ class ProjectDataTable extends DataTable
                 return $query->created_at->toDateString();
             })
             ->addColumn('slug', function ($query) {
-                // TODO: project owner can only edit his own project
                 $status = strtoupper($query->status);
-                $action = '';
+                $action = '<a href="'.route('submit.code.edit', $query->id).'">Edit</a>';
 
-                switch ($status) {
-                    case 'PUBLISHED':
-                        // view
-                        $action = '<a href="'.route('project', $query->slug).'">View</a>';
-                        break;
-                    
-                    case 'PENDING':
-                    case 'DRAFT':
-                        // edit
-                        $action = '<a href="'.route('submit.code.edit', $query->id).'">Edit</a>';
-                        break;
+                if ($status == 'PUBLISHED') {
+
+                    $action .= ' <a href="'.route('project', $query->slug).'">View</a>';
+
+                }else if ($status == 'REJECT') {
+
+                    $action = '';
+
                 }
+
 
                 return $action;
             })

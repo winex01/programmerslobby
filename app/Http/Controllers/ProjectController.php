@@ -13,15 +13,6 @@ class ProjectController extends Controller
     use SeoTrait;
 
     /**
-     * 
-     * 
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

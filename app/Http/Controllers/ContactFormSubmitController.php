@@ -10,15 +10,6 @@ class ContactFormSubmitController extends Controller
 {
 
     /**
-     * 
-     * 
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
