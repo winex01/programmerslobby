@@ -13,15 +13,6 @@ class UserProjectController extends Controller
     use SeoTrait;
 
     /**
-     * 
-     * 
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  int  $id

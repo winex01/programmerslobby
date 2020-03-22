@@ -71,7 +71,9 @@ class SubmitCodeController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        // TODO: fix policy, where user can edit their own shits
+        $this->authorize('update', $project); 
+
         $this->basicSEO('Edit Submitted Code');        
 
         return view(viewEdit('submit-code'), [
