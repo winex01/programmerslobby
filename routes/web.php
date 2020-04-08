@@ -26,6 +26,7 @@ Route::get('user/{user}/{submittedBy}', 'UserProjectController@show')->name('use
 
 //auth
 Auth::routes();
+LaravelChangePassword::routes();
 Route::get('login/provider/{provider}', 'Auth\LoginController@redirectToProvider')->name('login.provider');
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('login.provider.callback');
 Route::middleware(['auth'])->group(function () {
