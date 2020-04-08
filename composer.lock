@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "96ef889f67723118b737419d789258fa",
+    "content-hash": "27e01b95c10d1fac5f0c785e789a80f8",
     "packages": [
         {
             "name": "ajthinking/tinx",
@@ -1576,6 +1576,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -1622,6 +1623,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
@@ -5531,6 +5533,64 @@
                 "routing"
             ],
             "time": "2019-03-25T04:56:13+00:00"
+        },
+        {
+            "name": "winnie/laravelchangepassword",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/winex01/laravelchangepassword.git",
+                "reference": "4966deb09159a4ef4a45e1177d35a77838c826a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/winex01/laravelchangepassword/zipball/4966deb09159a4ef4a45e1177d35a77838c826a8",
+                "reference": "4966deb09159a4ef4a45e1177d35a77838c826a8",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5|~6|~7",
+                "yoeunes/toastr": "^1.2"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.1",
+                "orchestra/testbench": "~3|~4",
+                "phpunit/phpunit": "^8.0",
+                "sempro/phpunit-pretty-print": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Winnie\\LaravelChangePassword\\LaravelChangePasswordServiceProvider"
+                    ],
+                    "aliases": {
+                        "LaravelChangePassword": "Winnie\\LaravelChangePassword\\Facades\\LaravelChangePassword"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Winnie\\LaravelChangePassword\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Winnie A. Damayo",
+                    "email": "winnie131212592@gmail.com"
+                }
+            ],
+            "description": ":Laravel framework change password functionality.",
+            "homepage": "https://github.com/winex01/laravelchangepassword",
+            "keywords": [
+                "LaravelChangePassword",
+                "laravel"
+            ],
+            "time": "2020-04-08T15:01:20+00:00"
         },
         {
             "name": "yajra/laravel-datatables-buttons",
