@@ -5536,16 +5536,16 @@
         },
         {
             "name": "winnie/laravelchangepassword",
-            "version": "v1.0.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/winex01/laravelchangepassword.git",
-                "reference": "4966deb09159a4ef4a45e1177d35a77838c826a8"
+                "reference": "abd76f0de638e5ed1b86f2519e70ed579855af70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/winex01/laravelchangepassword/zipball/4966deb09159a4ef4a45e1177d35a77838c826a8",
-                "reference": "4966deb09159a4ef4a45e1177d35a77838c826a8",
+                "url": "https://api.github.com/repos/winex01/laravelchangepassword/zipball/abd76f0de638e5ed1b86f2519e70ed579855af70",
+                "reference": "abd76f0de638e5ed1b86f2519e70ed579855af70",
                 "shasum": ""
             },
             "require": {
@@ -5581,7 +5581,8 @@
             "authors": [
                 {
                     "name": "Winnie A. Damayo",
-                    "email": "winnie131212592@gmail.com"
+                    "email": "winnie131212592@gmail.com",
+                    "homepage": "https://github.com/winex01/"
                 }
             ],
             "description": ":Laravel framework change password functionality.",
@@ -5590,20 +5591,20 @@
                 "LaravelChangePassword",
                 "laravel"
             ],
-            "time": "2020-04-08T15:01:20+00:00"
+            "time": "2020-05-01T10:16:59+00:00"
         },
         {
             "name": "winnie/winniequote",
-            "version": "v1.1",
+            "version": "v1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/winex01/WinnieQuote.git",
-                "reference": "5c77c709a2ef880914b6f54d2f2afcd73325baeb"
+                "reference": "70fa96bc2c6240ca50219323006c24826b66f8fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/winex01/WinnieQuote/zipball/5c77c709a2ef880914b6f54d2f2afcd73325baeb",
-                "reference": "5c77c709a2ef880914b6f54d2f2afcd73325baeb",
+                "url": "https://api.github.com/repos/winex01/WinnieQuote/zipball/70fa96bc2c6240ca50219323006c24826b66f8fd",
+                "reference": "70fa96bc2c6240ca50219323006c24826b66f8fd",
                 "shasum": ""
             },
             "require": {
@@ -5653,7 +5654,7 @@
                 "WinnieQuote",
                 "laravel"
             ],
-            "time": "2020-05-01T09:22:27+00:00"
+            "time": "2020-05-01T10:18:58+00:00"
         },
         {
             "name": "yajra/laravel-datatables-buttons",
