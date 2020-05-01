@@ -26,6 +26,7 @@
         "tcg/voyager": "^1.2",
         "watson/active": "^3.1",
         "winnie/laravelchangepassword": "^1.0",
+        "winnie/winniequote": "^1.1",
         "yajra/laravel-datatables-buttons": "^4.6",
         "yajra/laravel-datatables-html": "^4.4",
         "yajra/laravel-datatables-oracle": "^9.4",

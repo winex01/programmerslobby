@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "27e01b95c10d1fac5f0c785e789a80f8",
+    "content-hash": "e502cb94828c1e9440e5180ccbfed2a9",
     "packages": [
         {
             "name": "ajthinking/tinx",
@@ -5591,6 +5591,69 @@
                 "laravel"
             ],
             "time": "2020-04-08T15:01:20+00:00"
+        },
+        {
+            "name": "winnie/winniequote",
+            "version": "v1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/winex01/WinnieQuote.git",
+                "reference": "5c77c709a2ef880914b6f54d2f2afcd73325baeb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/winex01/WinnieQuote/zipball/5c77c709a2ef880914b6f54d2f2afcd73325baeb",
+                "reference": "5c77c709a2ef880914b6f54d2f2afcd73325baeb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5|~6|~7"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.1",
+                "orchestra/testbench": "~3|~4",
+                "phpunit/phpunit": "^8.0",
+                "sempro/phpunit-pretty-print": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Winnie\\WinnieQuote\\WinnieQuoteServiceProvider"
+                    ],
+                    "aliases": {
+                        "WinnieQuote": "Winnie\\WinnieQuote\\Facades\\WinnieQuote"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Winnie\\WinnieQuote\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Winnie A. Damayo",
+                    "email": "winnie131212592@gmail.com",
+                    "homepage": "https://github.com/winex01/"
+                }
+            ],
+            "description": ":Laravel package that generate random quote.",
+            "homepage": "https://github.com/winnie/winniequote",
+            "keywords": [
+                "Programming Quotes Package",
+                "Random Quote Package",
+                "WinnieQuote",
+                "laravel"
+            ],
+            "time": "2020-05-01T09:22:27+00:00"
         },
         {
             "name": "yajra/laravel-datatables-buttons",
