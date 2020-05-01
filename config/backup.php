@@ -208,7 +208,7 @@ return [
             /*
              * The number of weeks for which one weekly backup must be kept.
              */
-            'keep_weekly_backups_for_weeks' => 7,
+            'keep_weekly_backups_for_weeks' => 1,
 
             /*
              * The number of months for which one monthly backup must be kept.
