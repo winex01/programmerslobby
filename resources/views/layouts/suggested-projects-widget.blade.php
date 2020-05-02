@@ -1,3 +1,5 @@
+@include('adsense.square')
+
 <div class="card border-0 shadow mb-4">
 	<div class="card-body">
 		<h5 class="mb-0">{{ __('Suggested Projects') }}</h5>
@@ -21,4 +23,5 @@
 	</div>
 </div>
 
+@include('adsense.vertical')
 @include('adsense.vertical')
