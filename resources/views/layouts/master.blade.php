@@ -31,7 +31,7 @@
                 @include('layouts.vultr')
                 @include('layouts.inspire')
                @yield('content')
-               @include('adsense.square')
+               {{-- @include('adsense.square') --}}
             </div>
             {{-- footer --}}
             @include('layouts.footer')
