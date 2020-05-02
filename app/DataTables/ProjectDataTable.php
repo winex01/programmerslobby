@@ -73,7 +73,7 @@ class ProjectDataTable extends DataTable
      */
     public function query(Project $model)
     {
-        return $model->newQuery()->select('id', 'title', 'status', 'created_at', 'slug');
+        return $model->newQuery()->select('id', 'title', 'status', 'created_at', 'slug')->latest();
     }
 
     /**

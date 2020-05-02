@@ -28,6 +28,7 @@
             @include('layouts.navbar')
             <div class="container mt-70">
                 @yield('main_title')
+                @include('layouts.vultr')
                 @include('layouts.inspire')
                @yield('content')
                @include('adsense.square')
