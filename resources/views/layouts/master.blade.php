@@ -30,7 +30,14 @@
                 @yield('main_title')
                 @include('layouts.vultr')
                 @include('layouts.inspire')
-               @yield('content')
+
+                {{-- search box at projects and search url --}}
+                @if (is_active('home', 'search'))
+                    <div class="mt-4"></div>
+                    @include('layouts.search')
+                @endif
+
+                @yield('content')
                {{-- @include('adsense.square') --}}
             </div>
             {{-- footer --}}
