@@ -30,9 +30,9 @@ class SearchController extends Controller
 					// search by coded by
 					$query->orWhere('coded_by', 'LIKE', "%$q%");
 				})
-				->published()
+				->published(paginationEntries())
 				->orderBy('title', 'ASC')
-				->paginate(6);
+				->paginate();
 			
 			// append to URL query string
 			$projects->appends ([

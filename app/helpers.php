@@ -1,6 +1,16 @@
 <?php 
 
 
+if (! function_exists('paginationEntries')) {
+	/*
+	*
+	*/
+	function paginationEntries() {
+		return 6;
+	}
+}
+
+
 if (! function_exists('widgetButton')) {
 	/**
 	 * 

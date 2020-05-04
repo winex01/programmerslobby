@@ -21,7 +21,7 @@ class ProjectController extends Controller
     {
         $this->basicSEO('Home');
 
-        $projects = Project::published()->latest()->paginate(6);
+        $projects = Project::published()->latest()->paginate(paginationEntries());
         return view(viewIndex('projects'), compact('projects'));
     }
 
