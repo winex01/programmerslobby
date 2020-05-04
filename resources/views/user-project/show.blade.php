@@ -18,13 +18,19 @@
 								{{ __('Published') }} {{ $project->created_at->toDayDateTimeString() }}
 							</span>
 						</p>
+
+						@foreach($project->tags as $tag)
+							<a href="{{ route('search.project') .'?q='.$tag->description }}">{{ $tag->description }}</a>
+
+							@if(!$loop->last) , @endif
+						@endforeach
+
 						<hr>
-
-
 						{!! shortenString($project->description, 300) !!}
 
 						<div class="mt-2"></div>
 						<a href="{{ route('project', $project->slug) }}" class="btn btn-primary">{{ __('Read more...') }}</a> 
+
 					</div>
 				</div>
 
