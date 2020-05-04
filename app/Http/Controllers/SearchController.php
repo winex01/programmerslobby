@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Project;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -14,9 +13,22 @@ class SearchController extends Controller
     	$q = $request->q;
 
 		if ($q != '') {
-			$projects = Project::where('title', 'LIKE', "%$q%")
-				->orWhereHas('tags', function (Builder $query) use ($q) {
-					$query->where('description', 'LIKE', "%$q%");
+			$projects = Project::where( function($query) use ($q) {
+					// search title
+					$query->where('title', 'LIKE', "%$q%");
+
+					// search tags
+					$query->orWhereHas('tags', function ($query) use ($q) {
+						$query->where('description', 'LIKE', "%$q%");
+					});
+
+					//search author
+					$query->orWhereHas('author', function ($query) use ($q) {
+						$query->where('name', 'LIKE', "%$q%");
+					});
+					
+					// search by coded by
+					$query->orWhere('coded_by', 'LIKE', "%$q%");
 				})
 				->published()
 				->orderBy('title', 'ASC')
