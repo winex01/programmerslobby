@@ -64,6 +64,10 @@ class Project extends Model
             return true;
         }
 
+        if($this->download_link) {
+            return true;
+        }
+
         return false;
     }
     // end Query Scope
