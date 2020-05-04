@@ -32,7 +32,7 @@ class SearchController extends Controller
 				})
 				->published()
 				->orderBy('title', 'ASC')
-				->paginate(6);
+				->paginate(paginationEntries());
 			
 			// append to URL query string
 			$projects->appends ([

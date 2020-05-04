@@ -13,12 +13,9 @@
 				<div class="card-body">
 					<h4 class="m-0">{{ $project->title }}</h4>
 					<p class="blog-meta">
-						{{ __('Submitted by') }} <a href="{{ route('user.projects', [$project->author_id, $project->submittedBy]) }}">{{ $project->submittedBy }}</a> 
+						{{ __('By') }} <a href="{{ route('user.projects', [$project->author_id, $project->submittedBy]) }}">{{ $project->submittedBy }}</a> 
 						<span class="text-muted">
-							<br>
-							<sub>
-								{{ __('Published') }} {{ $project->created_at->toDayDateTimeString() }}
-							</sub>
+							{{ __('Published') }} {{ $project->created_at->toDayDateTimeString() }}
 						</span>
 						
 						<span class="text-dark pull-right">
@@ -28,6 +25,12 @@
 						</span>
 					</p>
 					
+					@foreach($project->tags as $tag)
+						<a href="{{ route('search.project') .'?q='.$tag->description }}">{{ $tag->description }}</a>
+
+						@if(!$loop->last) , @endif
+					@endforeach
+
 					@include('layouts.social-media-share')
 
 					<hr>
