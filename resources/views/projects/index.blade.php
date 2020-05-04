@@ -20,7 +20,7 @@
                                    <h2>
                                         {{ implode(', ', $project->tags->pluck('description')->toArray()) }}
                                    </h2>
-                                   <a class="info" href="{{ route('project', $project->slug) }}">{{ __('Download Code') }}</a>
+                                   <a class="info" href="{{ route('project', $project->slug) }}">{{ __('View Code') }}</a>
                                 </div>
                             </div>
 
