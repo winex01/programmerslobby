@@ -17,6 +17,12 @@
 							<span class="text-muted">
 								{{ __('Published') }} {{ $project->created_at->toDayDateTimeString() }}
 							</span>
+
+							<span class="text-dark pull-right">
+								<i class="fa fa-eye" aria-hidden="true"></i> 
+								{{ $project->totalViews }}
+								{{ str_plural(__('view'), $project->totalViews ) }}
+							</span>
 						</p>
 
 						@foreach($project->tags as $tag)
