@@ -43,7 +43,7 @@
 			@endforeach	
 			
 			{{-- pagination --}}
-			{{ $projects->links('pagination.blog') }}
+			{{ $projects->links() }}
 			
 		</div>
 
