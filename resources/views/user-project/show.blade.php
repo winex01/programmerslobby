@@ -26,9 +26,7 @@
 						</p>
 
 						@foreach($project->tags as $tag)
-							<a href="{{ route('search.project') .'?q='.$tag->description }}">{{ $tag->description }}</a>
-
-							@if(!$loop->last) , @endif
+							<a class="badge badge-secondary" href="{{ route('search.project') .'?q='.$tag->description }}">{{ $tag->description }}</a>
 						@endforeach
 
 						<hr>
