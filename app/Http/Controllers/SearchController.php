@@ -10,12 +10,16 @@ class SearchController extends Controller
     //
     public function project(Request $request)
     {
+    	// TODO: clean this up and transfer to sevice class
     	$q = $request->q;
 
 		if ($q != '') {
 			$projects = Project::where( function($query) use ($q) {
 					// search title
 					$query->where('title', 'LIKE', "%$q%");
+
+					// search keywords
+					$query->orWhere('meta_keywords', 'LIKE', "%$q%");
 
 					// search tags
 					$query->orWhereHas('tags', function ($query) use ($q) {

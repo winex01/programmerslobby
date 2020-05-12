@@ -7,7 +7,7 @@ use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use TCG\Voyager\Traits\Resizable;
 
-class Blog extends Model
+class Blog extends Model // TODO: refactor this code and remove unnecessary attribute including other Model classes
 {
     //
     use Resizable;
@@ -99,7 +99,7 @@ class Blog extends Model
         return $this->created_at->toDayDateTimeString();
     }
 
-    public function getOverallViewsAttribute()
+    public function getOverallViewsAttribute() // TODO: remove this shit and transfer it to class repository
     {   
         $total = 0;
         foreach ($this->all() as $temp) {
