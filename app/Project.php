@@ -30,7 +30,7 @@ class Project extends Model
 
     public function views()
     {
-        return $this->belongsToMany('App\User', 'project_views')->withTimestamps();
+        return $this->belongsToMany('App\User', 'project_views');
     }
     // end Relationship
 
@@ -48,27 +48,6 @@ class Project extends Model
     public function scopePending($query)
     {
         return $query->where('status', 'PENDING');
-    }
-
-    public function getHasCodeLinkAttribute()
-    {
-        if($this->github_link) {
-            return true;
-        }
-
-        if($this->gitlab_link) {
-            return true;
-        }
-
-        if($this->sourcecode_link) {
-            return true;
-        }
-
-        if($this->download_link) {
-            return true;
-        }
-
-        return false;
     }
     // end Query Scope
 
@@ -88,7 +67,7 @@ class Project extends Model
         return $this->updated_at;
     }
 
-    public function getSubmittedByAttribute($value)
+    public function getSubmittedByAttribute()
     {
         return $this->coded_by ?? $this->author->name;
     }
@@ -118,7 +97,7 @@ class Project extends Model
         return $this->created_at->toFormattedDateString();
     }
 
-    public function getOverallViewsAttribute()
+    public function getOverallViewsAttribute() // TODO: remove this shit and transfer it to class repository
     {   
         $total = 0;
         foreach ($this->all() as $temp) {
@@ -146,6 +125,28 @@ class Project extends Model
         }
 
     }
+
+    public function getHasCodeLinkAttribute()
+    {
+        if($this->github_link) {
+            return true;
+        }
+
+        if($this->gitlab_link) {
+            return true;
+        }
+
+        if($this->sourcecode_link) {
+            return true;
+        }
+
+        if($this->download_link) {
+            return true;
+        }
+
+        return false;
+    }
+    // end Attributes
 
     /**
      * Get the options for generating the slug.
