@@ -47,18 +47,24 @@ class ProjectDataTable extends DataTable
             })
             ->addColumn('slug', function ($query) {
                 $status = strtoupper($query->status);
-                $action = '<a href="'.route('submit.code.edit', $query->id).'">Edit</a>';
+                $action = '';
+
+                // display remove in bookmark datatable
+                if ( request()->path() === 'bookmarks' ) {
+                    $action .= '<a class="badge badge-danger" href="'.route('project.bookmark', $query->id).'">Remove</a>';
+                }else { // display edit on my projects datatable
+                    $action .= '<a class="badge badge-warning"  href="'.route('submit.code.edit', $query->id).'">Edit</a>';
+                }
 
                 if ($status == 'PUBLISHED') {
 
-                    $action .= ' <a href="'.route('project', $query->slug).'">View</a>';
+                    $action .= ' <a class="badge badge-success" href="'.route('project', $query->slug).'">View</a>';
 
                 }else if ($status == 'REJECT') {
 
                     $action = '';
 
                 }
-
 
                 return $action;
             })

@@ -13,6 +13,7 @@
         "algolia/algoliasearch-client-php": "^2.3",
         "anhskohbo/no-captcha": "^3.0",
         "artesaos/seotools": "^0.14.0",
+        "christiankuri/laravel-favorite": "^1.4",
         "fideloper/proxy": "^4.0",
         "itsgoingd/clockwork": "^4.0",
         "jorenvanhocht/laravel-share": "^3.2",

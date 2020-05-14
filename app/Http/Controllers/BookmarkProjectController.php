@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\DataTables\ProjectDataTable;
 use App\DataTables\Scopes\ScopeAuthenticatedUserProjects;
+use App\DataTables\Scopes\ScopeProjectBookmarks;
 use App\Traits\ProjectTrait;
 use App\Traits\SeoTrait;
 use Illuminate\Http\Request;
 
-class MyProjectController extends Controller
+class BookmarkProjectController extends Controller
 {
     use ProjectTrait;
     use SeoTrait;
@@ -29,15 +30,16 @@ class MyProjectController extends Controller
      */
     public function index()
     {
-        $title = 'My Projects';
+        $title = 'My Bookmarks';
         $this->basicSEO($title);
 
         return $this->dataTable
-        ->addScope(new ScopeAuthenticatedUserProjects)
+        ->addScope(new ScopeProjectBookmarks)
         ->render('datatables.default', [
             'suggestedProjects' => $this->suggestedProjects(),
             'dataTableTitle' => $title
         ]);
     }
 
+   
 }

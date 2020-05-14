@@ -44,6 +44,10 @@
                             {{ __('My Projects') }}
                         </a>
 
+                        <a class="dropdown-item" href="{{ route('my.bookmarks') }}">
+                            {{ __('Bookmarks') }}
+                        </a>
+
                         <a class="dropdown-item" href="{{ route('password.change') }}">
                             {{ __('Change Password') }}
                         </a>

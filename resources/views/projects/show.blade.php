@@ -15,9 +15,20 @@
 					<p class="blog-meta">
 						{{ __('By') }} <a href="{{ route('user.projects', [$project->author_id, $project->submittedBy]) }}">{{ $project->submittedBy }}</a> 
 						<span class="text-muted">
-							{{ __('Published') }} {{ $project->created_at->toDayDateTimeString() }}
+							{{ __('Published') }} {{ $project->created_at->toDayDateTimeString() }} 
 						</span>
-						
+
+						{{-- bookmark --}}
+				        @if($project->isFavorited())
+							<a href="{{ route('project.bookmark', $project->id) }}" title="{{ __('Remove bookmark on this project') }}">
+					        	<i class="fa fa-bookmark" aria-hidden="true"></i>
+					        </a>
+				        @else
+				        	<a href="{{ route('project.bookmark', $project->id) }}" title="{{ __('Bookmark on this project') }}">
+					        	<i class="fa fa-bookmark-o" aria-hidden="true"></i>
+					        </a>
+				        @endif
+
 						<span class="text-dark pull-right">
 							<i class="fa fa-eye" aria-hidden="true"></i> 
 							{{ $project->totalViews }}
@@ -30,6 +41,7 @@
 					@endforeach
 
 					@include('layouts.social-media-share')
+					
 
 					<hr>
 					{!! $project->description !!}
