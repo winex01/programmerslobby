@@ -8,7 +8,7 @@
             <div class="card border-0 shadow mb-4">
                 <div class="card-body">
 
-                    <h3>My Projects</h3>
+                    <h3>{{ $dataTableTitle }}</h3>
                     <hr>
 
                     {!! $dataTable->table() !!}

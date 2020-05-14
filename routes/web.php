@@ -40,6 +40,7 @@ Route::middleware(['auth'])->group(function () {
 	Route::get('submit-code/{project}/edit', 'SubmitCodeController@edit')->middleware('edit.project')->name('submit.code.edit');
 	Route::patch('submit-code/{project}', 'SubmitCodeController@update')->name('submit.code.update');
 	Route::get('my-projects', 'MyProjectController@index')->name('my.projects');
+	Route::get('bookmarks', 'BookmarkProjectController@index')->name('my.bookmarks');
 	
 	// project bookmark
 	Route::get('project/{project}/bookmark', function($project) {

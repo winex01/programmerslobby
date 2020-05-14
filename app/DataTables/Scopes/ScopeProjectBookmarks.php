@@ -4,7 +4,7 @@ namespace App\DataTables\Scopes;
 
 use Yajra\DataTables\Contracts\DataTableScope;
 
-class ProjectScopeDataTable implements DataTableScope
+class ScopeProjectBookmarks implements DataTableScope
 {
     /**
      * Apply a query scope.
@@ -14,6 +14,9 @@ class ProjectScopeDataTable implements DataTableScope
      */
     public function apply($query)
     {
-        return $query->where('author_id', auth()->user()->id);
+        return $query->whereHas('favorites', function ($query) {
+            $query->where('user_id', auth()->user()->id);
+            $query->where('favoriteable_type', 'App\Project');
+        });
     }
 }
