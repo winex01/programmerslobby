@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DataTables\ProjectDataTable;
 use App\DataTables\Scopes\ScopeAuthenticatedUserProjects;
 use App\DataTables\Scopes\ScopeProjectBookmarks;
+use App\Project;
 use App\Traits\ProjectTrait;
 use App\Traits\SeoTrait;
 use Illuminate\Http\Request;
@@ -39,6 +40,15 @@ class BookmarkProjectController extends Controller
             'suggestedProjects' => $this->suggestedProjects(),
             'dataTableTitle' => $title
         ]);
+    }
+
+    public function store($project)
+    {
+        $project = Project::findOrFail($project);
+        toastr()->success(
+            $project->isFavorited() ? 'Bookmark Successfully!' : 'Remove bookmark successfully!'
+        );
+        return redirect()->back();
     }
 
    

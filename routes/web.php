@@ -43,13 +43,7 @@ Route::middleware(['auth'])->group(function () {
 	Route::get('bookmarks', 'BookmarkProjectController@index')->name('my.bookmarks');
 	
 	// project bookmark
-	Route::get('project/{project}/bookmark', function($project) {
-		$project = \App\Project::findOrFail($project);
-		toastr()->success(
-			$project->isFavorited() ? 'Bookmark Successfully!' : 'Remove bookmark successfully!'
-		);
-		return redirect()->back();
-	})->middleware('project.bookmark')->name('project.bookmark');
+	Route::get('project/{project}/bookmark', 'BookmarkProjectController@store')->middleware('project.bookmark')->name('project.bookmark');
 });
 
 
