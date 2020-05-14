@@ -64,6 +64,7 @@ class Kernel extends HttpKernel
         'project.views' => \App\Http\Middleware\IncrementProjectViews::class,
         'blog.views' => \App\Http\Middleware\BlogViews::class,
         'edit.project' => \App\Http\Middleware\EditProject::class,
+        'project.bookmark' => \App\Http\Middleware\ProjectBookmark::class,
     ];
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use ChristianKuri\LaravelFavorite\Traits\Favoriteable;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
@@ -11,6 +12,7 @@ class Project extends Model
 {
     use Resizable;
     use HasSlug;
+    use Favoriteable;
 
     protected $guarded = [];
 

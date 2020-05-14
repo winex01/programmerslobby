@@ -40,7 +40,17 @@ Route::middleware(['auth'])->group(function () {
 	Route::get('submit-code/{project}/edit', 'SubmitCodeController@edit')->middleware('edit.project')->name('submit.code.edit');
 	Route::patch('submit-code/{project}', 'SubmitCodeController@update')->name('submit.code.update');
 	Route::get('my-projects', 'MyProjectController@index')->name('my.projects');
+	
+	// project bookmark
+	Route::get('project/{project}/bookmark', function($project) {
+		$project = \App\Project::findOrFail($project);
+		toastr()->success(
+			$project->isFavorited() ? 'Bookmark Successfully!' : 'Remove bookmark successfully!'
+		);
+		return redirect()->back();
+	})->middleware('project.bookmark')->name('project.bookmark');
 });
+
 
 // auth admin
 Route::group(['prefix' => 'admin'], function () {
