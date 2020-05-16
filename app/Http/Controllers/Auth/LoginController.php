@@ -61,7 +61,7 @@ class LoginController extends Controller
             'name' => $provider
         ]);
 
-        $providerUser = Socialite::driver($provider->name)->user();
+        $providerUser = Socialite::driver($provider->name)->stateless()->user();
 
         $user = User::WhereHas('providers', function($q) use($provider, $providerUser) { 
             $q->where('provider_id', $provider->id)
