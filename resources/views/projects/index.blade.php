@@ -49,7 +49,7 @@
 
         {{-- pagination --}}
         <div class="mt-4">
-            {{ $projects->links() }}
+            {{ $projects->onEachSide(3)->links() }}
         </div>
     @else
         <div class="mt-4 mb-2">
