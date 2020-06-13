@@ -21,11 +21,11 @@
 						{{-- bookmark --}}
 				        @if($project->isFavorited())
 							<a href="{{ route('project.bookmark', $project->id) }}" title="{{ __('Remove bookmark on this project') }}">
-					        	<i class="fa fa-bookmark" aria-hidden="true"></i>
+					        	<i class="fa fa-bookmark" aria-hidden="true"></i> Unbookmark
 					        </a>
 				        @else
 				        	<a href="{{ route('project.bookmark', $project->id) }}" title="{{ __('Bookmark on this project') }}">
-					        	<i class="fa fa-bookmark-o" aria-hidden="true"></i>
+					        	<i class="fa fa-bookmark-o" aria-hidden="true"></i> Bookmark
 					        </a>
 				        @endif
 
